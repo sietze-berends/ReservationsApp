@@ -1,5 +1,11 @@
+import hotel.Hotel;
+import hotel.InitializeHotel;
+
 public class Application {
     public static void main(String[] args) {
-        Hotel molveno = new Hotel("Molveno test", "", "");
+
+        InitializeHotel initializeHotel = new InitializeHotel();
+        Hotel molveno = initializeHotel.makeMolveno();
+
     }
 }
