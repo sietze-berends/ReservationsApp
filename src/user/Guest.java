@@ -1,22 +1,16 @@
 package user;
 
-import sun.security.util.Password;
-
 import java.time.LocalDate;
-import java.util.Date;
 
-public class Guest {
+public class Guest extends User{
     private String guestId;
-    private String firstName;
-    private String lastName;
     private LocalDate dateOfBirth;
     private String email;
     private String password;
 
     public Guest(String guestId, String firstName, String lastName, LocalDate dateOfBirth, String email, String password) {
+        super(firstName, lastName);
         this.guestId = guestId;
-        this.firstName = firstName;
-        this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.password = password;
@@ -28,22 +22,6 @@ public class Guest {
 
     public void setGuestId(String guestId) {
         this.guestId = guestId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public LocalDate getDateOfBirth() {
