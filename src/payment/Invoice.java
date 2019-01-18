@@ -31,6 +31,7 @@ public class Invoice {
         this.paymentType = paymentType;
     }
 
+
     public LocalDate getInvoiceDate() {
         return invoiceDate;
     }
