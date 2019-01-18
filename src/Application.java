@@ -1,5 +1,9 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class Application {
     public static void main(String[] args) {
-        Hotel molveno = new Hotel("Molveno test", "", "");
+        InitializeHotel initializeHotel = new InitializeHotel();
+        Hotel molveno = initializeHotel.makeMolveno();
     }
 }
