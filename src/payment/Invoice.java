@@ -1,12 +1,13 @@
 package payment;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Invoice {
 
-    private Date invoiceDate;
+    private LocalDate invoiceDate;
     private Reservation reservation;
     private Guest booker;
     private ArrayList<SubInvoice> subInvoice;
@@ -15,7 +16,7 @@ public class Invoice {
     private boolean fullyPaid;
     private String paymentType;
 
-    public Invoice(Date invoiceDate, Reservation reservation, Guest booker, BigDecimal totalAmount,
+    public Invoice(LocalDate invoiceDate, Reservation reservation, Guest booker, BigDecimal totalAmount,
                    BigDecimal amountAlreadyPaid, boolean fullyPaid, String paymentType) {
         this.invoiceDate = invoiceDate;
         this.reservation = reservation;
