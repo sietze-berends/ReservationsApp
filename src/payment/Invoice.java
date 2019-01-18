@@ -1,5 +1,8 @@
 package payment;
 
+import hotel.Reservation;
+import user.Guest;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -28,11 +31,12 @@ public class Invoice {
         this.paymentType = paymentType;
     }
 
-    public Date getInvoiceDate() {
+
+    public LocalDate getInvoiceDate() {
         return invoiceDate;
     }
 
-    public void setInvoiceDate(Date invoiceDate) {
+    public void setInvoiceDate(LocalDate invoiceDate) {
         this.invoiceDate = invoiceDate;
     }
 
