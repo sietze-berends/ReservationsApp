@@ -32,4 +32,14 @@ public class Hotel {
         this.invoices = invoices;
         this.reservations = reservations;
     }
+
+    @Override
+    public String toString() {
+        String output;
+        output = "This hotel has the following rooms:\n";
+        for (Room room : rooms) {
+            output += room.toString() + "\n";
+        }
+        return output;
+    }
 }

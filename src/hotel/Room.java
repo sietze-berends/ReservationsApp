@@ -7,7 +7,7 @@ import java.util.Currency;
 public class Room {
     private String roomId;
     double area;
-    BigDecimal price;
+    double price;
     int singleBeds;
     int doubleBeds;
     int capacity;
@@ -19,7 +19,7 @@ public class Room {
         this.roomId = roomNr;
     }
 
-    public Room(String roomNr, double area, BigDecimal price, int singleBeds, int doubleBeds, int capacity,
+    public Room(String roomNr, double area, double price, int singleBeds, int doubleBeds, int capacity,
                 boolean bookable, ArrayList<RoomAttributes> roomAttributes, ArrayList<String> imageUrls) {
         this.roomId = roomNr;
         this.area = area;
@@ -30,6 +30,21 @@ public class Room {
         this.bookable = bookable;
         this.roomAttributes = roomAttributes;
         this.imageUrls = imageUrls;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "roomId='" + roomId + '\'' +
+                ", area=" + area +
+                ", price=" + price +
+                ", singleBeds=" + singleBeds +
+                ", doubleBeds=" + doubleBeds +
+                ", capacity=" + capacity +
+                ", bookable=" + bookable +
+                ", roomAttributes=" + roomAttributes +
+                ", imageUrls=" + imageUrls +
+                '}';
     }
 
     public String getRoomId() {
@@ -48,11 +63,11 @@ public class Room {
         this.area = area;
     }
 
-    public BigDecimal getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
