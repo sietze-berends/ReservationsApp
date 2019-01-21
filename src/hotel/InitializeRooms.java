@@ -1,7 +1,7 @@
 package hotel;
 
-import Basics.Room;
-import Basics.RoomAttributes;
+import basics.Room;
+import basics.RoomAttributes;
 
 import java.util.ArrayList;
 

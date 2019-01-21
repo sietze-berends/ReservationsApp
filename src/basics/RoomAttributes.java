@@ -1,4 +1,4 @@
-package Basics;
+package basics;
 
 public class RoomAttributes {
     private String roomAttributeId;
@@ -7,6 +7,14 @@ public class RoomAttributes {
     public RoomAttributes(String attributeId, String description) {
         this.roomAttributeId = attributeId;
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "RoomAttributes{" +
+                "roomAttributeId='" + roomAttributeId + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 
     public String getRoomAttributeId() {

@@ -1,4 +1,4 @@
-package Basics;
+package basics;
 
 import java.util.ArrayList;
 
@@ -40,7 +40,7 @@ public class Room {
                 ", doubleBeds=" + doubleBeds +
                 ", capacity=" + capacity +
                 ", bookable=" + bookable +
-                ", roomAttributes=" + roomAttributes +
+                ", roomAttributes=" + roomAttributes.toString() +
                 ", imageUrls=" + imageUrls +
                 '}';
     }
