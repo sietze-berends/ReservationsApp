@@ -12,7 +12,7 @@ public class InitializeHotel {
         InitializeRooms rooms = new InitializeRooms();
         InitializeGuests guests = new InitializeGuests();
 
-        Hotel molveno = new Hotel("Molveno test", "", "", rooms.getRooms(), guests.getGuests(), null, null);
+        Hotel molveno = new Hotel("Molveno test", "", "", rooms.getRooms(), guests.getGuests(), new ArrayList<>(), new ArrayList<>());
 
         return molveno;
     }

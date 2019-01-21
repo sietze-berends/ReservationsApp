@@ -1,10 +1,12 @@
 package hotel;
 
-import Basics.Reservation;
-import Basics.Room;
+import basics.Reservation;
+import basics.Room;
 import payment.Invoice;
+import search.SearchModule;
 import user.Guest;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Hotel {
@@ -20,6 +22,8 @@ public class Hotel {
     private ArrayList<Guest> guests;
     private ArrayList<Invoice> invoices;
     private ArrayList<Reservation> reservations;
+
+    private SearchModule searchModule = new SearchModule();
 
     public Hotel(String name, String telNo, String email) {
         this.name = name;
@@ -37,6 +41,15 @@ public class Hotel {
         this.reservations = reservations;
     }
 
+    public void search(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
+        ArrayList<Room> availableRooms = searchModule.search(start, end, amountOfGuests, amountOfRooms, this);
+        System.out.println("Searching for " + amountOfRooms + " rooms available between " + start + " and " + end + " for " + amountOfGuests + " guests...\n");
+        System.out.println(availableRooms.size() + " rooms found: \n ");
+        for (Room room : availableRooms) {
+            System.out.println(room);
+        }
+    }
+
     @Override
     public String toString() {
         String output;
@@ -45,5 +58,13 @@ public class Hotel {
             output += room.toString() + "\n";
         }
         return output;
+    }
+
+    public ArrayList<Room> getRooms() {
+        return rooms;
+    }
+
+    public ArrayList<Reservation> getReservations() {
+            return reservations;
     }
 }
