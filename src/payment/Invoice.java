@@ -1,6 +1,6 @@
 package payment;
 
-import hotel.Reservation;
+import Basics.Reservation;
 import user.Guest;
 
 import java.math.BigDecimal;

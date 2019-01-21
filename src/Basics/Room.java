@@ -1,8 +1,6 @@
-package hotel;
+package Basics;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Currency;
 
 public class Room {
     private String roomId;

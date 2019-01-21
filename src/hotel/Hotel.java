@@ -1,11 +1,15 @@
 package hotel;
 
+import Basics.Reservation;
+import Basics.Room;
 import payment.Invoice;
 import user.Guest;
 
 import java.util.ArrayList;
 
 public class Hotel {
+
+    private static Hotel hotel = null;
 
     // some basic details about the hotel.Hotel
     private String name;

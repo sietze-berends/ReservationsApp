@@ -1,4 +1,4 @@
-package hotel;
+package Basics;
 
 public class RoomAttributes {
     private String roomAttributeId;
