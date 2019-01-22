@@ -15,11 +15,11 @@ public class Room {
     int doubleBeds;
     int capacity;
     boolean bookable;
-    ArrayList<RoomAttributes> roomAttributes;
+    ArrayList<RoomAttribute> roomAttributes;
     ArrayList<String> imageUrls;
-    
+
     public Room(String roomNr, double area, double price, int singleBeds, int doubleBeds, int capacity,
-                boolean bookable, ArrayList<RoomAttributes> roomAttributes, ArrayList<String> imageUrls) {
+                boolean bookable, ArrayList<RoomAttribute> roomAttributes, ArrayList<String> imageUrls) {
         this.roomId = roomNr;
         this.area = area;
         this.price = price;
@@ -44,5 +44,9 @@ public class Room {
                 ", roomAttributes=" + roomAttributes.toString() +
                 ", imageUrls=" + imageUrls +
                 '}';
+    }
+
+    public ArrayList<RoomAttribute> getRoomAttributes() {
+        return roomAttributes;
     }
 }

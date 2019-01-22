@@ -1,7 +1,7 @@
 package hotel;
 
 import basics.Room;
-import basics.RoomAttributes;
+import basics.RoomAttribute;
 
 import java.util.ArrayList;
 
@@ -10,14 +10,14 @@ import java.util.ArrayList;
  */
 public class InitializeRooms {
     private ArrayList<Room> rooms = new ArrayList<>();
-    private ArrayList<RoomAttributes> allRoomAttributes = new ArrayList<>();
+    private ArrayList<RoomAttribute> allRoomAttributes = new ArrayList<>();
 
     public InitializeRooms() {
-        allRoomAttributes.add(new RoomAttributes("Jacuzzi", "This room has a jacuzzi"));
-        allRoomAttributes.add(new RoomAttributes("Child friendly", "A room which is childfriendly"));
+        allRoomAttributes.add(new RoomAttribute("Jacuzzi", "This room has a jacuzzi"));
+        allRoomAttributes.add(new RoomAttribute("Child friendly", "A room which is childfriendly"));
 
-        ArrayList<RoomAttributes> room1Attributes = new ArrayList<>();
-        ArrayList<RoomAttributes> room2Attributes = new ArrayList<>();
+        ArrayList<RoomAttribute> room1Attributes = new ArrayList<>();
+        ArrayList<RoomAttribute> room2Attributes = new ArrayList<>();
         room1Attributes.add(allRoomAttributes.get(0));
         room2Attributes.add(allRoomAttributes.get(1));
 
