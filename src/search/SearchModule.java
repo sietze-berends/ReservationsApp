@@ -6,6 +6,11 @@ import hotel.Hotel;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+/**
+ * Search class. Calls several helper methods to check if the date is available, desired attributes are available,
+ * capacity is enough, etc.
+ */
+
 public class SearchModule {
     public SearchModule() {
 

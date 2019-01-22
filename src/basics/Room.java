@@ -2,6 +2,11 @@ package basics;
 
 import java.util.ArrayList;
 
+/**
+ * Models a room with some basic data.
+ * Bookable indicates whether it's an actual room or something like a conference room;
+ */
+
 public class Room {
     private String roomId;
     double area;

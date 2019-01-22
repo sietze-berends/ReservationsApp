@@ -4,6 +4,9 @@ import user.Guest;
 
 import java.time.LocalDateTime;
 
+/**
+ * Models a reservation with some basic data
+ */
 public class Reservation {
     private Room room;
     private LocalDateTime start;

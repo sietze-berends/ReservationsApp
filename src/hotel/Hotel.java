@@ -9,8 +9,12 @@ import user.Guest;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+/**
+ * Singleton class that models the Molveno lake resort. Hotel holds all the rooms, guests, invoices and reservations.
+ * Hotel has some methods to perform searches, make bookings, etc
+ */
 public class Hotel {
-
+    // TODO: make this a Singleton!
     private static Hotel hotel = null;
 
     // some basic details about the hotel.Hotel

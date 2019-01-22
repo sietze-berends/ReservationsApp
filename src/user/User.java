@@ -1,6 +1,9 @@
 package user;
 
-// this is the super class for Guest and Admin
+/**
+ * Superclass that models a basic user. In order of increasing permissions, this could be a:
+ * Guest, receptionist, chief receptionist, operational manager or owner
+ */
 public abstract class User {
 
     private String firstName;

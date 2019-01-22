@@ -6,6 +6,10 @@ import user.Guest;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Class that initializes our hotel with rooms, guests, reservations and invoices
+ * Uses separate initializers for the ones above to keep code readable
+ */
 public class InitializeHotel {
 
     public Hotel makeMolveno() {

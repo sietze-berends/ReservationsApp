@@ -2,6 +2,9 @@ import hotel.Hotel;
 import hotel.InitializeHotel;
 import java.time.LocalDateTime;
 
+/**
+ * Runner class for the Hotel Application
+ */
 public class Application {
     public static void main(String[] args) {
         InitializeHotel initializeHotel = new InitializeHotel();

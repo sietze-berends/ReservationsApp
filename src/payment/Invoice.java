@@ -7,6 +7,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Class that models a final invoice that covers all hotel, restaurant and bar expenses
+ * Contains several subinvoices to get more detail
+ */
 public class Invoice {
 
     private LocalDate invoiceDate;

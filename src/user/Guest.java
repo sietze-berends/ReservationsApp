@@ -2,6 +2,9 @@ package user;
 
 import java.time.LocalDate;
 
+/**
+ * Class that models a guest
+ */
 public class Guest extends User{
     private String guestId;
     private LocalDate dateOfBirth;

@@ -5,6 +5,9 @@ import basics.RoomAttributes;
 
 import java.util.ArrayList;
 
+/**
+ * Initializes rooms for molveno
+ */
 public class InitializeRooms {
     private ArrayList<Room> rooms = new ArrayList<>();
     private ArrayList<RoomAttributes> allRoomAttributes = new ArrayList<>();

@@ -7,6 +7,9 @@ import hotel.Hotel;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+/**
+ * Class that checks if a room is available on a given date
+ */
 public class AvailabilityChecker {
 
     public AvailabilityChecker() {

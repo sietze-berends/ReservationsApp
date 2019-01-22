@@ -1,5 +1,9 @@
 package basics;
 
+/**
+ * Class that models an attribute of a room, e.g. "jacuzzi" or "child friendly"
+ */
+
 public class RoomAttributes {
     private String roomAttributeId;
     private String description;

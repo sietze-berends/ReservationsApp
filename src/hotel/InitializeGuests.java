@@ -5,6 +5,10 @@ import user.Guest;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Initializes guests for molveno
+ */
+
 public class InitializeGuests {
     private ArrayList<Guest> guests = new ArrayList<>();
 

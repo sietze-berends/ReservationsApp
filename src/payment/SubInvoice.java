@@ -2,6 +2,10 @@ package payment;
 
 import java.util.ArrayList;
 
+/**
+ * Class that models a subinvoice. E.g: bill of the room, bill of the restaurant or bill of the bar
+ * Contains lines that give more detail
+ */
 public class SubInvoice {
 
     private String name;

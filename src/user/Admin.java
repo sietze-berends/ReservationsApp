@@ -1,7 +1,10 @@
 package user;
 
 import sun.security.util.Password;
-// class for the reception to use
+
+/**
+ * Admin class which has more rights than the user
+ */
 public class Admin extends User{
 
     private String username;

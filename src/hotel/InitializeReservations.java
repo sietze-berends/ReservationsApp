@@ -1,12 +1,13 @@
 package hotel;
 
 import basics.Reservation;
-import basics.Room;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+/**
+ * Initializes reservations for molveno
+ */
 public class InitializeReservations {
     private ArrayList<Reservation> reservations = new ArrayList<>();
 
