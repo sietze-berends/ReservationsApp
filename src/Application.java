@@ -1,7 +1,5 @@
 import hotel.Hotel;
 import hotel.InitializeHotel;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Application {
