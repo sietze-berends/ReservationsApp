@@ -8,6 +8,7 @@ import user.Guest;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Singleton class that models the Molveno lake resort. Hotel holds all the rooms, guests, invoices and reservations.
@@ -22,7 +23,7 @@ public class Hotel {
     private String telNo;
     private String email;
 
-    private ArrayList<Room> rooms;
+    private List<Room> rooms;
     private ArrayList<Guest> guests;
     private ArrayList<Invoice> invoices;
     private ArrayList<Reservation> reservations;
