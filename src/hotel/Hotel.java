@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * Hotel has some methods to perform searches, make bookings, etc
  */
 public class Hotel {
-    // TODO: make this a Singleton!
+    // TODO: make sure this is a Singleton
     private static Hotel hotel = null;
 
     // some basic details about the hotel.Hotel
@@ -43,7 +43,8 @@ public class Hotel {
         this.email = email;
     }
 
-    public Hotel(String name, String telNo, String email, ArrayList<Room> rooms, ArrayList<Guest> guests, ArrayList<Invoice> invoices, ArrayList<Reservation> reservations) {
+    public Hotel(String name, String telNo, String email, ArrayList<Room> rooms, ArrayList<Guest> guests
+            , ArrayList<Invoice> invoices, ArrayList<Reservation> reservations) {
         this.name = name;
         this.telNo = telNo;
         this.email = email;
@@ -55,7 +56,8 @@ public class Hotel {
 
     public void search(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
         ArrayList<Room> availableRooms = searchModule.search(start, end, amountOfGuests, amountOfRooms, this);
-        System.out.println("Searching for " + amountOfRooms + " rooms available between " + start + " and " + end + " for " + amountOfGuests + " guests...\n");
+        System.out.println("Searching for " + amountOfRooms + " rooms available between " + start + " and " + end
+                + " for " + amountOfGuests + " guests...\n");
         System.out.println(availableRooms.size() + " rooms found: \n ");
         for (Room room : availableRooms) {
             System.out.println(room);
