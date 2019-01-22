@@ -10,6 +10,13 @@ public class Reservation {
     private LocalDateTime end;
     private Guest guest;
 
+    public Reservation(Room room, LocalDateTime start, LocalDateTime end, Guest guest) {
+        this.room = room;
+        this.start = start;
+        this.end = end;
+        this.guest = guest;
+    }
+
     public Room getRoom() {
         return room;
     }

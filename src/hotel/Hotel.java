@@ -23,6 +23,14 @@ public class Hotel {
     private ArrayList<Invoice> invoices;
     private ArrayList<Reservation> reservations;
 
+    public void setReservations(ArrayList<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    public ArrayList<Guest> getGuests() {
+        return guests;
+    }
+
     private SearchModule searchModule = new SearchModule();
 
     public Hotel(String name, String telNo, String email) {

@@ -14,6 +14,9 @@ public class InitializeHotel {
 
         Hotel molveno = new Hotel("Molveno test", "", "", rooms.getRooms(), guests.getGuests(), new ArrayList<>(), new ArrayList<>());
 
+        InitializeReservations reservations = new InitializeReservations(molveno);
+        molveno.setReservations(reservations.getReservations());
+
         return molveno;
     }
 
