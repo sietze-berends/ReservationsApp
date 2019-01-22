@@ -30,14 +30,8 @@ public class Hotel {
 
     private SearchModule searchModule = new SearchModule();
 
-    public Hotel(String name, String telNo, String email) {
-        this.name = name;
-        this.telNo = telNo;
-        this.email = email;
-    }
-
-    public Hotel(String name, String telNo, String email, ArrayList<Room> rooms, ArrayList<Guest> guests
-            , ArrayList<Invoice> invoices, ArrayList<Reservation> reservations) {
+    public Hotel(String name, String telNo, String email, List<Room> rooms, List<Guest> guests
+            , List<Invoice> invoices, List<Reservation> reservations) {
         this.name = name;
         this.telNo = telNo;
         this.email = email;
@@ -57,8 +51,6 @@ public class Hotel {
 
     public void searchDate(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
         List<Room> availableRooms = searchModule.searchDate(start, end, amountOfGuests, amountOfRooms, this);
-
-
 
         System.out.println("Searching for " + amountOfRooms + " rooms available between " + start + " and " + end
                 + " for " + amountOfGuests + " guests...\n");

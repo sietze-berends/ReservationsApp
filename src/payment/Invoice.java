@@ -6,6 +6,7 @@ import user.Guest;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class that models a final invoice that covers all hotel, restaurant and bar expenses
@@ -16,7 +17,7 @@ public class Invoice {
     private LocalDate invoiceDate;
     private Reservation reservation;
     private Guest booker;
-    private ArrayList<SubInvoice> subInvoice;
+    private List<SubInvoice> subInvoice;
     private BigDecimal totalAmount;
     private BigDecimal amountAlreadyPaid;
     private boolean fullyPaid;
@@ -59,7 +60,7 @@ public class Invoice {
         this.booker = booker;
     }
 
-    public ArrayList<SubInvoice> getSubInvoice() {
+    public List<SubInvoice> getSubInvoice() {
         return subInvoice;
     }
 
