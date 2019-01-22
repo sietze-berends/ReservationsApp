@@ -27,6 +27,8 @@ public class Hotel {
     private ArrayList<Invoice> invoices;
     private ArrayList<Reservation> reservations;
 
+    private SearchModule searchModule = new SearchModule();
+
     public void setReservations(ArrayList<Reservation> reservations) {
         this.reservations = reservations;
     }
@@ -35,7 +37,7 @@ public class Hotel {
         return guests;
     }
 
-    private SearchModule searchModule = new SearchModule();
+
 
     public Hotel(String name, String telNo, String email) {
         this.name = name;

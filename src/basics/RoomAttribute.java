@@ -4,18 +4,18 @@ package basics;
  * Class that models an attribute of a room, e.g. "jacuzzi" or "child friendly"
  */
 
-public class RoomAttributes {
+public class RoomAttribute {
     private String roomAttributeId;
     private String description;
 
-    public RoomAttributes(String attributeId, String description) {
+    public RoomAttribute(String attributeId, String description) {
         this.roomAttributeId = attributeId;
         this.description = description;
     }
 
     @Override
     public String toString() {
-        return "RoomAttributes{" +
+        return "RoomAttribute{" +
                 "roomAttributeId='" + roomAttributeId + '\'' +
                 ", description='" + description + '\'' +
                 '}';
