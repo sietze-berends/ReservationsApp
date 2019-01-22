@@ -6,6 +6,7 @@ import hotel.Hotel;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class that checks if a room is available on a given date
@@ -16,16 +17,15 @@ public class AvailabilityChecker {
 
     }
 
-    public ArrayList<Room> checkAvailability(LocalDateTime start, LocalDateTime end, Hotel hotel) {
-        ArrayList<Room> availableRooms = new ArrayList<>();
+    public List<Room> checkAvailability(LocalDateTime start, LocalDateTime end, Hotel hotel) {
+        List<Room> availableRooms = new ArrayList<>();
+        // als het hotel überhaupt geen reservering heeft, dan is de kamer beschikbaar
+        if (hotel.getReservations().isEmpty()) {
+            return hotel.getRooms();
+        }
         // voor iedere kamer die het hotel heeft
         for (Room room : hotel.getRooms()) {
             boolean available = false;
-            // als het hotel überhaupt geen reservering heeft, dan is de kamer beschikbaar
-            if (hotel.getReservations().isEmpty()) {
-                availableRooms.add(room);
-                continue;
-            }
             // check iedere reservering
             for (Reservation reservation : hotel.getReservations()) {
                 // als de reservering over dezelfde kamer gaat

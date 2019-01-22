@@ -14,9 +14,8 @@ import java.util.List;
  */
 
 public class SearchModule {
-    private List<Room> availableRooms = new ArrayList<>();
+    private List<Room> availableRooms;
     public SearchModule() {
-
     }
 
     public List<Room> searchDate(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms, Hotel hotel) {

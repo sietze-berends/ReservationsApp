@@ -24,21 +24,11 @@ public class Hotel {
     private String email;
 
     private List<Room> rooms;
-    private ArrayList<Guest> guests;
-    private ArrayList<Invoice> invoices;
-    private ArrayList<Reservation> reservations;
+    private List<Guest> guests;
+    private List<Invoice> invoices;
+    private List<Reservation> reservations;
 
     private SearchModule searchModule = new SearchModule();
-
-    public void setReservations(ArrayList<Reservation> reservations) {
-        this.reservations = reservations;
-    }
-
-    public ArrayList<Guest> getGuests() {
-        return guests;
-    }
-
-
 
     public Hotel(String name, String telNo, String email) {
         this.name = name;
@@ -57,8 +47,19 @@ public class Hotel {
         this.reservations = reservations;
     }
 
-    public void search(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
+    public void setReservations(ArrayList<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    public List<Guest> getGuests() {
+        return guests;
+    }
+
+    public void searchDate(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
         List<Room> availableRooms = searchModule.searchDate(start, end, amountOfGuests, amountOfRooms, this);
+
+
+
         System.out.println("Searching for " + amountOfRooms + " rooms available between " + start + " and " + end
                 + " for " + amountOfGuests + " guests...\n");
         System.out.println(availableRooms.size() + " rooms found: \n ");
@@ -81,7 +82,7 @@ public class Hotel {
         return rooms;
     }
 
-    public ArrayList<Reservation> getReservations() {
-            return reservations;
+    public List<Reservation> getReservations() {
+        return reservations;
     }
 }
