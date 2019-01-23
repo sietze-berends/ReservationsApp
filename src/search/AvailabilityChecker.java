@@ -6,6 +6,7 @@ import hotel.Hotel;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -13,16 +14,18 @@ import java.util.List;
  */
 public class AvailabilityChecker {
 
-    public AvailabilityChecker() {
 
+    public AvailabilityChecker() {
     }
 
     public List<Room> checkAvailability(LocalDateTime start, LocalDateTime end, Hotel hotel) {
-        List<Room> availableRooms = new ArrayList<>();
-        // als het hotel überhaupt geen reservering heeft, dan is de kamer beschikbaar
+        List <Room> availableRooms = new ArrayList<>();
+
+        // als het hotel überhaupt geen reservering heeft, dan zijn alle kamers beschikbaar
         if (hotel.getReservations().isEmpty()) {
             return hotel.getRooms();
         }
+
         // voor iedere kamer die het hotel heeft
         for (Room room : hotel.getRooms()) {
             boolean available = false;
@@ -30,29 +33,28 @@ public class AvailabilityChecker {
             for (Reservation reservation : hotel.getReservations()) {
                 // als de reservering over dezelfde kamer gaat
                 if (reservation.getRoom() == room) {
-                    // als de startdatum van de reservering na de einddatum van de gewenste reservering is
-                    // of de einddatum van de reservering is voor de startdatum van de reservering
-                    // dan is de kamer beschikbaar
+                    // startdatum van de reservering na de einddatum van de gewenste reservering
+                    // of einddatum van de reservering voor de startdatum van de gewenste reservering
                     if (reservation.getStart().isAfter(end) || reservation.getEnd().isBefore(start)) {
                         available = true;
                     }
-                    // als de kamer niet beschikbaar is, stop dan met het checken van de overige reserveringen
-                    // de kamer is namelijk niet beschikbaar, ongeacht de rest van de reserveringen
+                    // als kamer niet beschikbaar is, stop met het checken van de overige reserveringen
                     else {
                         available = false;
                         break;
                     }
-                } // als de gevonden reserververing over een andere kamer gaat dan de gewenste
+                } // als reserververing over een andere kamer gaat
                 else {
                     available = true;
                 }
             }
-            // als de kamer na het checken van alle reservering nog steeds beschikbaar is
-            // voeg deze dan toe aan de beschikbare kamers
+
+            // als de kamer na het checken van alle reserveringen nog steeds beschikbaar is voeg deze dan toe
             if (available) {
                 availableRooms.add(room);
             }
         }
+        availableRooms.sort(Comparator.comparingDouble(Room::getPrice).reversed());
         return availableRooms;
     }
 }

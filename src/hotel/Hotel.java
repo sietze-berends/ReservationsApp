@@ -2,6 +2,7 @@ package hotel;
 
 import basics.Reservation;
 import basics.Room;
+import basics.RoomAttribute;
 import payment.Invoice;
 import search.SearchModule;
 import user.Guest;
@@ -49,15 +50,21 @@ public class Hotel {
         return guests;
     }
 
-    public void searchDate(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
-        List<Room> availableRooms = searchModule.searchDate(start, end, amountOfGuests, amountOfRooms, this);
-
-        System.out.println("Searching for " + amountOfRooms + " rooms available between " + start + " and " + end
-                + " for " + amountOfGuests + " guests...\n");
-        System.out.println(availableRooms.size() + " rooms found: \n ");
-        for (Room room : availableRooms) {
-            System.out.println(room);
+    public void search(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
+        // eerst de suggestie
+        System.out.println("Eerst de suggestie:");
+        List<Room> suggestion = searchModule.searchSuggestion(start, end, amountOfGuests, amountOfRooms, this);
+        for (Room room : suggestion) {
+            System.out.println(room.toString());
         }
+
+        // dan de rest
+        System.out.println("Dan de rest:");
+        List<Room> availableRooms = searchModule.searchAll(start, end, this);
+        for (Room room : availableRooms) {
+            System.out.println(room.toString());
+        }
+
     }
 
     @Override
