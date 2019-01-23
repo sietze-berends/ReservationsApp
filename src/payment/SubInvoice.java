@@ -29,7 +29,7 @@ public class SubInvoice {
         return subInvoiceLines;
     }
 
-    public void setSubInvoiceLines(ArrayList<SubInvoiceLine> subInvoiceLines) {
+    public void setSubInvoiceLines(List<SubInvoiceLine> subInvoiceLines) {
         this.subInvoiceLines = subInvoiceLines;
     }
 }

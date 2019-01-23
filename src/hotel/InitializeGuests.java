@@ -4,13 +4,14 @@ import user.Guest;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Initializes guests for molveno
  */
 
 public class InitializeGuests {
-    private ArrayList<Guest> guests = new ArrayList<>();
+    private List<Guest> guests = new ArrayList<>();
 
     public InitializeGuests() {
         guests.add(new Guest("1", "Sietze", "Berends", LocalDate.of(1993, 6,
@@ -21,7 +22,7 @@ public class InitializeGuests {
 
     }
 
-    public ArrayList<Guest> getGuests() {
+    public List<Guest> getGuests() {
         return guests;
     }
 }
