@@ -1,6 +1,7 @@
 package basics;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Models a room with some basic data.
@@ -9,17 +10,17 @@ import java.util.ArrayList;
 
 public class Room {
     private String roomId;
-    double area;
-    double price;
-    int singleBeds;
-    int doubleBeds;
-    int capacity;
-    boolean bookable;
-    ArrayList<RoomAttribute> roomAttributes;
-    ArrayList<String> imageUrls;
+    private double area;
+    private double price;
+    private int singleBeds;
+    private int doubleBeds;
+    private int capacity;
+    private boolean bookable;
+    private List<RoomAttribute> roomAttributes;
+    private List<String> imageUrls;
 
     public Room(String roomNr, double area, double price, int singleBeds, int doubleBeds, int capacity,
-                boolean bookable, ArrayList<RoomAttribute> roomAttributes, ArrayList<String> imageUrls) {
+                boolean bookable, List<RoomAttribute> roomAttributes, List<String> imageUrls) {
         this.roomId = roomNr;
         this.area = area;
         this.price = price;
@@ -46,7 +47,7 @@ public class Room {
                 '}';
     }
 
-    public ArrayList<RoomAttribute> getRoomAttributes() {
+    public List<RoomAttribute> getRoomAttributes() {
         return roomAttributes;
     }
 }

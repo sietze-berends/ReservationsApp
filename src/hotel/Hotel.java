@@ -6,6 +6,7 @@ import payment.Invoice;
 import search.SearchModule;
 import user.Guest;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +37,8 @@ public class Hotel {
         this.email = email;
     }
 
-    public Hotel(String name, String telNo, String email, ArrayList<Room> rooms, ArrayList<Guest> guests
-            , ArrayList<Invoice> invoices, ArrayList<Reservation> reservations) {
+    public Hotel(String name, String telNo, String email, List<Room> rooms, List<Guest> guests
+            , List<Invoice> invoices, List<Reservation> reservations) {
         this.name = name;
         this.telNo = telNo;
         this.email = email;
@@ -47,7 +48,17 @@ public class Hotel {
         this.reservations = reservations;
     }
 
-    public void setReservations(ArrayList<Reservation> reservations) {
+    public Hotel(String name, String telNo, String email, List<Room> rooms, List<Guest> guests
+            , List<Reservation> reservations) {
+        this.name = name;
+        this.telNo = telNo;
+        this.email = email;
+        this.rooms = rooms;
+        this.guests = guests;
+        this.reservations = reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
 
@@ -58,14 +69,15 @@ public class Hotel {
     public void searchDate(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
         List<Room> availableRooms = searchModule.searchDate(start, end, amountOfGuests, amountOfRooms, this);
 
-
-
         System.out.println("Searching for " + amountOfRooms + " rooms available between " + start + " and " + end
                 + " for " + amountOfGuests + " guests...\n");
         System.out.println(availableRooms.size() + " rooms found: \n ");
         for (Room room : availableRooms) {
             System.out.println(room);
         }
+    }
+    public void addReservation(Reservation reservation){
+        reservations.add(reservation);
     }
 
     @Override

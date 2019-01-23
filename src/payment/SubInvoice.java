@@ -1,6 +1,7 @@
 package payment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class that models a subinvoice. E.g: bill of the room, bill of the restaurant or bill of the bar
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 public class SubInvoice {
 
     private String name;
-    private ArrayList<SubInvoiceLine> subInvoiceLines;
+    private List<SubInvoiceLine> subInvoiceLines;
 
     public SubInvoice(String name) {
         this.name = name;
@@ -24,11 +25,11 @@ public class SubInvoice {
         this.name = name;
     }
 
-    public ArrayList<SubInvoiceLine> getSubInvoiceLines() {
+    public List<SubInvoiceLine> getSubInvoiceLines() {
         return subInvoiceLines;
     }
 
-    public void setSubInvoiceLines(ArrayList<SubInvoiceLine> subInvoiceLines) {
+    public void setSubInvoiceLines(List<SubInvoiceLine> subInvoiceLines) {
         this.subInvoiceLines = subInvoiceLines;
     }
 }
