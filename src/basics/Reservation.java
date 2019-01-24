@@ -3,6 +3,7 @@ package basics;
 import user.Guest;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 /**
@@ -21,24 +22,35 @@ public class Reservation {
         this.booker = booker;
     }
 
-     public void addRoom(Room room){
+    public void addRoom(Room room) {
         this.roomList.add(room);
-     }
-    public void addBooker(Guest booker){
+    }
+
+    public void addBooker(Guest booker) {
         this.booker = booker;
     }
-    
 
-    public List<Room> getRoom() {
-        return roomList;
+    public boolean isValid() throws ReservationException {
+        long diff = start.until(end, ChronoUnit.DAYS);
+        if (diff >= 1) {
+            return true;
+        } else {
+            throw new ReservationException(this);
+        }
     }
 
-    public LocalDateTime getStart() {
-        return start;
+    public List<Room> getRoom () {
+            return roomList;
     }
 
-    public LocalDateTime getEnd() {
-        return end;
+    public LocalDateTime getStart () {
+            return start;
     }
+
+    public LocalDateTime getEnd () {
+            return end;
+    }
+
+
 }
 
