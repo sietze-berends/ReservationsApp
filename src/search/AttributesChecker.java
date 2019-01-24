@@ -20,10 +20,9 @@ public class AttributesChecker {
         // check alle kamers in availableRooms
         for (Room room : allRooms) {
             // check alle gewenste attributen
-            for (RoomAttribute roomAttribute : desiredAttributes) {
-                System.out.println(roomAttribute);
-                System.out.println(room.getRoomAttributes());
-                if (room.getRoomAttributes().contains(roomAttribute)) {
+            for (RoomAttribute desiredRoomAttribute : desiredAttributes) {
+                boolean contains = room.getRoomAttributes().contains(desiredRoomAttribute);
+                if (room.getRoomAttributes().contains(desiredRoomAttribute)) {
                     System.out.println("Match! Room witch capacity " + room.getCapacity() + " has " + room.getRoomAttributes());
                     filteredRooms.add(room);
                 }

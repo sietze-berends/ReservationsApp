@@ -1,5 +1,7 @@
 package basics;
 
+import java.util.Objects;
+
 /**
  * Class that models an attribute of a room, e.g. "jacuzzi" or "child friendly"
  */
@@ -19,6 +21,19 @@ public class RoomAttribute {
                 "roomAttributeId='" + roomAttributeId + '\'' +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RoomAttribute that = (RoomAttribute) o;
+        return roomAttributeId.equals(that.roomAttributeId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(roomAttributeId);
     }
 
     public String getRoomAttributeId() {

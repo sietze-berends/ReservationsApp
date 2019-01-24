@@ -60,9 +60,9 @@ public class SearchModuleTest {
         Hotel molveno = initializeHotel.makeMolveno();
         List<Room> allRooms = molveno.getRooms();
         List<Room> suggestion = searchModule.searchAttributes(roomAttributes, allRooms);
-//        for (Room room : suggestion) {
-//            System.out.println(room.toString());
-//        }
-        Assert.assertEquals(4, suggestion.size());
+        for (Room room : suggestion) {
+            System.out.println(room.toString());
+        }
+        Assert.assertEquals(1, suggestion.size());
     }
 }
