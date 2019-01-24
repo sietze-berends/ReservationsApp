@@ -15,10 +15,10 @@ public class InitializeGuests {
 
     public InitializeGuests() {
         guests.add(new Guest("1", "Sietze", "Berends", LocalDate.of(1993, 6,
-                9), "sietze.b@gmail.com", "toEncrypt"));
+                9), "sietze.b@gmail.com", "toEncrypt", "Dutch"));
 
         guests.add(new Guest("2", "Pim", "Groenveld", LocalDate.of(1992, 2,
-                11), "pim.g@gmail.com", "toEncrypt"));
+                11), "pim.g@gmail.com", "toEncrypt", "Dutch"));
 
     }
 
