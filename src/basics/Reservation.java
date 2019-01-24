@@ -30,9 +30,9 @@ public class Reservation {
         this.booker = booker;
     }
 
-    public boolean isValid() throws ReservationException {
+    public boolean isValid() throws Exception {
         long diff = start.until(end, ChronoUnit.DAYS);
-        if (diff >= 1) {
+        if ((diff >= 1) && (this.booker != null) && (this.roomList.size() >= 1)){
             return true;
         } else {
             throw new ReservationException(this);
@@ -51,6 +51,8 @@ public class Reservation {
             return end;
     }
 
-
+    public Guest getBooker() {
+        return booker;
+    }
 }
 
