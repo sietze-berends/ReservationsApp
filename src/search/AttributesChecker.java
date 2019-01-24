@@ -3,6 +3,7 @@ package search;
 import basics.Room;
 import basics.RoomAttribute;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,27 +15,21 @@ public class AttributesChecker {
 
     }
 
-    public List<Room> filter(List<RoomAttribute> desiredAttributes, List<Room> availableRooms) {
-
+    public List<Room> filter(List<RoomAttribute> desiredAttributes, List<Room> allRooms) {
+        List<Room> filteredRooms = new ArrayList<>();
         // check alle kamers in availableRooms
-        for (Room room : availableRooms) {
-            boolean matchesAttributes = true;
-
+        for (Room room : allRooms) {
             // check alle gewenste attributen
             for (RoomAttribute roomAttribute : desiredAttributes) {
-                if (!room.getRoomAttributes().contains(roomAttribute)) {
-                    matchesAttributes = false;
-                    break;
+                System.out.println(roomAttribute);
+                System.out.println(room.getRoomAttributes());
+                if (room.getRoomAttributes().contains(roomAttribute)) {
+                    System.out.println("Match! Room witch capacity " + room.getCapacity() + " has " + room.getRoomAttributes());
+                    filteredRooms.add(room);
                 }
             }
-
-            // attribuut niet aanwezig? Gooi de kamer uit de lijst
-            if (!matchesAttributes) {
-                availableRooms.remove(room);
-            }
         }
-        // geef de lijst met alle kamers die voldoen aan de wensen terug
-        return availableRooms;
+        return filteredRooms;
     }
 }
 

@@ -37,10 +37,10 @@ public class SearchModule {
         return availableRooms;
     }
 
-    public List<Room> searchAttributes(List<RoomAttribute> desiredAttributes, List<Room> availableRooms) {
-        List<Room> filteredRooms = new ArrayList<>();
+    public List<Room> searchAttributes(List<RoomAttribute> desiredAttributes, List<Room> allRooms) {
+        List<Room> filteredRooms;
         AttributesChecker attributesChecker = new AttributesChecker();
-        filteredRooms = attributesChecker.filter(desiredAttributes, availableRooms);
-        return availableRooms;
+        filteredRooms = attributesChecker.filter(desiredAttributes, allRooms);
+        return filteredRooms;
     }
 }
