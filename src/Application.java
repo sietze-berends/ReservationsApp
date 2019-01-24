@@ -17,5 +17,5 @@ public class Application {
         InitializeHotel initializeHotel = new InitializeHotel();
         Hotel molveno = initializeHotel.makeMolveno();
         System.out.println("Zoek 3 kamers voor 8 gasten...");
-        molveno.search(LocalDateTime.now(), LocalDateTime.now().plusDays(3), 8, 3); }
+        molveno.search(LocalDateTime.now(), LocalDateTime.now().plusDays(3), 80, 3); }
 }

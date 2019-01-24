@@ -67,23 +67,34 @@ public class Hotel {
         return guests;
     }
 
-    public void search(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
-        // eerst de suggestie
-        System.out.println("Eerst de suggestie:");
-        List<Room> suggestion = searchModule.searchSuggestion(start, end, amountOfGuests, amountOfRooms, this);
-        for (Room room : suggestion) {
-            System.out.println(room.toString());
-        }
-
-        // dan de rest
-        System.out.println("Dan de rest:");
-        List<Room> availableRooms = searchModule.searchAll(start, end, this);
-        for (Room room : availableRooms) {
-            System.out.println(room.toString());
-        }
+    public String getTelNo() {
+        return telNo;
     }
 
-    public void addReservation(Reservation reservation){
+    public String search(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
+        List<Room> suggestion = searchModule.searchSuggestion(start, end, amountOfGuests, amountOfRooms, this);
+
+        if (suggestion == null) {
+
+            return "Call the receptionist on " + telNo;
+        }
+        String result = "";
+        result += "eerst suggestie \n";
+
+        for (Room room : suggestion) {
+            result += room.toString() + "\n";
+        }
+
+        result += "Dan de rest:\n";
+
+        List<Room> availableRooms = searchModule.searchAll(start, end, this);
+        for (Room room : availableRooms) {
+            result += room.toString() + "\n";
+        }
+        return result;
+    }
+
+    public void addReservation(Reservation reservation) {
         reservations.add(reservation);
     }
 
