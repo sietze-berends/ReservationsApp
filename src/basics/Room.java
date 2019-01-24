@@ -16,6 +16,7 @@ public class Room {
     private int doubleBeds;
     private int capacity;
     private boolean bookable;
+    private boolean clean;
     private List<RoomAttribute> roomAttributes;
     private List<String> imageUrls;
 
@@ -28,6 +29,7 @@ public class Room {
         this.doubleBeds = doubleBeds;
         this.capacity = capacity;
         this.bookable = bookable;
+        this.clean = true;
         this.roomAttributes = roomAttributes;
         this.imageUrls = imageUrls;
     }
@@ -47,15 +49,83 @@ public class Room {
                 '}';
     }
 
-    public List<RoomAttribute> getRoomAttributes() {
-        return roomAttributes;
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
     }
 
     public double getPrice() {
         return price;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getSingleBeds() {
+        return singleBeds;
+    }
+
+    public void setSingleBeds(int singleBeds) {
+        this.singleBeds = singleBeds;
+    }
+
+    public int getDoubleBeds() {
+        return doubleBeds;
+    }
+
+    public void setDoubleBeds(int doubleBeds) {
+        this.doubleBeds = doubleBeds;
+    }
+
     public int getCapacity() {
         return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public boolean isBookable() {
+        return bookable;
+    }
+
+    public void setBookable(boolean bookable) {
+        this.bookable = bookable;
+    }
+
+    public boolean isClean() {
+        return clean;
+    }
+
+    public void setClean(boolean clean) {
+        this.clean = clean;
+    }
+
+    public List<RoomAttribute> getRoomAttributes() {
+        return roomAttributes;
+    }
+
+    public void setRoomAttributes(List<RoomAttribute> roomAttributes) {
+        this.roomAttributes = roomAttributes;
+    }
+
+    public List<String> getImageUrls() {
+        return imageUrls;
+    }
+
+    public void setImageUrls(List<String> imageUrls) {
+        this.imageUrls = imageUrls;
     }
 }
