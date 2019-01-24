@@ -1,10 +1,10 @@
 package hotel;
 
-import basics.Room;
-import basics.RoomAttribute;
+        import basics.Room;
+        import basics.RoomAttribute;
 
-import java.util.ArrayList;
-import java.util.List;
+        import java.util.ArrayList;
+        import java.util.List;
 
 /**
  * Initializes rooms for molveno

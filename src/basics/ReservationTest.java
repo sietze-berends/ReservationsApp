@@ -18,6 +18,7 @@ public class ReservationTest {
     private BasicHotel basicHotel = new BasicHotel();
     private Reservation res;
     private Reservation res2;
+    private Reservation res3;
 
     @Before
     public void before(){
@@ -29,16 +30,18 @@ public class ReservationTest {
 
         InitializeHotel initializeHotel = new InitializeHotel();
         Hotel molveno = initializeHotel.makeMolveno();
+
         LocalDateTime startDate = LocalDateTime.of(2019,1,22,0,0);
         LocalDateTime endDate = LocalDateTime.of(2019,1,23,0,0);
         LocalDateTime startDate2 = LocalDateTime.of(2019,1,25,0,0);
         LocalDateTime endDate2 = LocalDateTime.of(2019,1,23,0,0);
+
         List<Room> roomReservering1 = new ArrayList<>();
         roomReservering1.add(room1);
         res = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(0) );
         res2 = new Reservation(roomReservering1, startDate2, endDate2, basicHotel.getGuests().get(0) );
+        res3 = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(3) );
     }
-
 
     @Test
     public void isValid() {
@@ -47,8 +50,8 @@ public class ReservationTest {
         //When
         try {
             res.isValid();
-        } catch (ReservationException e){
-            Assert.fail("Reservation not valid");
+        } catch (Exception e){
+            Assert.fail(e.getMessage());
         }
     }
 
@@ -60,11 +63,10 @@ public class ReservationTest {
         try {
             res2.isValid();
             Assert.fail("Reservation not valid");
-        } catch (ReservationException e){
-
+        } catch (Exception e){
+            System.out.println(e.getMessage());
         }
     }
-
 
 
 }

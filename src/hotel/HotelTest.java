@@ -50,9 +50,9 @@ public class HotelTest {
         System.out.println("before reservation: " + reservation1);
     }
 
-    @Test
-    public void addReservationTest() {
-        molveno.addReservation(reservation1);
-        Assert.assertEquals(1, reservations.size());
-    }
+//    @Test
+//    public void addReservationTest() {
+//        molveno.addReservation(reservation1);
+//        Assert.assertEquals(1, reservations.size());
+//    }
 }
