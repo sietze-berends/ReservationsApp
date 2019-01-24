@@ -9,8 +9,8 @@ import java.util.List;
  * Class that checks if a room has desired attributes
  */
 
-public class RoomAttributesFilter {
-    public RoomAttributesFilter() {
+public class AttributesChecker {
+    public AttributesChecker() {
 
     }
 
@@ -28,7 +28,7 @@ public class RoomAttributesFilter {
                 }
             }
 
-            // zo nee: gooi em uit de lijst
+            // attribuut niet aanwezig? Gooi de kamer uit de lijst
             if (!matchesAttributes) {
                 availableRooms.remove(room);
             }

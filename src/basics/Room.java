@@ -50,4 +50,12 @@ public class Room {
     public List<RoomAttribute> getRoomAttributes() {
         return roomAttributes;
     }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
 }
