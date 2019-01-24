@@ -10,13 +10,15 @@ public class Guest extends User{
     private LocalDate dateOfBirth;
     private String email;
     private String password;
+    private String nationality;
 
-    public Guest(String guestId, String firstName, String lastName, LocalDate dateOfBirth, String email, String password) {
+    public Guest(String guestId, String firstName, String lastName, LocalDate dateOfBirth, String email, String password, String nationality) {
         super(firstName, lastName);
         this.guestId = guestId;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.password = password;
+        this.nationality = nationality;
     }
 
     public String getGuestId() {
@@ -49,5 +51,13 @@ public class Guest extends User{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 }
