@@ -5,6 +5,7 @@ import basics.RoomAttribute;
 import hotel.Hotel;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,8 +14,6 @@ import java.util.List;
  */
 
 public class SearchModule {
-    private List<Room> suggestion;
-    private List<Room> availableRooms;
     private AvailabilityChecker availabilityChecker;
     private CapacityChecker capacityChecker;
     private AttributesChecker attributesChecker;
@@ -26,19 +25,22 @@ public class SearchModule {
     }
 
     public List<Room> searchSuggestion(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms, Hotel hotel) {
+        List<Room> suggestion = new ArrayList<>();
         suggestion = availabilityChecker.checkAvailability(start, end, hotel);
         suggestion = capacityChecker.makeSuggestionWithAmountOfRooms(suggestion, amountOfGuests, amountOfRooms);
         return suggestion;
     }
     
     public List<Room> searchAll(LocalDateTime start, LocalDateTime end, Hotel hotel) {
+        List<Room> availableRooms = new ArrayList<>();
         availableRooms = availabilityChecker.checkAvailability(start, end, hotel);
         return availableRooms;
     }
 
     public List<Room> searchAttributes(List<RoomAttribute> desiredAttributes, List<Room> availableRooms) {
+        List<Room> filteredRooms = new ArrayList<>();
         AttributesChecker attributesChecker = new AttributesChecker();
-        this.availableRooms = attributesChecker.filter(desiredAttributes, availableRooms);
+        filteredRooms = attributesChecker.filter(desiredAttributes, availableRooms);
         return availableRooms;
     }
 }

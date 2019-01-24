@@ -32,15 +32,12 @@ public class Hotel {
 
     private SearchModule searchModule = new SearchModule();
 
-<<<<<<< HEAD
-=======
     public Hotel(String name, String telNo, String email) {
         this.name = name;
         this.telNo = telNo;
         this.email = email;
     }
 
->>>>>>> FeatureInvoice
     public Hotel(String name, String telNo, String email, List<Room> rooms, List<Guest> guests
             , List<Invoice> invoices, List<Reservation> reservations) {
         this.name = name;
@@ -70,7 +67,6 @@ public class Hotel {
         return guests;
     }
 
-<<<<<<< HEAD
     public void search(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
         // eerst de suggestie
         System.out.println("Eerst de suggestie:");
@@ -82,19 +78,11 @@ public class Hotel {
         // dan de rest
         System.out.println("Dan de rest:");
         List<Room> availableRooms = searchModule.searchAll(start, end, this);
-=======
-    public void searchDate(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
-        List<Room> availableRooms = searchModule.searchDate(start, end, amountOfGuests, amountOfRooms, this);
-
-        System.out.println("Searching for " + amountOfRooms + " rooms available between " + start + " and " + end
-                + " for " + amountOfGuests + " guests...\n");
-        System.out.println(availableRooms.size() + " rooms found: \n ");
->>>>>>> FeatureInvoice
         for (Room room : availableRooms) {
             System.out.println(room.toString());
         }
-
     }
+
     public void addReservation(Reservation reservation){
         reservations.add(reservation);
     }
