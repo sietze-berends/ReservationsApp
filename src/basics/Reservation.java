@@ -21,9 +21,10 @@ public class Reservation {
         this.booker = booker;
     }
 
-     public void addRoom(Room room){
+    public void addRoom(Room room){
         this.roomList.add(room);
-     }
+    }
+
     public void addBooker(Guest booker){
         this.booker = booker;
     }
