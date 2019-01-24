@@ -94,8 +94,10 @@ public class Hotel {
         return result;
     }
 
-    public void addReservation(Reservation reservation) {
-        reservations.add(reservation);
+    public void addReservation(Reservation reservation) throws Exception{
+        if (reservation.isValid()){
+            reservations.add(reservation);
+        }
     }
 
     @Override
