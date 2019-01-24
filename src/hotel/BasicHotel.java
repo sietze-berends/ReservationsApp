@@ -31,9 +31,9 @@ public class BasicHotel {
         Room room1 = new Room("101", 20.0, 100.0, 0, 1, 2, true, room1Attributes, null);
         Room room2 = new Room("102", 40.0, 200.0, 2, 1, 4, true, room2Attributes, null);
         Guest guest1 = new Guest("1", "Sietze", "Berends", LocalDate.of(1993, 6,
-                9), "sietze.b@gmail.com", "toEncrypt");
+                9), "sietze.b@gmail.com", "toEncrypt", "Dutch");
         Guest guest2 = new Guest("2", "Pim", "Groenveld", LocalDate.of(1992, 2,
-                11), "pim.g@gmail.com", "toEncrypt");
+                11), "pim.g@gmail.com", "toEncrypt", "Dutch");
         List<Room> roomReservation1 = new ArrayList<>();
         roomReservation1.add(room1);
         Reservation reservation1 = new Reservation(roomReservation1, LocalDateTime.of(2019, 01, 28, 01, 00),

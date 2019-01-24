@@ -43,7 +43,6 @@ public class ReservationTest {
         res3 = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(3) );
     }
 
-
     @Test
     public void isValid() {
         //Given
@@ -67,22 +66,7 @@ public class ReservationTest {
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
-
-
     }
-
-//    @Test
-//    public void invalidGuest() {
-//        //Given
-//        // see before
-//        //When
-//        try {
-//            res3.isValid();
-//            Assert.fail("Reservation not valid");
-//        } catch (Exception e){
-//            System.out.println(e.getMessage());
-//        }
-//    }
 
 
 }
