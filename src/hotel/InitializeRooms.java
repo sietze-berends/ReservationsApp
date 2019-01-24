@@ -36,4 +36,8 @@ public class InitializeRooms {
     public List<Room> getRooms() {
         return rooms;
     }
+
+    public Room getOneRoom(int roomNumber) {
+        return rooms.get(roomNumber);
+    }
 }
