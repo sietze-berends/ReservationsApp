@@ -14,12 +14,14 @@ public class Reservation {
     private LocalDateTime start;
     private LocalDateTime end;
     private Guest booker;
+    private int reservationNumber;
 
-    public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker) {
+    public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, int reservationNumber) {
         this.roomList = room;
         this.start = start;
         this.end = end;
         this.booker = booker;
+        this.reservationNumber = reservationNumber;
     }
 
     public void addRoom(Room room) {
@@ -39,7 +41,7 @@ public class Reservation {
         }
     }
 
-    public List<Room> getRoom () {
+    public List<Room> getRooms() {
             return roomList;
     }
 

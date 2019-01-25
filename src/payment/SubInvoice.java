@@ -17,19 +17,4 @@ public class SubInvoice {
         this.subInvoiceLines = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<SubInvoiceLine> getSubInvoiceLines() {
-        return subInvoiceLines;
-    }
-
-    public void setSubInvoiceLines(List<SubInvoiceLine> subInvoiceLines) {
-        this.subInvoiceLines = subInvoiceLines;
-    }
 }

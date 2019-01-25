@@ -38,9 +38,9 @@ public class ReservationTest {
 
         List<Room> roomReservering1 = new ArrayList<>();
         roomReservering1.add(room1);
-        res = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(0) );
-        res2 = new Reservation(roomReservering1, startDate2, endDate2, basicHotel.getGuests().get(0) );
-        res3 = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(3) );
+        res = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(0), 1);
+        res2 = new Reservation(roomReservering1, startDate2, endDate2, molveno.getGuests().get(0), 2 );
+        res3 = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(1), 3 );
     }
 
     @Test

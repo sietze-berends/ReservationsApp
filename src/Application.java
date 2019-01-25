@@ -17,9 +17,6 @@ import java.util.List;
  */
 public class Application {
     public static void main(String[] args) {
-        InitializeHotel initializeHotel = new InitializeHotel();
-        Hotel molveno = initializeHotel.makeMolveno();
-        System.out.println("Zoek 3 kamers voor 8 gasten...");
-        molveno.search(LocalDateTime.now(), LocalDateTime.now().plusDays(3), 80, 3);
+        // nothing to see, we only run tests
     }
 }

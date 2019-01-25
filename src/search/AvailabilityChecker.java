@@ -32,7 +32,7 @@ public class AvailabilityChecker {
             // check iedere reservering
             for (Reservation reservation : hotel.getReservations()) {
                 // als de reservering over dezelfde kamer gaat
-                if (reservation.getRoom() == room) {
+                if (reservation.getRooms() == room) {
                     // startdatum van de reservering na de einddatum van de gewenste reservering
                     // of einddatum van de reservering voor de startdatum van de gewenste reservering
                     if (reservation.getStart().isAfter(end) || reservation.getEnd().isBefore(start)) {

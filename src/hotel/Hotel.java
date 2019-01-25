@@ -2,14 +2,12 @@ package hotel;
 
 import basics.Reservation;
 import basics.Room;
-import basics.RoomAttribute;
 import payment.Invoice;
+import payment.PaymentModule;
 import search.SearchModule;
 import user.Guest;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +29,7 @@ public class Hotel {
     private List<Reservation> reservations;
 
     private SearchModule searchModule = new SearchModule();
+    private PaymentModule paymentModule = new PaymentModule();
 
     public Hotel(String name, String telNo, String email) {
         this.name = name;
@@ -98,6 +97,11 @@ public class Hotel {
         if (reservation.isValid()){
             reservations.add(reservation);
         }
+    }
+
+    public double makeInvoice(Reservation reservation) {
+        double totalPrice = this.paymentModule.makeInvoice(reservation);
+        return totalPrice;
     }
 
     @Override
