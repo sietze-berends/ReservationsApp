@@ -3,13 +3,8 @@ package hotel;
 import basics.Reservation;
 import basics.Room;
 import basics.RoomAttribute;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import user.Guest;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
