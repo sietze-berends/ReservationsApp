@@ -54,7 +54,7 @@ public class AvailabilityChecker {
                 availableRooms.add(room);
             }
         }
-            availableRooms.sort(Comparator.comparingDouble(Room::getPrice).reversed());
+        availableRooms.sort(Comparator.comparingDouble(Room::getPrice).reversed());
         return availableRooms;
     }
 }
