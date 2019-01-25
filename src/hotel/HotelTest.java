@@ -35,9 +35,15 @@ public class HotelTest {
         Room room1 = new Room("101", 20.0, 100.0, 0, 1, 2, true, room1Attributes, null);
         Room room2 = new Room("102", 40.0, 200.0, 2, 1, 4, true, room2Attributes, null);
         Guest guest1 = new Guest("1", "Sietze", "Berends", LocalDate.of(1993, 6,
+<<<<<<< HEAD
                 9), "sietze.b@gmail.com", "toEncrypt", "Dutch");
         Guest guest2 = new Guest("2", "Pim", "Groenveld", LocalDate.of(1992, 2,
                 11), "pim.g@gmail.com", "toEncrypt", "Dutch");
+=======
+                9), "sietze.b@gmail.com", "toEncrypt");
+        Guest guest2 = new Guest("2", "Pim", "Groenveld", LocalDate.of(1992, 2,
+                11), "pim.g@gmail.com", "toEncrypt");
+>>>>>>> parent of f85dd38... Commit/merge
 
         rooms.add(room1);
         rooms.add(room2);
