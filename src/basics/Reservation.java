@@ -34,7 +34,7 @@ public class Reservation {
         booker.setCheckedIn(false);
     }
 
-    // date in future still needs works
+    // date in future still needs work
     public boolean isValid() throws Exception {
         long diff = start.until(end, ChronoUnit.DAYS);
         long startDateCompare = start.until(LocalDateTime.now(), ChronoUnit.DAYS);
