@@ -11,7 +11,6 @@ public class Guest extends User{
     private String email;
     private String password;
     private String nationality;
-    private boolean checkedIn;
 
     public Guest(String guestId, String firstName, String lastName, LocalDate dateOfBirth, String email, String password, String nationality) {
         super(firstName, lastName);
@@ -20,15 +19,6 @@ public class Guest extends User{
         this.email = email;
         this.password = password;
         this.nationality = nationality;
-        this.checkedIn = false;
-    }
-
-    public boolean isCheckedIn() {
-        return checkedIn;
-    }
-
-    public void setCheckedIn(boolean checkedIn) {
-        this.checkedIn = checkedIn;
     }
 
     public String getGuestId() {
