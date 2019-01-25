@@ -3,6 +3,7 @@ package basics;
 import hotel.BasicHotel;
 import hotel.Hotel;
 import hotel.InitializeHotel;
+import hotel.InitializeReservations;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,6 +20,9 @@ public class ReservationTest {
     private Reservation res;
     private Reservation res2;
     private Reservation res3;
+    private Reservation reservation;
+    private InitializeReservations initializeReservations;
+    private InitializeHotel hotel;
 
     @Before
     public void before(){
@@ -31,16 +35,20 @@ public class ReservationTest {
         InitializeHotel initializeHotel = new InitializeHotel();
         Hotel molveno = initializeHotel.makeMolveno();
 
-        LocalDateTime startDate = LocalDateTime.of(2019,1,22,0,0);
-        LocalDateTime endDate = LocalDateTime.of(2019,1,23,0,0);
+        LocalDateTime startDate = LocalDateTime.of(2019,1,27,0,0);
+        LocalDateTime endDate = LocalDateTime.of(2019,1,29,0,0);
         LocalDateTime startDate2 = LocalDateTime.of(2019,1,25,0,0);
         LocalDateTime endDate2 = LocalDateTime.of(2019,1,23,0,0);
 
-        List<Room> roomReservering1 = new ArrayList<>();
-        roomReservering1.add(room1);
-        res = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(0), 1);
-        res2 = new Reservation(roomReservering1, startDate2, endDate2, molveno.getGuests().get(0), 2 );
-        res3 = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(1), 3 );
+//        List<Room> roomReservering1 = new ArrayList<>();
+//        roomReservering1.add(room1);
+//        res = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(0), 1);
+//        res2 = new Reservation(roomReservering1, startDate2, endDate2, molveno.getGuests().get(0), 2 );
+//        res3 = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(1), 3 );
+//        res = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(0) );
+//        res2 = new Reservation(roomReservering1, startDate2, endDate2, basicHotel.getGuests().get(0) );
+//        res3 = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(2) );
+
     }
 
     @Test
@@ -50,6 +58,7 @@ public class ReservationTest {
         //When
         try {
             res.isValid();
+            System.out.println(res);
         } catch (Exception e){
             Assert.fail(e.getMessage());
         }
@@ -67,6 +76,17 @@ public class ReservationTest {
             System.out.println(e.getMessage());
         }
     }
+//
+    @Test
+    public void startDateIsInFuture(){
+        try {
+            res.isValid();
+        } catch (Exception e){
+            System.out.println("startDateIsInFuture exception: " + e.getMessage());
+            Assert.fail();
+        }
+    }
+
 
 
 }
