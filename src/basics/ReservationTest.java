@@ -1,21 +1,16 @@
 package basics;
 
-import hotel.BasicHotel;
 import hotel.Hotel;
 import hotel.InitializeHotel;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class ReservationTest {
-    private BasicHotel basicHotel = new BasicHotel();
     private Reservation res;
     private Reservation res2;
     private Reservation res3;
@@ -38,9 +33,9 @@ public class ReservationTest {
 
         List<Room> roomReservering1 = new ArrayList<>();
         roomReservering1.add(room1);
-        res = new Reservation(roomReservering1, startDate2, endDate, basicHotel.getGuests().get(0) );
-        res2 = new Reservation(roomReservering1, startDate2, endDate2, basicHotel.getGuests().get(0) );
-        res3 = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(0) );
+        res = new Reservation(roomReservering1, startDate2, endDate, molveno.getGuests().get(0) );
+        res2 = new Reservation(roomReservering1, startDate2, endDate2, molveno.getGuests().get(0) );
+        res3 = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(0) );
     }
 
     @Test
