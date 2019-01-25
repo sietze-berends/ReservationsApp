@@ -1,11 +1,9 @@
 package basics;
 
-import user.ExtraGuest;
 import user.Guest;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,22 +14,20 @@ public class Reservation {
     private LocalDateTime start;
     private LocalDateTime end;
     private Guest booker;
-    private List<ExtraGuest> extraGuests;
 
     public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker) {
         this.roomList = room;
         this.start = start;
         this.end = end;
         this.booker = booker;
-        this.extraGuests = new ArrayList<>();
     }
 
-    public void checkIn(){
-        booker.setCheckedIn(true);
+    public void addRoom(Room room) {
+        this.roomList.add(room);
     }
 
-    public void checkOut(){
-        booker.setCheckedIn(false);
+    public void addBooker(Guest booker) {
+        this.booker = booker;
     }
 
     // date in future still needs works
@@ -43,22 +39,6 @@ public class Reservation {
         } else {
             throw new ReservationException(this);
         }
-    }
-
-    public void addRoom(Room room) {
-        this.roomList.add(room);
-    }
-
-    public void addBooker(Guest booker) {
-        this.booker = booker;
-    }
-
-    public Guest getBooker() {
-        return booker;
-    }
-
-    public List<Room> getRoomList() {
-        return roomList;
     }
 
     public List<Room> getRoom () {
@@ -73,12 +53,8 @@ public class Reservation {
             return end;
     }
 
-    public List<ExtraGuest> getExtraGuests() {
-        return extraGuests;
-    }
-
-    public void addExtraGuests(ExtraGuest extraGuest) {
-        extraGuests.add(extraGuest);
+    public Guest getBooker() {
+        return booker;
     }
 }
 
