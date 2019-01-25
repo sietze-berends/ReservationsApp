@@ -30,11 +30,9 @@ public class Reservation {
         this.booker = booker;
     }
 
-    // date in future still needs works
     public boolean isValid() throws Exception {
         long diff = start.until(end, ChronoUnit.DAYS);
-        long startDateCompare = start.until(LocalDateTime.now(), ChronoUnit.DAYS);
-        if ((diff >= 1) && (this.booker != null) && (this.roomList.size() >= 1) && (startDateCompare < 0)){
+        if ((diff >= 1) && (this.booker != null) && (this.roomList.size() >= 1)){
             return true;
         } else {
             throw new ReservationException(this);

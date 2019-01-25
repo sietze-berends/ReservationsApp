@@ -1,15 +1,17 @@
 package user;
 
+import sun.security.util.Password;
+
 /**
  * Admin class which has more rights than the user
  */
 public class Admin extends User{
 
     private String username;
-    private String password;  // is this datatype correct?
+    private Password password;  // is this datatype correct?
 
 
-    public Admin(String firstName, String lastName, String username, String password) {
+    public Admin(String firstName, String lastName, String username, Password password) {
         super(firstName, lastName);
         this.username = username;
         this.password = password;
@@ -23,11 +25,11 @@ public class Admin extends User{
         this.username = username;
     }
 
-    public String getPassword() {
+    public Password getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(Password password) {
         this.password = password;
     }
 }

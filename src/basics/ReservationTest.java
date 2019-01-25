@@ -1,16 +1,21 @@
 package basics;
 
+import hotel.BasicHotel;
 import hotel.Hotel;
 import hotel.InitializeHotel;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.*;
+
 public class ReservationTest {
+    private BasicHotel basicHotel = new BasicHotel();
     private Reservation res;
     private Reservation res2;
     private Reservation res3;
@@ -27,15 +32,15 @@ public class ReservationTest {
         Hotel molveno = initializeHotel.makeMolveno();
 
         LocalDateTime startDate = LocalDateTime.of(2019,1,22,0,0);
-        LocalDateTime endDate = LocalDateTime.of(2019,1,27,0,0);
+        LocalDateTime endDate = LocalDateTime.of(2019,1,23,0,0);
         LocalDateTime startDate2 = LocalDateTime.of(2019,1,25,0,0);
         LocalDateTime endDate2 = LocalDateTime.of(2019,1,23,0,0);
 
         List<Room> roomReservering1 = new ArrayList<>();
         roomReservering1.add(room1);
-        res = new Reservation(roomReservering1, startDate2, endDate, molveno.getGuests().get(0) );
-        res2 = new Reservation(roomReservering1, startDate2, endDate2, molveno.getGuests().get(0) );
-        res3 = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(0) );
+        res = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(0) );
+        res2 = new Reservation(roomReservering1, startDate2, endDate2, basicHotel.getGuests().get(0) );
+        res3 = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(3) );
     }
 
     @Test
@@ -60,16 +65,6 @@ public class ReservationTest {
             Assert.fail("Reservation not valid");
         } catch (Exception e){
             System.out.println(e.getMessage());
-        }
-    }
-
-    @Test
-    public void startDateIsInFuture(){
-        try {
-            res.isValid();
-        } catch (Exception e){
-            System.out.println("startDateIsInFuture exception: " + e.getMessage());
-            Assert.fail();
         }
     }
 
