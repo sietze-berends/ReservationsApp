@@ -31,7 +31,7 @@ public class RoomController {
 
     @GetMapping(path = "/contact")
     public String getHotelContactInfo() {
-        return "Look! Here's some useless hotel info. It is somewhere in China. Bye Bye";
+        return "Hotel Molveno -> just a route to add info in later";
     }
 
     @GetMapping(value = "/room")
