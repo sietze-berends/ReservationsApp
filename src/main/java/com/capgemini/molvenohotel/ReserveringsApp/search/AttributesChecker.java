@@ -23,7 +23,7 @@ public class AttributesChecker {
             for (RoomAttribute desiredRoomAttribute : desiredAttributes) {
                 boolean contains = room.getRoomAttributes().contains(desiredRoomAttribute);
                 if (room.getRoomAttributes().contains(desiredRoomAttribute)) {
-                    System.out.println("Match! Room witch capacity " + room.getCapacity() + " has " + room.getRoomAttributes());
+                    System.out.println("Match! Room with capacity " + room.getCapacity() + " has " + room.getRoomAttributes());
                     filteredRooms.add(room);
                 }
             }
