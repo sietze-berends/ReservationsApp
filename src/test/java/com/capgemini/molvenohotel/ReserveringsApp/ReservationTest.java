@@ -3,11 +3,9 @@ package com.capgemini.molvenohotel.ReserveringsApp;
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
 import com.capgemini.molvenohotel.ReserveringsApp.basics.RoomAttribute;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.BasicHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeReservations;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,14 +16,13 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class ReservationTest {
-    private BasicHotel basicHotel = new BasicHotel();
     private Reservation res;
     private Reservation res2;
     private Reservation res3;
     private Reservation reservation;
     private InitializeReservations initializeReservations;
-    private InitializeHotel hotel;
-
+    private InitializeHotel initializeHotel = new InitializeHotel();
+    private Hotel basicHotel = initializeHotel.makeMolveno();
     @Before
     public void before(){
         List<RoomAttribute> room1Attributes = new ArrayList<>();
