@@ -47,7 +47,7 @@ public class ReservationTest {
         LocalDateTime endDate2 = LocalDateTime.of(2019,1,23,0,0);
 
         List<Room> roomReservering1 = new ArrayList<>();
-        roomReservering1.add(room1);
+//        roomReservering1.add(room1);
 
         Guest booker = new Guest("5", "John", "the Dude", LocalDate.now(), "test@test.com", "supersecret123","Dutch");
 
