@@ -21,6 +21,6 @@ public class PaymentModuleTest {
     @Test public void subInvoiceAmount() {
         molveno = initializeHotel.makeMolveno();
         double totalPrice = molveno.makeInvoice(molveno.getReservations().get(0));
-        assertEquals(500.0, totalPrice, 0.0  );
+        assertEquals(2000.0, totalPrice, 0.0  );
     }
 }
