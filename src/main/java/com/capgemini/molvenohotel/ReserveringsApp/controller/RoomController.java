@@ -2,7 +2,10 @@ package com.capgemini.molvenohotel.ReserveringsApp.controller;
 
 
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
+import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
+import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeRooms;
+import com.sun.org.apache.xml.internal.security.Init;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,28 +16,22 @@ import java.util.List;
 @RequestMapping(value = "/hotel")
 public class RoomController {
 
-    @Autowired
-//    Hotel hotel;
+    private InitializeHotel initializeHotel = new InitializeHotel();
+    private Hotel hotel = initializeHotel.makeMolveno();
 
     @GetMapping(path = "/")
     public String homepage() {
         return "This will be our homepage. Here's some useless hotel info. It is somewhere in China. Bye Bye";
     }
 
-    @GetMapping(path = "/contact")
-    public String getHotelContactInfo() {
-        return "Hotel Molveno -> just a route to add info in later";
-    }
-
-    //GET
-    @GetMapping(value = "/room")
-    public List<Room> getRooms(InitializeRooms initializeRooms){
-        return initializeRooms.getRooms();
+    @GetMapping(path = "/rooms")
+    public List<Room> getHotelContactInfo() {
+        return hotel.getRooms();
     }
 
     @GetMapping(value = "/room/{roomNr}")
-    public Room getRoomByNr(InitializeRooms initializeRooms, @PathVariable int roomNr){
-        return initializeRooms.getOneRoom(roomNr);
+    public Room getRoomByNr(InitializeRooms initializeRooms, @PathVariable String roomNr){
+        return hotel.getOneRoom(roomNr);
     }
 
     //TODO: edit, add, delete

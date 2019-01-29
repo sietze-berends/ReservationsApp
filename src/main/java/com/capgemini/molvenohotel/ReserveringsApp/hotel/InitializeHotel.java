@@ -1,12 +1,20 @@
 package com.capgemini.molvenohotel.ReserveringsApp.hotel;
 
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 /**
  * Class that initializes our hotel with rooms, guests, reservations and invoices
  * Uses separate initializers for the ones above to keep code readable
  */
+
+@Component
 public class InitializeHotel {
+
+    public InitializeHotel() {
+    }
 
     public Hotel makeMolveno() {
         InitializeRooms rooms = new InitializeRooms();

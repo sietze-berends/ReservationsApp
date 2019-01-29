@@ -16,10 +16,9 @@ import java.util.List;
  * Singleton class that models the Molveno lake resort. Hotel holds all the rooms, guests, invoices and reservations.
  * Hotel has some methods to perform searches, make bookings, etc
  */
-//@Component
+
+
 public class Hotel {
-    // TODO: make sure this is a Singleton
-    private static Hotel hotel = null;
 
     // some basic details about the hotel.Hotel
     private String name;
@@ -129,6 +128,7 @@ public class Hotel {
         rooms.add(room);
     }
 
+
     public List<Reservation> getAllReservationsPerBooker(int id){
         List<Reservation> match = new ArrayList<>();
         for (Reservation reservation : reservations){
@@ -137,5 +137,14 @@ public class Hotel {
             }
         }
         return match;
+    }
+  
+    public Room getOneRoom(String roomNr) {
+        for (Room room : this.rooms) {
+            if (room.getRoomId().equalsIgnoreCase(roomNr)) {
+                return room;
+            }
+        }
+        return null;
     }
 }

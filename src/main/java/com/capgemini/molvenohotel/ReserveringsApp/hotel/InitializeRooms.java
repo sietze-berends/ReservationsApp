@@ -14,6 +14,7 @@ public class InitializeRooms {
     private List<RoomAttribute> allRoomAttributes = new ArrayList<>();
     public Room room1;
     public Room room2;
+
     public InitializeRooms() {
         allRoomAttributes.add(new RoomAttribute("Jacuzzi", "This room has a jacuzzi"));
         allRoomAttributes.add(new RoomAttribute("Child friendly", "A room which is childfriendly"));
