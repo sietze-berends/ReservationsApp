@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Models a reservation with some basic data
  */
+
 public class Reservation {
     private List<Room> roomList;
     private LocalDateTime start;

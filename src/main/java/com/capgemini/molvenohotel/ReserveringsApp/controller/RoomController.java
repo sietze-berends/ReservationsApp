@@ -19,13 +19,9 @@ public class RoomController {
     private InitializeHotel initializeHotel = new InitializeHotel();
     private Hotel hotel = initializeHotel.makeMolveno();
 
-    @GetMapping(path = "/")
-    public String homepage() {
-        return "This will be our homepage. Here's some useless hotel info. It is somewhere in China. Bye Bye";
-    }
 
     @GetMapping(path = "/rooms")
-    public List<Room> getHotelContactInfo() {
+    public List<Room> getAllRooms() {
         return hotel.getRooms();
     }
 
