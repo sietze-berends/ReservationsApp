@@ -2,6 +2,7 @@ package com.capgemini.molvenohotel.ReserveringsApp.hotel;
 
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
+import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
 import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 import com.capgemini.molvenohotel.ReserveringsApp.payment.Invoice;
 import com.capgemini.molvenohotel.ReserveringsApp.payment.PaymentModule;
@@ -9,6 +10,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,6 +28,7 @@ public class Hotel {
 
     private List<Room> rooms;
     private List<Guest> guests;
+    private List<ExtraGuest> extraGuests;
     private List<Invoice> invoices;
     private List<Reservation> reservations;
 
@@ -39,23 +42,14 @@ public class Hotel {
     }
 
     public Hotel(String name, String telNo, String email, List<Room> rooms, List<Guest> guests
-            , List<Invoice> invoices, List<Reservation> reservations) {
+            , List<ExtraGuest> extraGuests, List<Invoice> invoices, List<Reservation> reservations) {
         this.name = name;
         this.telNo = telNo;
         this.email = email;
         this.rooms = rooms;
         this.guests = guests;
+        this.extraGuests = extraGuests;
         this.invoices = invoices;
-        this.reservations = reservations;
-    }
-
-    public Hotel(String name, String telNo, String email, List<Room> rooms, List<Guest> guests
-            , List<Reservation> reservations) {
-        this.name = name;
-        this.telNo = telNo;
-        this.email = email;
-        this.rooms = rooms;
-        this.guests = guests;
         this.reservations = reservations;
     }
 
@@ -127,6 +121,17 @@ public class Hotel {
         rooms.add(room);
     }
 
+
+    public List<Reservation> getAllReservationsPerBooker(int id){
+        List<Reservation> match = new ArrayList<>();
+        for (Reservation reservation : reservations){
+            if (id == reservation.getBookerId(id)){
+                match.add(reservation);
+            }
+        }
+        return match;
+    }
+  
     public Room getOneRoom(String roomNr) {
         for (Room room : this.rooms) {
             if (room.getRoomId().equalsIgnoreCase(roomNr)) {
@@ -134,5 +139,9 @@ public class Hotel {
             }
         }
         return null;
+    }
+
+    public List<ExtraGuest> getExtraGuests() {
+        return extraGuests;
     }
 }
