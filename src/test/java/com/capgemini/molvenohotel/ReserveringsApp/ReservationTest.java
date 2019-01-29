@@ -6,9 +6,12 @@ import com.capgemini.molvenohotel.ReserveringsApp.basics.RoomAttribute;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeReservations;
+import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,11 +42,14 @@ public class ReservationTest {
         LocalDateTime startDate2 = LocalDateTime.of(2019,1,25,0,0);
         LocalDateTime endDate2 = LocalDateTime.of(2019,1,23,0,0);
 
-//        List<Room> roomReservering1 = new ArrayList<>();
-//        roomReservering1.add(room1);
-//        res = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(0), 1);
-//        res2 = new Reservation(roomReservering1, startDate2, endDate2, molveno.getGuests().get(0), 2 );
-//        res3 = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(1), 3 );
+        List<Room> roomReservering1 = new ArrayList<>();
+        roomReservering1.add(room1);
+
+        Guest booker = new Guest("5", "John", "the Dude", LocalDate.now(), "test@test.com", "supersecret123","Dutch");
+
+        res = new Reservation(roomReservering1, startDate, endDate, booker, 1);
+        res2 = new Reservation(roomReservering1, startDate2, endDate2, molveno.getGuests().get(0), 2 );
+        res3 = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(1), 3 );
 //        res = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(0) );
 //        res2 = new Reservation(roomReservering1, startDate2, endDate2, basicHotel.getGuests().get(0) );
 //        res3 = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(2) );
@@ -85,7 +91,6 @@ public class ReservationTest {
             fail();
         }
     }
-
 
 
 }

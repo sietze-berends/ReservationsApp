@@ -58,5 +58,9 @@ public class Reservation {
     public Guest getBooker() {
         return booker;
     }
+
+    public int getBookerId(int guestId) {
+        return booker.getGuestId();
+    }
 }
 

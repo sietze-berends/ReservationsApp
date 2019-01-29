@@ -21,8 +21,8 @@ public class Guest extends User{
         this.nationality = nationality;
     }
 
-    public String getGuestId() {
-        return guestId;
+    public int getGuestId() {
+        return Integer.valueOf(guestId);
     }
 
     public void setGuestId(String guestId) {
