@@ -6,6 +6,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 import com.capgemini.molvenohotel.ReserveringsApp.payment.Invoice;
 import com.capgemini.molvenohotel.ReserveringsApp.payment.PaymentModule;
 import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
  * Singleton class that models the Molveno lake resort. Hotel holds all the rooms, guests, invoices and reservations.
  * Hotel has some methods to perform searches, make bookings, etc
  */
+@Component
 public class Hotel {
     // TODO: make sure this is a Singleton
     private static Hotel hotel = null;
@@ -120,5 +122,9 @@ public class Hotel {
 
     public List<Reservation> getReservations() {
         return reservations;
+    }
+
+    public void addRoom(Room room){
+        rooms.add(room);
     }
 }

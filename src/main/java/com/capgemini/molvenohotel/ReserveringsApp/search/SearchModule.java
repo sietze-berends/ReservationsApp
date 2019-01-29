@@ -3,6 +3,7 @@ package com.capgemini.molvenohotel.ReserveringsApp.search;
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
 import com.capgemini.molvenohotel.ReserveringsApp.basics.RoomAttribute;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
  * Search class. Calls several helper methods to check if the date is available, desired attributes are available,
  * capacity is enough, etc.
  */
-
+@Component
 public class SearchModule {
     private AvailabilityChecker availabilityChecker;
     private CapacityChecker capacityChecker;
