@@ -9,10 +9,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeReservations;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeRooms;
 import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,8 +18,8 @@ import java.util.List;
 @RequestMapping(value = "/hotel")
 public class RoomController {
 
-//    @Autowired
-//    SearchModule searchModule;
+    @Autowired
+//    Hotel hotel;
 
     @GetMapping(path = "/")
     public String homepage() {
@@ -34,19 +31,22 @@ public class RoomController {
         return "Hotel Molveno -> just a route to add info in later";
     }
 
+    //GET
     @GetMapping(value = "/room")
     public List<Room> getRooms(InitializeRooms initializeRooms){
         return initializeRooms.getRooms();
     }
 
-    @GetMapping(value = "/reservation")
-    public List<Reservation> getReservations(BasicHotel hotel) {
-        return hotel.getReservations();
+    @GetMapping(value = "/room/{roomNr}")
+    public Room getRoomByNr(InitializeRooms initializeRooms, @PathVariable int roomNr){
+        return initializeRooms.getOneRoom(roomNr);
     }
 
-    // werkt nog niet lekker, meer als voorbeeld
-//    @GetMapping(value = "/room/{id}")
-//    public List<Room> getRoom(@PathVariable String id){
-//        return searchModule.searchAll(id);
+    //TODO: edit, add, delete
+
+    // work in progress
+//    @RequestMapping(value = "/room/add", method = RequestMethod.POST)
+//    public void addRoom(@RequestBody Room room){
+//        hotel.addRoom(room);
 //    }
 }

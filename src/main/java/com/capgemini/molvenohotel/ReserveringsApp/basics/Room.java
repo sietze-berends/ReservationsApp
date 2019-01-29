@@ -57,4 +57,28 @@ public class Room {
     public int getCapacity() {
         return capacity;
     }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public int getSingleBeds() {
+        return singleBeds;
+    }
+
+    public int getDoubleBeds() {
+        return doubleBeds;
+    }
+
+    public boolean isBookable() {
+        return bookable;
+    }
+
+    public List<String> getImageUrls() {
+        return imageUrls;
+    }
 }
