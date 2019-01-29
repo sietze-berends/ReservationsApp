@@ -1,5 +1,6 @@
 package com.capgemini.molvenohotel.ReserveringsApp.basics;
 
+import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
 import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 
 import java.time.LocalDateTime;
@@ -14,13 +15,15 @@ public class Reservation {
     private LocalDateTime start;
     private LocalDateTime end;
     private Guest booker;
+    private List<ExtraGuest> extraGuests;
     private int reservationNumber;
 
-    public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, int reservationNumber) {
+    public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests, int reservationNumber) {
         this.roomList = room;
         this.start = start;
         this.end = end;
         this.booker = booker;
+        this.extraGuests = extraGuests;
         this.reservationNumber = reservationNumber;
     }
 
@@ -61,6 +64,42 @@ public class Reservation {
 
     public int getBookerId(int guestId) {
         return booker.getGuestId();
+    }
+
+    public List<Room> getRoomList() {
+        return roomList;
+    }
+
+    public void setRoomList(List<Room> roomList) {
+        this.roomList = roomList;
+    }
+
+    public void setStart(LocalDateTime start) {
+        this.start = start;
+    }
+
+    public void setEnd(LocalDateTime end) {
+        this.end = end;
+    }
+
+    public void setBooker(Guest booker) {
+        this.booker = booker;
+    }
+
+    public List<ExtraGuest> getExtraGuests() {
+        return extraGuests;
+    }
+
+    public void setExtraGuests(List<ExtraGuest> extraGuests) {
+        this.extraGuests = extraGuests;
+    }
+
+    public int getReservationNumber() {
+        return reservationNumber;
+    }
+
+    public void setReservationNumber(int reservationNumber) {
+        this.reservationNumber = reservationNumber;
     }
 }
 

@@ -6,6 +6,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.basics.RoomAttribute;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeReservations;
+import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
 import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,6 +27,9 @@ public class ReservationTest {
     private InitializeReservations initializeReservations;
     private InitializeHotel initializeHotel = new InitializeHotel();
     private Hotel basicHotel = initializeHotel.makeMolveno();
+    private List<ExtraGuest> extraGuests;
+
+
     @Before
     public void before(){
         List<RoomAttribute> room1Attributes = new ArrayList<>();
@@ -47,9 +51,15 @@ public class ReservationTest {
 
         Guest booker = new Guest("5", "John", "the Dude", LocalDate.now(), "test@test.com", "supersecret123","Dutch");
 
-        res = new Reservation(roomReservering1, startDate, endDate, booker, 1);
-        res2 = new Reservation(roomReservering1, startDate2, endDate2, molveno.getGuests().get(0), 2 );
-        res3 = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(1), 3 );
+        ExtraGuest extraGuest1 = new ExtraGuest("Avinash", "Soerdjbali", "Hindustani");
+        ExtraGuest extraGuest2 = new ExtraGuest("Leon", "Zwakenberg", "Dutch");
+
+        extraGuests.add(extraGuest1);
+        extraGuests.add(extraGuest2);
+
+        res = new Reservation(roomReservering1, startDate, endDate, booker, extraGuests, 1);
+        res2 = new Reservation(roomReservering1, startDate2, endDate2, molveno.getGuests().get(0), extraGuests,  2 );
+        res3 = new Reservation(roomReservering1, startDate, endDate, molveno.getGuests().get(1), extraGuests,3 );
 //        res = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(0) );
 //        res2 = new Reservation(roomReservering1, startDate2, endDate2, basicHotel.getGuests().get(0) );
 //        res3 = new Reservation(roomReservering1, startDate, endDate, basicHotel.getGuests().get(2) );
