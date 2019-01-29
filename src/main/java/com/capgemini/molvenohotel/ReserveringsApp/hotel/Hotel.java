@@ -9,6 +9,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -126,5 +127,15 @@ public class Hotel {
 
     public void addRoom(Room room){
         rooms.add(room);
+    }
+
+    public List<Reservation> getAllReservationsPerBooker(int id){
+        List<Reservation> match = new ArrayList<>();
+        for (Reservation reservation : reservations){
+            if (id == reservation.getBookerId(id)){
+                match.add(reservation);
+            }
+        }
+        return match;
     }
 }
