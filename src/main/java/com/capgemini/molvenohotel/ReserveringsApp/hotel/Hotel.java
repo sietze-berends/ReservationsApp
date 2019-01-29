@@ -15,7 +15,7 @@ import java.util.List;
  * Singleton class that models the Molveno lake resort. Hotel holds all the rooms, guests, invoices and reservations.
  * Hotel has some methods to perform searches, make bookings, etc
  */
-@Component
+//@Component
 public class Hotel {
     // TODO: make sure this is a Singleton
     private static Hotel hotel = null;

@@ -19,8 +19,7 @@ import java.util.List;
 public class RoomController {
 
     @Autowired
-//    SearchModule searchModule;
-    Hotel hotel;
+//    Hotel hotel;
 
     @GetMapping(path = "/")
     public String homepage() {
@@ -32,27 +31,22 @@ public class RoomController {
         return "Hotel Molveno -> just a route to add info in later";
     }
 
+    //GET
     @GetMapping(value = "/room")
     public List<Room> getRooms(InitializeRooms initializeRooms){
         return initializeRooms.getRooms();
     }
 
-    @GetMapping(value = "/reservation")
-    public List<Reservation> getReservations(BasicHotel hotel) {
-        return hotel.getReservations();
+    @GetMapping(value = "/room/{roomNr}")
+    public Room getRoomByNr(InitializeRooms initializeRooms, @PathVariable int roomNr){
+        return initializeRooms.getOneRoom(roomNr);
     }
 
-    // werkt nog niet lekker, meer als voorbeeld
-//    @GetMapping(value = "/room/{id}")
-//    public List<Room> getRoom(@PathVariable String id){
-//        return searchModule.searchAll(id);
-//    }
-
-    //Get + /{id} + /add + /edit + /delete voor Guest, Room, Reservation, RoomAttributes, etc
+    //TODO: edit, add, delete
 
     // work in progress
-    @RequestMapping(value = "/room/add", method = RequestMethod.POST)
-    public void addRoom(@RequestBody Room room){
-        hotel.addRoom(room);
-    }
+//    @RequestMapping(value = "/room/add", method = RequestMethod.POST)
+//    public void addRoom(@RequestBody Room room){
+//        hotel.addRoom(room);
+//    }
 }

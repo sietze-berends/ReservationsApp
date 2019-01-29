@@ -13,7 +13,7 @@ import java.util.List;
  * Search class. Calls several helper methods to check if the date is available, desired attributes are available,
  * capacity is enough, etc.
  */
-@Component
+//@Component
 public class SearchModule {
     private AvailabilityChecker availabilityChecker;
     private CapacityChecker capacityChecker;
