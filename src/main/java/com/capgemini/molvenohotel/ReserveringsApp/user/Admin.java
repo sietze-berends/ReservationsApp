@@ -1,6 +1,6 @@
 package com.capgemini.molvenohotel.ReserveringsApp.user;
 
-import sun.security.util.Password;
+// import sun.security.util.Password;
 
 /**
  * Admin class which has more rights than the user
