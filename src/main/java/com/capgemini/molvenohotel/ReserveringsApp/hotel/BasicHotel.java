@@ -28,20 +28,21 @@ public class BasicHotel {
         room1Attributes.add(allRoomAttributes.get(0));
         room2Attributes.add(allRoomAttributes.get(1));
 
+//
+//        Room room1 = new Room("101", 20.0, 100.0, 0, 1, 2, true, room1Attributes, null);
+//        Room room2 = new Room("102", 40.0, 200.0, 2, 1, 4, true, room2Attributes, null);
 
-        Room room1 = new Room("101", 20.0, 100.0, 0, 1, 2, true, room1Attributes, null);
-        Room room2 = new Room("102", 40.0, 200.0, 2, 1, 4, true, room2Attributes, null);
         Guest guest1 = new Guest("1", "Sietze", "Berends", LocalDate.of(1993, 6,
                 9), "sietze.b@gmail.com", "toEncrypt", "Dutch");
         Guest guest2 = new Guest("2", "Pim", "Groenveld", LocalDate.of(1992, 2,
                 11), "pim.g@gmail.com", "toEncrypt", "Dutch");
         List<Room> roomReservation1 = new ArrayList<>();
-        roomReservation1.add(room1);
+//        roomReservation1.add(room1);
         Reservation reservation1 = new Reservation(roomReservation1, LocalDateTime.of(2019, 02, 12, 01, 00),
                 LocalDateTime.of(2019,02,20,01,00), guest1, 1);
 
-        rooms.add(room1);
-        rooms.add(room2);
+//        rooms.add(room1);
+//        rooms.add(room2);
         guests.add(guest1);
         guests.add(guest2);
         reservations.add(reservation1);

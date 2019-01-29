@@ -9,23 +9,31 @@ import java.util.List;
 
 public class Room {
     private String roomId;
-    private double area;
+    private String roomType;
     private double price;
     private int singleBeds;
     private int doubleBeds;
-    private int capacity;
+    private int babyBeds;
+    private int capacityRoom;
+    private int capacityAdults;
+    private int capacityBaby;
     private boolean bookable;
     private List<RoomAttribute> roomAttributes;
     private List<String> imageUrls;
 
-    public Room(String roomNr, double area, double price, int singleBeds, int doubleBeds, int capacity,
-                boolean bookable, List<RoomAttribute> roomAttributes, List<String> imageUrls) {
+
+    public Room(String roomNr, String roomType, double price, int singleBeds, int doubleBeds, int babyBeds,
+                int capacityRoom, int capacityAdults, int capacityBaby, boolean bookable,
+                List<RoomAttribute> roomAttributes, List<String> imageUrls) {
         this.roomId = roomNr;
-        this.area = area;
+        this.roomType = roomType;
         this.price = price;
         this.singleBeds = singleBeds;
         this.doubleBeds = doubleBeds;
-        this.capacity = capacity;
+        this.babyBeds = babyBeds;
+        this.capacityRoom = capacityRoom;
+        this.capacityAdults = capacityAdults;
+        this.capacityBaby = capacityBaby;
         this.bookable = bookable;
         this.roomAttributes = roomAttributes;
         this.imageUrls = imageUrls;
@@ -35,11 +43,14 @@ public class Room {
     public String toString() {
         return "Room{" +
                 "roomId='" + roomId + '\'' +
-                ", area=" + area +
+                ", roomType='" + roomType +
                 ", price=" + price +
                 ", singleBeds=" + singleBeds +
                 ", doubleBeds=" + doubleBeds +
-                ", capacity=" + capacity +
+                ", babyBeds=" + babyBeds +
+                ", capacityRoom=" + capacityRoom +
+                ", capacityAdults=" + capacityAdults +
+                ", capacityBaby=" + capacityBaby +
                 ", bookable=" + bookable +
                 ", roomAttributes=" + roomAttributes.toString() +
                 ", imageUrls=" + imageUrls +
@@ -50,20 +61,26 @@ public class Room {
         return roomAttributes;
     }
 
+    public String getRoomType() { return roomType; }
+
     public double getPrice() {
         return price;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public int getCapacityRoom() {
+        return capacityRoom;
+    }
+
+    public int getCapacityAdults() {
+        return capacityAdults;
+    }
+
+    public int getCapacityBaby() {
+        return capacityBaby;
     }
 
     public String getRoomId() {
         return roomId;
-    }
-
-    public double getArea() {
-        return area;
     }
 
     public int getSingleBeds() {
@@ -72,6 +89,10 @@ public class Room {
 
     public int getDoubleBeds() {
         return doubleBeds;
+    }
+
+    public int getBabyBeds() {
+        return babyBeds;
     }
 
     public boolean isBookable() {
