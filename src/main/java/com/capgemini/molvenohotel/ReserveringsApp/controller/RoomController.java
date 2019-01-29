@@ -1,13 +1,8 @@
 package com.capgemini.molvenohotel.ReserveringsApp.controller;
 
 
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.BasicHotel;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeReservations;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeRooms;
-import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
