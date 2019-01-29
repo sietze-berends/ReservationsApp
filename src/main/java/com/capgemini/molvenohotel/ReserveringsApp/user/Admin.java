@@ -8,10 +8,10 @@ import sun.security.util.Password;
 public class Admin extends User{
 
     private String username;
-    private Password password;  // is this datatype correct?
+    private String password;
 
 
-    public Admin(String firstName, String lastName, String username, Password password) {
+    public Admin(String firstName, String lastName, String username, String password) {
         super(firstName, lastName);
         this.username = username;
         this.password = password;
@@ -25,11 +25,11 @@ public class Admin extends User{
         this.username = username;
     }
 
-    public Password getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Password password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 }
