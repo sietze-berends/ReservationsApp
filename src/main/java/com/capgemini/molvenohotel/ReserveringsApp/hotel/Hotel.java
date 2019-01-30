@@ -121,8 +121,9 @@ public class Hotel {
         rooms.add(room);
     }
 
-    public void addGuest(Guest guest) {
+    public Guest addGuest(Guest guest) {
         this.guests.add(guest);
+        return guest;
     }
 
     public List<Reservation> getAllReservationsPerBooker(int id){

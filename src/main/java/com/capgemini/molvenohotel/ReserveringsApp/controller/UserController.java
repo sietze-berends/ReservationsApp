@@ -4,10 +4,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +17,11 @@ public class UserController {
     @GetMapping(value = "/guests")
     public List<Guest> getAllGuests() {
         return hotel.getGuests();
+    }
+
+    @PostMapping(value = "/guests/add")
+    public Guest guest(@RequestBody Guest guest) {
+        return hotel.addGuest(guest);
     }
 
 }
