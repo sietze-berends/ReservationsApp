@@ -23,7 +23,7 @@ public class CapacityChecker {
 
     public List<Room> makeSuggestionWithAmountOfRooms(List<Room> availableRooms, int amountOfGuests, int amountOfRooms) {
         // sorteer de lijst op capaciteit
-        availableRooms.sort(Comparator.comparingInt(Room::getCapacity).reversed());
+        availableRooms.sort(Comparator.comparingInt(Room::getCapacityRoom).reversed());
         if (availableRooms.size() < amountOfRooms) {
             return null;
         }
@@ -32,13 +32,13 @@ public class CapacityChecker {
             // begin met de eerste
             Room room = availableRooms.get(i);
             // als de capaciteit + de capaciteit van deze kamer teveel is, skip deze dan
-            if (currentCapacity + room.getCapacity() > amountOfGuests) {
+            if (currentCapacity + room.getCapacityRoom() > amountOfGuests) {
                 continue;
             }
             // anders, voeg em toe
             else {
                 suggestion.add(room);
-                currentCapacity += room.getCapacity();
+                currentCapacity += room.getCapacityRoom();
                 currentAmountOfRooms += 1;
             }
             // als we genoeg capaciteit hebben en precies het juiste aantal kamers, dan zijn we klaar
