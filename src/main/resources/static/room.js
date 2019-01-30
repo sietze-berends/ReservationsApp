@@ -22,6 +22,7 @@
         content += '<th> Baby beds </th>'
         content += '<th> Capacity </th>'
         content += '<th> Clean </th>'
+        content += '<th> Disabled-friendly</th>'
 
         $.each($rooms, function (index, value) {
             content += "<tr>"
@@ -30,8 +31,16 @@
             content += "<td>" + value.doubleBeds + "</td>"
             content += "<td>" + value.babyBeds + "</td>"
             content += "<td>" + value.capacityRoom + "</td>"
+            console.log("Room: " + value.roomId)
             if (value.clean) {
-                content += '<td> <span class="glyphicon glyphicon-ok"></span></td>'
+                content += '<td> Yes </td>'
+                } else {
+                content += '<td> No </td>'
+                }
+            if (value.roomAttributes[0].roomAttributeId == "Disabled") {
+                content += '<td> Yes </td>'
+            } else {
+                content += '<td> No </td>'
                 }
             content += "</tr>";
         })

@@ -121,6 +121,9 @@ public class Hotel {
         rooms.add(room);
     }
 
+    public void addGuest(Guest guest) {
+        this.guests.add(guest);
+    }
 
     public List<Reservation> getAllReservationsPerBooker(int id){
         List<Reservation> match = new ArrayList<>();

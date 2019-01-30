@@ -13,7 +13,8 @@
       })
 
      function fillGuests($guests) {
-             var content = '<h2> Guests: </h2> <div class = "row"></div>'
+             var content = '<input id="addGuest" type="button" value="Add guest"/>'
+             content += '<h2> Guests: </h2> <div class = "row"></div>'
              content += '<table id = "guestsTable" class="table table-bordered table-striped table-hover table-condensed">'
              content += '<tbody id = tableBody>'
              content += '<tr> <th> Guest number </th>'

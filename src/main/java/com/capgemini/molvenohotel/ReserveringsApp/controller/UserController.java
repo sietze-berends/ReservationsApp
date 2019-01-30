@@ -5,6 +5,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
