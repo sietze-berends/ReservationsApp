@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class that models a final invoice that covers all hotel, restaurant and bar expenses
+ * Class that models a final invoice that covers all rooms, restaurant and bar expenses
  * Contains several subinvoices to get more detail
  */
 public class Invoice {

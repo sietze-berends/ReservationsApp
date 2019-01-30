@@ -21,7 +21,7 @@ import java.util.List;
 
 public class Hotel {
 
-    // some basic details about the hotel.Hotel
+    // some basic details about the rooms.Hotel
     private String name;
     private String telNo;
     private String email;
@@ -102,7 +102,7 @@ public class Hotel {
     @Override
     public String toString() {
         String output;
-        output = "This hotel has the following rooms:\n";
+        output = "This rooms has the following rooms:\n";
         for (Room room : rooms) {
             output += room.toString() + "\n";
         }

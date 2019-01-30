@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 
 /**
- * Class that initializes our hotel with rooms, guests, reservations and invoices
+ * Class that initializes our rooms with rooms, guests, reservations and invoices
  * Uses separate initializers for the ones above to keep code readable
  */
 

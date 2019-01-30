@@ -21,12 +21,12 @@ public class AvailabilityChecker {
     public List<Room> checkAvailability(LocalDateTime start, LocalDateTime end, Hotel hotel) {
         List <Room> availableRooms = new ArrayList<>();
 
-        // als het hotel überhaupt geen reservering heeft, dan zijn alle kamers beschikbaar
+        // als het rooms überhaupt geen reservering heeft, dan zijn alle kamers beschikbaar
         if (hotel.getReservations().isEmpty()) {
             return hotel.getRooms();
         }
 
-        // voor iedere kamer die het hotel heeft
+        // voor iedere kamer die het rooms heeft
         for (Room room : hotel.getRooms()) {
             boolean available = false;
             // check iedere reservering
