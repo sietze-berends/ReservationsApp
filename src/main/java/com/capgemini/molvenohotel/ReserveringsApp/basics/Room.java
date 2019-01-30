@@ -17,13 +17,13 @@ public class Room {
     private int capacityRoom;
     private int capacityAdults;
     private int capacityBaby;
-    private boolean bookable;
+    private boolean clean;
     private List<RoomAttribute> roomAttributes;
     private List<String> imageUrls;
 
 
     public Room(String roomNr, String roomType, double price, int singleBeds, int doubleBeds, int babyBeds,
-                int capacityRoom, int capacityAdults, int capacityBaby, boolean bookable,
+                int capacityRoom, int capacityAdults, int capacityBaby, boolean clean,
                 List<RoomAttribute> roomAttributes, List<String> imageUrls) {
         this.roomId = roomNr;
         this.roomType = roomType;
@@ -34,7 +34,7 @@ public class Room {
         this.capacityRoom = capacityRoom;
         this.capacityAdults = capacityAdults;
         this.capacityBaby = capacityBaby;
-        this.bookable = bookable;
+        this.clean = clean;
         this.roomAttributes = roomAttributes;
         this.imageUrls = imageUrls;
     }
@@ -51,7 +51,7 @@ public class Room {
                 ", capacityRoom=" + capacityRoom +
                 ", capacityAdults=" + capacityAdults +
                 ", capacityBaby=" + capacityBaby +
-                ", bookable=" + bookable +
+                ", clean=" + clean +
                 ", roomAttributes=" + roomAttributes.toString() +
                 ", imageUrls=" + imageUrls +
                 '}';
@@ -95,8 +95,8 @@ public class Room {
         return babyBeds;
     }
 
-    public boolean isBookable() {
-        return bookable;
+    public boolean isClean() {
+        return clean;
     }
 
     public List<String> getImageUrls() {
