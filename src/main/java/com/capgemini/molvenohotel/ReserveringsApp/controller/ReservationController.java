@@ -29,6 +29,4 @@ public class ReservationController {
     public List<Reservation> getReservationByBooker (@PathVariable int bookerId){
         return hotel.getAllReservationsPerBooker(bookerId);
     }
-
-
 }
