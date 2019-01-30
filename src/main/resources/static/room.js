@@ -33,14 +33,14 @@
             content += "<td>" + value.capacityRoom + "</td>"
             console.log("Room: " + value.roomId)
             if (value.clean) {
-                content += '<td> Yes </td>'
+                content += '<td> <span class="glyphicon glyphicon-ok"></span> </td>'
                 } else {
-                content += '<td> No </td>'
+                content += '<td> <span class="glyphicon glyphicon-remove"></span> </td>'
                 }
             if (value.roomAttributes[0].roomAttributeId == "Disabled") {
-                content += '<td> Yes </td>'
+                content += '<td> <span class="glyphicon glyphicon-ok"></span> </td>'
             } else {
-                content += '<td> No </td>'
+                content += '<td> <span class="glyphicon glyphicon-remove"></span> </td>'
                 }
             content += "</tr>";
         })

@@ -67,7 +67,7 @@ public class Hotel {
 
     public String search(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
         List<Room> suggestion = searchModule.searchSuggestion(start, end, amountOfGuests, amountOfRooms, this);
-
+        //TODO: remove hardcoded strings and dutch language
         if (suggestion == null) {
 
             return "Call the receptionist on " + telNo;
