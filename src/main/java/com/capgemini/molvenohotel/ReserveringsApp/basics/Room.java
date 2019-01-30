@@ -102,4 +102,52 @@ public class Room {
     public List<String> getImageUrls() {
         return imageUrls;
     }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
+    }
+
+    public void setImageUrls(List<String> imageUrls) {
+        this.imageUrls = imageUrls;
+    }
+
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setSingleBeds(int singleBeds) {
+        this.singleBeds = singleBeds;
+    }
+
+    public void setDoubleBeds(int doubleBeds) {
+        this.doubleBeds = doubleBeds;
+    }
+
+    public void setBabyBeds(int babyBeds) {
+        this.babyBeds = babyBeds;
+    }
+
+    public void setCapacityRoom(int capacityRoom) {
+        this.capacityRoom = capacityRoom;
+    }
+
+    public void setCapacityAdults(int capacityAdults) {
+        this.capacityAdults = capacityAdults;
+    }
+
+    public void setCapacityBaby(int capacityBaby) {
+        this.capacityBaby = capacityBaby;
+    }
+
+    public void setClean(boolean clean) {
+        this.clean = clean;
+    }
+
+    public void setRoomAttributes(List<RoomAttribute> roomAttributes) {
+        this.roomAttributes = roomAttributes;
+    }
 }

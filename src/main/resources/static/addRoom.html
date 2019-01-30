@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Room</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+<body>
+<h3>Add a new room:</h3>
+
+<div class = "add-room-form-wrapper">
+
+    <!--action="where info will be sent" target="to where person is sent after submit"-->
+    <form  class = "add-room-form" action="hotel/room/add" target="hotel.html" method="post">
+
+    Room number:<br>
+    <input type="text" name="roomNr"><br>
+    Room type:<br>
+    <input type="text" name="roomType"><br>
+    Room price (p/n):<br>
+    <input type="number" name="roomPrice"><br>
+    Amount single beds:<br>
+    <input type="number" name="roomSingleBeds"><br>
+    Amount double beds:<br>
+    <input type="number" name="roomDoubleBeds"><br>
+    Amount baby beds:<br>
+    <input type="number" name="roomBabyBeds"><br>
+    Total capacity:<br>
+    <input type="number" name="roomTotalCapacity"><br>
+    Capacity adults:<br>
+    <input type="number" name="roomCapAdult"><br>
+    Capacity baby's:<br>
+    <input type="number" name="roomCapBaby"><br>
+    Clean:<br>
+    <input type="radio" name="clean" value="Clean" checked> Clean <br>
+    <input type="radio" name="needsCleaning" value="Needs cleaning"> Needs Cleaning<br>
+    Room attributes:<br>
+        <select name="roomAttributes">
+            <option value="Disabled">Disable friendly</option>
+            <option value="Other">Other possible options</option>
+            <option value="Other">Other possible options</option>
+        </select><br>
+    Room picture URL:<br>
+    <input type="text" name="roomPictureURL"><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script src="addGuest.js"></script>
+</body>
+</html>

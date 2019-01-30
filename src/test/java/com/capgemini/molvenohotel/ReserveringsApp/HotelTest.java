@@ -29,8 +29,6 @@ public class HotelTest {
         room1Attributes.add(allRoomAttributes.get(0));
         room2Attributes.add(allRoomAttributes.get(1));
 
-
-
 //        Room room1 = new Room("101", 20.0, 100.0, 0, 1, 2, true, room1Attributes, null);
 //        Room room2 = new Room("102", 40.0, 200.0, 2, 1, 4, true, room2Attributes, null);
 //        Guest guest1 = new Guest("1", "Sietze", "Berends", LocalDate.of(1993, 6,
