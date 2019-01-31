@@ -3,8 +3,11 @@ package com.capgemini.molvenohotel.ReserveringsApp.controller;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.user.InternetGuest;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RestController
@@ -19,7 +22,7 @@ public class UserController {
     }
 
     @PostMapping(value = "/guests/add")
-    public Guest guest(@RequestBody Guest guest) {
+    public Guest guest(@RequestBody InternetGuest guest) {
         return hotel.addGuest(guest);
     }
 

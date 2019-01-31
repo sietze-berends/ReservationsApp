@@ -4,13 +4,14 @@
        var newGuest = {}
 
        $(newGuestForm).each(function(i, field) {
-           if (field.name == "dob") {
+           if (field.name == "dateOfBirth") {
                    newGuest[field.name] = field.value.toString()
                } else {
                    newGuest[field.name] = field.value
                }
        })
        newGuest = JSON.stringify(newGuest)
+       console.log(newGuest)
        $.post( {
            url : '/hotel/guests/add ',
            data : newGuest,

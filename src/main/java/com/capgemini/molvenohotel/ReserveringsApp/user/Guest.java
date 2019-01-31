@@ -1,6 +1,7 @@
 package com.capgemini.molvenohotel.ReserveringsApp.user;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -15,6 +16,7 @@ public class Guest extends User{
     private String nationality;
 
     public Guest(String firstName, String lastName, LocalDate dateOfBirth, String email, String password, String nationality) {
+
         super(firstName, lastName);
         this.guestId = Integer.toString(counter.getAndIncrement());
         this.dateOfBirth = dateOfBirth;
