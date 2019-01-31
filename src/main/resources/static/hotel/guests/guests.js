@@ -1,27 +1,26 @@
-     $('#showAllGuests').click(function() {
-         var guests;
-         $.ajax({
-            type:'get',
-            url: 'hotel/guests',
-            success: function(result) {
-                $('#showAllRooms').hide();
-                $('#showAllGuests').hide();
-                guests = result;
-                fillGuests(guests);
-            }
-         })
-      })
+    $( document ).ready(function() {
+        var guests;
+        $.ajax({
+           type:'get',
+           url: '../hotel/guests',
+           success: function(result) {
+               guests = result;
+               fillGuests(guests);
+               }
+           })
+        });
 
      function fillGuests($guests) {
              var content = '<input id="addGuest" type="button" value="Add guest"/>'
-             content += '<h2> Guests: </h2> <div class = "row"></div>'
-             content += '<table id = "guestsTable" class="table table-bordered table-striped table-hover table-condensed">'
-             content += '<tbody id = tableBody>'
+             content += '<table id = "allGuests" class="table table-bordered table-striped table-hover table-condensed">'
+             content += '<thead id = tableHeader>'
              content += '<tr> <th> Guest number </th>'
              content += '<th> Name </th>'
              content += '<th> Birthday </th>'
              content += '<th> E-mail </th>'
              content += '<th> Nationality </th>'
+             content += '</thead>'
+             content += '<tbody id = "tablebody">'
 
              $.each($guests, function (index, value) {
                  content += "<tr>"
@@ -34,5 +33,6 @@
                  content += "</tr>";
              })
              content += '</tbody> </table> <div class = "row"></div>'
-             $("#guestInfo").html(content)
+             $("#allGuestsDiv").html(content)
+             $('#allGuests').DataTable();
           }
