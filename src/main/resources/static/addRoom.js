@@ -3,20 +3,11 @@ $('#addRoom').click(function() {
      window.location.href = '/addRoom.html';
      })
 
-$.ajax({
-  type: "POST",
-  url: url,
-  data: data,
-  success: success,
-  dataType: dataType
-});
-
-
 // open form    
-$(document).on('click', '#addRoom', function(){
+$(document).on('click', '#addRoom', function()){
     console.log("test")
     window.location.href = '/addRoom.html';
-});
+};
 
 // submit the form
 $('#add-room-form').submit(function(event) {
