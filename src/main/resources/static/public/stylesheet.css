@@ -15,6 +15,8 @@ h1 {
     margin: auto;
     position: relative;
     left: 75px;
+    font-family: 'Squada One', cursive;
+    font-size: 75px;
 }
 
 .logo{
@@ -69,7 +71,7 @@ h1 {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: midnightblue;}
 
-.slider-images{
-    height: 60%
-    width: 60%
+.carousel-inner > .item > img {
+  width:500px;
+  height:400px;
 }
