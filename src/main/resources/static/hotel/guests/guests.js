@@ -10,6 +10,13 @@
            })
         });
 
+
+        // open form
+        $(document).on('click', '#addGuest', function(){
+            console.log("test")
+            window.location.href = '/hotel/guests/addguest.html';
+        });
+
      function fillGuests($guests) {
              var content = '<input id="addGuest" type="button" value="Add guest"/>'
              content += '<table id = "allGuests" class="table table-bordered table-striped table-hover table-condensed">'

@@ -1,9 +1,3 @@
-    // open form
-    $(document).on('click', '#addGuest', function(){
-        console.log("test")
-        window.location.href = '/addguest.html';
-    });
-
     // submit the form
     $('#add-guest-form').submit(function(event) {
        var newGuestForm = $(this).serializeArray();
@@ -17,12 +11,11 @@
                }
        })
        newGuest = JSON.stringify(newGuest)
-       console.log(newGuest)
        $.post( {
-           url : '/hotel/guests/add',
+           url : '/hotel/guests/add ',
            data : newGuest,
            contentType : "application/JSON",
-           succes : function(result) {
+           success : function(result) {
                if(result.validated) {
                    console.log("Guest added")
                    }

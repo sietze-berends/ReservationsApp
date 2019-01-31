@@ -4,7 +4,6 @@ package com.capgemini.molvenohotel.ReserveringsApp.controller;
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
 import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeRooms;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

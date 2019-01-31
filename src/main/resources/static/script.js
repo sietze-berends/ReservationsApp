@@ -10,7 +10,10 @@ $( document ).ready(function() {
         window.location.href = '/hotel/rooms/rooms.html'
      })
      $('#showAllGuests').click(function() {
-             window.location.href = '/hotel/guests/guests.html'
+        window.location.href = '/hotel/guests/guests.html'
+     })
+     $('#searchRooms').click(function() {
+        window.location.href = '/hotel/search/search.html'
      })
 });
 
