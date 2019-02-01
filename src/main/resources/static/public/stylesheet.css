@@ -10,13 +10,22 @@ body {
     flex-wrap: wrap;
 }
 
-h1 {
+h1, #title{
     color: midnightblue;
     margin: auto;
     position: relative;
-    left: 75px;
+    left: 90px;
     font-family: 'Squada One', cursive;
     font-size: 75px;
+}
+
+h3{
+color: midnightblue;
+    margin: auto;
+    position: relative;
+    left: 90px;
+    font-family: 'Squada One', cursive;
+    font-size: 50px;
 }
 
 .logo{
@@ -70,8 +79,3 @@ h1 {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: midnightblue;}
-
-.carousel-inner > .item > img {
-  width:500px;
-  height:400px;
-}
