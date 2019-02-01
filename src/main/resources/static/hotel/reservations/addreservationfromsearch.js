@@ -8,7 +8,6 @@ $( document ).ready(function() {
            $guests = result;
          $.each($guests, function (index, value) {
             $("#bookers").append('<option value = "' + value.firstName + ' ' + value.lastName + '">')
-            console.log('<option value = "' + value.firstName + ' ' + value.lastName + '">')
          })
        }
     })
@@ -32,14 +31,20 @@ $( document ).ready(function() {
             submitData[field.name] = field.value
        })
        submitData = JSON.stringify(submitData)
+       console.log(submitData)
        $.post ( {
-           url : '../hotel/reservations/add',
+           url : 'hotel/reservations/add',
            data : submitData,
            contentType : 'application/JSON',
            success : function(response) {
+               console.log("success")
                window.location.href('/hotel/reservations/reservations.html')
-           }
+           }, error : function(response) {
+               console.log("nosuccess")
+               window.location.href('/hotel/reservations/reservations.html')
+               }
        })
+       console.log("end")
        window.location.href('/hotel/reservations/reservations.html')
     })
 });

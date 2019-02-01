@@ -6,13 +6,12 @@ import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 import com.capgemini.molvenohotel.ReserveringsApp.user.InternetGuest;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/hotel")
 public class UserController {
+
     private InitializeHotel initializeHotel = new InitializeHotel();
     private Hotel hotel = initializeHotel.makeMolveno();
 
