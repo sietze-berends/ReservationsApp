@@ -19,7 +19,7 @@ public class ReservationController {
     private Hotel hotel = initializeHotel.makeMolveno();
 
     //Gets all reservations
-    @GetMapping(value = "/reservation")
+    @GetMapping(value = "/reservations")
     public List<Reservation> getReservations() {
         return hotel.getReservations();
     }

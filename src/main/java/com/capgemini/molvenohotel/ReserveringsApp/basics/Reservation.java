@@ -6,6 +6,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Models a reservation with some basic data
@@ -17,7 +18,10 @@ public class Reservation {
     private LocalDateTime end;
     private Guest booker;
     private List<ExtraGuest> extraGuests;
+    private static AtomicInteger counter = new AtomicInteger(1000);
     private int reservationNumber;
+    private int totalGuests;
+    private boolean checkedIn;
 
     public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests, int reservationNumber) {
         this.roomList = room;
@@ -25,8 +29,12 @@ public class Reservation {
         this.end = end;
         this.booker = booker;
         this.extraGuests = extraGuests;
-        this.reservationNumber = reservationNumber;
-    }
+        this.reservationNumber = counter.getAndIncrement();
+        this.totalGuests = 1;
+        for (ExtraGuest extraGuest : extraGuests) {
+            this.totalGuests++;
+        }
+        this.checkedIn = false; }
 
     public void addRoom(Room room) {
         this.roomList.add(room);
@@ -69,6 +77,10 @@ public class Reservation {
 
     public List<Room> getRoomList() {
         return roomList;
+    }
+
+    public int getTotalGuests() {
+        return totalGuests;
     }
 
     public void setRoomList(List<Room> roomList) {

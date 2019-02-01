@@ -121,6 +121,14 @@ public class Hotel {
         rooms.add(room);
     }
 
+    public void setGuests(List<Guest> guests) {
+        this.guests = guests;
+    }
+
+    public void setExtraGuests(List<ExtraGuest> extraGuests) {
+        this.extraGuests = extraGuests;
+    }
+
     public Guest addGuest(Guest guest) {
         this.guests.add(guest);
         return guest;

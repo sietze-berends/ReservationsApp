@@ -1,7 +1,6 @@
 package com.capgemini.molvenohotel.ReserveringsApp.user;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -63,5 +62,9 @@ public class Guest extends User{
 
     public void setNationality(String nationality) {
         this.nationality = nationality;
+    }
+
+    public String getBookerString() {
+        return getFirstName() + " " + getLastName();
     }
 }

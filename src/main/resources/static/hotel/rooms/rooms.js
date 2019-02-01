@@ -8,7 +8,16 @@ $( document ).ready(function() {
            fillRooms(rooms);
            }
        })
+
+        // open form
+        $(document).on('click', '#addRoom', function(){
+            window.location.href = '/hotel/rooms/addroom.html';
+        });
     });
+
+
+
+
 
      function fillRooms($rooms) {
         var content = '<input id="addRoom" type="button" value="Add room"/>'

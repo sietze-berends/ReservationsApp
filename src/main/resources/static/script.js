@@ -12,6 +12,11 @@ $( document ).ready(function() {
      $('#showAllGuests').click(function() {
         window.location.href = '/hotel/guests/guests.html'
      })
+
+     $('#showAllReservations').click(function() {
+        window.location.href = '/hotel/reservations/reservations.html'
+        })
+
      $('#searchRooms').click(function() {
         window.location.href = '/hotel/search/search.html'
      })
