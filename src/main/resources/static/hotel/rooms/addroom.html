@@ -5,31 +5,28 @@
     <title>Molveno</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet">
-
     <base href="../../" />
+    <link rel="stylesheet" href="../../public/forms.css">
+    <link rel="stylesheet" href="../../public/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Squada+One" rel="stylesheet">
 
 </head>
 <body>
 <div id ="navbar" class="container">
 </div>
-<div class = "container">
-
-    <base href="../../" />
-    <link rel="stylesheet" href="../../public/stylesheet.css">
-    <link href="https://fonts.googleapis.com/css?family=Squada+One" rel="stylesheet">
 
 <div class="container" id="title-logo-wrapper">
     <h3>Add a room</h3>
 
     <div class = "logo-wrapper">
-        <img class = "logo" src="/public/images/molveno_logo.jpg" alt="Logo Molveno Lake Resort">
+        <a href="/"><img class = "logo" src="/public/images/molveno_logo.jpg" alt="Logo Molveno Lake Resort"></a>
     </div>
 </div>
 
-<div class = "container">
+<div class = "form-style-5">
     <!--action="where info will be sent" target="to where person is sent after submit"-->
     <form  class = "add-room-form" action="hotel/room/add" target="hotel.html" method="post">
-
+    <fieldset>
     Room number:<br>
     <input type="text" name="roomNr"><br>
     Room type:<br>
@@ -61,7 +58,7 @@
     <input type="text" name="roomPictureURL"><br>
 
     <input type="submit" value="Submit">
-
+    </fieldset>
 </form>
 
 </div>
