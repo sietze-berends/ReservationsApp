@@ -15,15 +15,13 @@ $( document ).ready(function() {
         });
     });
 
-
-
-
-
      function fillRooms($rooms) {
         var content = '<input id="addRoom" type="button" value="Add room"/>'
         content += '<table id = "allRooms" class="table table-bordered table-striped table-hover table-condensed">'
         content += '<thead id = "thead">'
         content += '<tr> <th> Room number </th>'
+        content += '<th> Room type </th>'
+        content += '<th> Room price </th>'
         content += '<th> Single beds </th>'
         content += '<th> Double beds </th>'
         content += '<th> Baby beds </th>'
@@ -36,6 +34,8 @@ $( document ).ready(function() {
         $.each($rooms, function (index, value) {
             content += "<tr>"
             content += '<td>' + value.roomId + '</td>';
+            content += '<td>' + value.roomType + '</td>';
+            content += '<td>' + value.price + '</td>';
             content += "<td>" + value.singleBeds + "</td>"
             content += "<td>" + value.doubleBeds + "</td>"
             content += "<td>" + value.babyBeds + "</td>"
