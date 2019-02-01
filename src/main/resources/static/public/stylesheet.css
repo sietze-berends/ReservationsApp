@@ -19,6 +19,15 @@ h1 {
     font-size: 75px;
 }
 
+h3 {
+    color: midnightblue;
+    margin: auto;
+    position: relative;
+    left: 90px;
+    font-family: 'Squada One', cursive;
+    font-size: 50px;
+}
+
 .logo{
     height: 200px;
     width: 200px;
@@ -27,6 +36,34 @@ h1 {
 #google_translate_element{
     float: right;
 }
+
+#hotel-button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+
+.hotel-button{
+    position: relative;
+  	display: block;
+  	padding: 19px 39px 18px 39px;
+  	color: #FFF;
+  	margin: 0 auto;
+  	background: #1abc9c;
+  	font-size: 18px;
+  	text-align: center;
+  	font-style: normal;
+  	width: 100%;
+  	border: 1px solid #16a085;
+  	border-width: 1px 1px 3px;
+  	margin-bottom: 10px;
+}
+
+.hotel-button:hover {
+	background: #109177;
+}
+
 
 /* Dropdown Button */
 .dropbtn {
