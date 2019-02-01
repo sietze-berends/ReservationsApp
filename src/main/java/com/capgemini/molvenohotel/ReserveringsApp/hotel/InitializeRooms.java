@@ -101,8 +101,8 @@ public class InitializeRooms {
         rooms.add(new Room("415", "Single", 999, 0, 1, 0, 3,2, 1, false, notDisabledFriendly, null));
         rooms.add(new Room("416", "Single", 999, 0, 1, 0, 3,2, 1, false, notDisabledFriendly, null));
         rooms.add(new Room("417", "Single", 999, 0, 1, 0, 4,2, 2, false, notDisabledFriendly, null));
-        rooms.add(new Room("418", "Single", 999, 4, 2, 2, 10,8, 2, false, notDisabledFriendly, null));
-        rooms.add(new Room("419", "Penthouse", 999, 4, 2, 2, 10,8, 2, false, notDisabledFriendly, null));
+        rooms.add(new Room("418", "Penthouse", 1313, 4, 2, 2, 10,8, 2, false, notDisabledFriendly, null));
+        rooms.add(new Room("419", "Penthouse", 1313, 4, 2, 2, 10,8, 2, false, notDisabledFriendly, null));
 
     }
 

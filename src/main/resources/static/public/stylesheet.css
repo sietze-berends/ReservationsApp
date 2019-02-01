@@ -10,17 +10,17 @@ body {
     flex-wrap: wrap;
 }
 
-h1, #title{
+h1 {
     color: midnightblue;
     margin: auto;
     position: relative;
     left: 90px;
     font-family: 'Squada One', cursive;
-    font-size: 5vw;
+    font-size: 75px;
 }
 
-h3{
-color: midnightblue;
+h3 {
+    color: midnightblue;
     margin: auto;
     position: relative;
     left: 90px;
@@ -29,13 +29,39 @@ color: midnightblue;
 }
 
 .logo{
-    width: 100%;
-    max-width: 200px;
-    height: auto;
+    height: 200px;
+    width: 200px;
 }
 
 #google_translate_element{
     float: right;
+}
+
+#hotel-button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+
+.hotel-button{
+    position: relative;
+  	display: block;
+  	padding: 19px 39px 18px 39px;
+  	color: #FFF;
+  	margin: 0 auto;
+  	background: #1abc9c;
+  	font-size: 18px;
+  	text-align: center;
+  	font-style: normal;
+  	width: 100%;
+  	border: 1px solid #16a085;
+  	border-width: 1px 1px 3px;
+  	margin-bottom: 10px;
+}
+
+.hotel-button:hover {
+	background: #109177;
 }
 
 
@@ -59,7 +85,7 @@ color: midnightblue;
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 120px;
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -80,3 +106,4 @@ color: midnightblue;
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: midnightblue;}
+
