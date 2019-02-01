@@ -65,11 +65,11 @@
             $('#searchResults').DataTable();
     }
 
-// this (or a variant) needs to be added somewhere to hide the css on room search results. Cant find the right place :(
-//    $('.form-style-5').css('display','none');
-//    $('.form-style-5 fieldset').css('display','none');
-//    $('.form-style-5 legend').css('display','none');
-//    $('.form-style-5 label').css('display','none');
-//    $('#search').hide();
-//    $('.form-style-5').hide();
-//    $('#searchform').hide();
+    // this (or a variant) needs to be added somewhere to hide the css on room search results. Cant find the right place :(
+    //    $('.form-style-5').css('display','none');
+    //    $('.form-style-5 fieldset').css('display','none');
+    //    $('.form-style-5 legend').css('display','none');
+    //    $('.form-style-5 label').css('display','none');
+    //    $('#search').hide();
+    //    $('.form-style-5').hide();
+    //    $('#searchform').hide();
