@@ -32,8 +32,6 @@ $( document ).ready(function() {
 
             $.each($rooms, function (index, value) {
                 content += + value.roomId
-                console.log(index)
-                console.log($rooms.length)
                 if (!(index == $rooms.length -1)) {
                     content += "/"
                 }
@@ -42,12 +40,8 @@ $( document ).ready(function() {
             content += "</td>"
             content += "<td>" + value.booker["firstName"] + " " + value.booker["lastName"] + "</td>"
             content += "<td>" + value.totalGuests + "</td>"
-            var startStr = JSON.stringify(value.start)
-            var startDate = new Date(value.start)
-            var endStr = JSON.stringify(value.end)
-            var endDate = new Date(value.end)
-            content += "<td>" + startDate + "</td>"
-            content += "<td>" + endStr + "</td>"
+            content += "<td>" + value.startStr + "</td>"
+            content += "<td>" + value.endStr + "</td>"
 
             if (value.checkedIn) {
                 content += '<td data-sort="1"> <span class="glyphicon glyphicon-ok"></span> </td>'

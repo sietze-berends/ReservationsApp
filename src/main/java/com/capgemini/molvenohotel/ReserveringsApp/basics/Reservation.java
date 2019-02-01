@@ -4,6 +4,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
 import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -22,6 +23,16 @@ public class Reservation {
     private int reservationNumber;
     private int totalGuests;
     private boolean checkedIn;
+    private String startStr;
+    private String endStr;
+
+    public String getStartStr() {
+        return this.startStr;
+    }
+
+    public String getEndStr() {
+        return this.endStr;
+    }
 
     public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests, int reservationNumber) {
         this.roomList = room;
@@ -34,7 +45,10 @@ public class Reservation {
         for (ExtraGuest extraGuest : extraGuests) {
             this.totalGuests++;
         }
-        this.checkedIn = false; }
+        this.checkedIn = false;
+        this.startStr = this.start.format(DateTimeFormatter.ofPattern("dd-MM-yyyy : hh:mm"));
+        this.endStr = this.end.format(DateTimeFormatter.ofPattern("dd-MM-yyyy : hh:mm"));
+    }
 
     public void addRoom(Room room) {
         this.roomList.add(room);
@@ -48,7 +62,7 @@ public class Reservation {
     public boolean isValid() throws Exception {
         long diff = start.until(end, ChronoUnit.DAYS);
         long startDateCompare = start.until(LocalDateTime.now(), ChronoUnit.DAYS);
-        if ((diff >= 1) && (this.booker != null) && (this.roomList.size() >= 1) && (startDateCompare <= 0)){
+        if ((diff >= 1) && (this.booker != null) && (this.roomList.size() >= 1) && (startDateCompare <= 0)) {
             return true;
         } else {
             throw new ReservationException(this);
@@ -56,15 +70,15 @@ public class Reservation {
     }
 
     public List<Room> getRooms() {
-            return roomList;
+        return roomList;
     }
 
-    public LocalDateTime getStart () {
-            return start;
+    public LocalDateTime getStart() {
+        return start;
     }
 
-    public LocalDateTime getEnd () {
-            return end;
+    public LocalDateTime getEnd() {
+        return end;
     }
 
     public Guest getBooker() {
