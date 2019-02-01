@@ -13,7 +13,7 @@
        newGuest = JSON.stringify(newGuest)
        console.log(newGuest)
        $.post( {
-           url : '/hotel/guests/add ',
+           url : '/hotel/guests/add',
            data : newGuest,
            contentType : "application/JSON",
            success : function(result) {

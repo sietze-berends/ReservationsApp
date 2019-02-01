@@ -129,6 +129,15 @@ public class Hotel {
         this.extraGuests = extraGuests;
     }
 
+    public Guest getGuestByName(String name) {
+        for (Guest guest : this.guests) {
+            if (name.equalsIgnoreCase(guest.getFirstName() + " " + guest.getLastName())) {
+                return guest;
+            }
+        }
+        return this.guests.get(0);
+    }
+
     public Guest addGuest(Guest guest) {
         this.guests.add(guest);
         return guest;
