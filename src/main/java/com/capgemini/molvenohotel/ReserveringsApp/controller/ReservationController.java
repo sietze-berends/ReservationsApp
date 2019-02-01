@@ -29,7 +29,7 @@ public class ReservationController {
         return hotel.getReservations();
     }
 
-    @PostMapping(value = "reservations/add")
+    @PostMapping(value = "/reservations/add")
     public List<Reservation> addReservation(@RequestBody InternetReservation internetReservation) throws Exception {
         Guest booker = hotel.getGuestByName(internetReservation.getBooker());
         String rooms[] = internetReservation.getRooms().split(",");
