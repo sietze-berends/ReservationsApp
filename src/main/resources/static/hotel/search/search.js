@@ -1,23 +1,24 @@
+    var $submitData = {}
+
     // submit the form
     $('#searchform').submit(function(event) {
        var newSearchForm = $(this).serializeArray();
-       var submitData = {}
+//       var submitData = {}
 
        $(newSearchForm).each(function(i, field) {
-           console.log(field.name)
            if(field.name == "start") {
-               submitData[field.name] = field.value.toString();
+               $submitData[field.name] = field.value.toString();
            } else if (field.name == "end") {
-               submitData[field.name] = field.value.toString();
+               $submitData[field.name] = field.value.toString();
                }
              else {
-               submitData[field.name] = field.value;
+               $submitData[field.name] = field.value;
              }
            })
-        submitData = JSON.stringify(submitData)
+        $submitData = JSON.stringify($submitData)
        $.post( {
            url : '/hotel/search',
-           data : submitData,
+           data : $submitData,
            contentType : "application/JSON",
            success : function(result) {
                showResults(result)
@@ -40,8 +41,8 @@
             content += '<tbody id = tableBody>'
 
             $.each($results, function (index, value) {
-                content += "<tr>"
-                content += '<td>' + value.roomId + '</td>';
+                content += "<tr id = row " + index + ">"
+                content += '<td id = roomId>' + value.roomId + '</td>';
                 content += "<td>" + value.singleBeds + "</td>"
                 content += "<td>" + value.doubleBeds + "</td>"
                 content += "<td>" + value.babyBeds + "</td>"
@@ -59,8 +60,24 @@
                     }
                 content += "</tr>";
             })
-            content += '</tbody> </table> <div class = "row"></div>'
+            content += '</tbody> </table> <br> <input id="bookNow" type="button" value="Book now!"/>'
+            content += '<div class = "row"></div>'
             $("#search").html(content)
             $('#searchResults').DataTable();
-
     }
+
+        // open form
+        $(document).on('click', '#bookNow', function(){
+            var dataRooms = []
+            var rooms = $('#searchResults > tbody > tr > #roomId')
+
+            $.each(rooms, function (index, value) {
+                dataRooms[index] = value.textContent
+            })
+            console.log($submitData)
+            dataStart = JSON.parse($submitData).start
+            dataEnd = JSON.parse($submitData).end
+            dataGuests = JSON.parse($submitData).amountOfPersons
+            dataRooms = dataRooms.toString()
+            window.location.href = '/hotel/reservations/addreservation.html?rooms=' + encodeURIComponent(dataRooms) + '&start=' + encodeURIComponent(dataStart) + '&end=' + encodeURIComponent(dataEnd) + '&guests=' + encodeURIComponent(dataGuests)
+        });

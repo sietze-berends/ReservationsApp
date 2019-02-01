@@ -13,7 +13,6 @@
 
         // open form
         $(document).on('click', '#addGuest', function(){
-            console.log("test")
             window.location.href = '/hotel/guests/addguest.html';
         });
 

@@ -10,6 +10,11 @@ $( document ).ready(function() {
        })
     });
 
+    // open form
+    $(document).on('click', '#addReservation', function(){
+        window.location.href = '/hotel/reservations/addreservation.html';
+    });
+
      function fillReservations($reservations) {
         var content = '<input id="addReservation" type="button" value="Add reservation"/>'
         content += '<table id = "allReservations" class="table table-bordered table-striped table-hover table-condensed">'
