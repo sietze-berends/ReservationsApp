@@ -70,8 +70,3 @@ h1 {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: midnightblue;}
-
-.carousel-inner > .item > img {
-  width:500px;
-  height:400px;
-}

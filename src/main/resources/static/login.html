@@ -7,11 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/public/stylesheet.css">
     <link href="https://fonts.googleapis.com/css?family=Squada+One" rel="stylesheet">
-
-    <!--Bootstrap carousel-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/public/forms.css">
 
 </head>
 
@@ -27,26 +23,27 @@
     </div>
 </div>
 
-<form action="action_page.php">
+<div class="form-style-5">
+    <form action="action_page.php">
+    <fieldset>
 
-    <div class="container">
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required> <br>
+        <input type="text" placeholder="Enter Username" name="uname" required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required> <br>
+        <input type="password" placeholder="Enter Password" name="psw" required>
 
         <button type="submit">Login</button>
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label> <br><br>
-    </div>
+        </label>
 
-    <div class="container" style="background-color:#f1f1f1">
         <button type="button" class="cancelbtn">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-</form>
+
+    </fieldset>
+    </form>
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
