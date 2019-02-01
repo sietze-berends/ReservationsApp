@@ -10,13 +10,22 @@ body {
     flex-wrap: wrap;
 }
 
-h1 {
+h1, #title{
     color: midnightblue;
     margin: auto;
     position: relative;
     left: 90px;
     font-family: 'Squada One', cursive;
     font-size: 75px;
+}
+
+h3{
+color: midnightblue;
+    margin: auto;
+    position: relative;
+    left: 90px;
+    font-family: 'Squada One', cursive;
+    font-size: 50px;
 }
 
 .logo{
