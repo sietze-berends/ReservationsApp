@@ -2,12 +2,11 @@ package com.capgemini.molvenohotel.ReserveringsApp.hotel;
 
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
 import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
-import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 import com.capgemini.molvenohotel.ReserveringsApp.payment.Invoice;
 import com.capgemini.molvenohotel.ReserveringsApp.payment.PaymentModule;
 import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
-import org.springframework.stereotype.Component;
+import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
+import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -88,10 +87,8 @@ public class Hotel {
         return result;
     }
 
-    public void addReservation(Reservation reservation) throws Exception{
-        if (reservation.isValid()){
-            reservations.add(reservation);
-        }
+    public void addReservation(Reservation reservation) {
+        this.reservations.add(reservation);
     }
 
     public double makeInvoice(Reservation reservation) {

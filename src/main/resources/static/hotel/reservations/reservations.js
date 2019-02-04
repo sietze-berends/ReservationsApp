@@ -2,7 +2,7 @@ $( document ).ready(function() {
     var reservations;
     $.ajax({
        type:'get',
-       url: '../hotel/reservations',
+       url: '../hotel/reservations/',
        success: function(result) {
            reservations = result;
            fillReservations(reservations);

@@ -23,16 +23,6 @@ public class Reservation {
     private int reservationNumber;
     private int totalGuests;
     private boolean checkedIn;
-    private String startStr;
-    private String endStr;
-
-    public String getStartStr() {
-        return this.startStr;
-    }
-
-    public String getEndStr() {
-        return this.endStr;
-    }
 
     public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests) {
         this.roomList = room;
@@ -46,8 +36,6 @@ public class Reservation {
             this.totalGuests++;
         }
         this.checkedIn = false;
-        this.startStr = this.start.format(DateTimeFormatter.ofPattern("dd-MM-yyyy : hh:mm"));
-        this.endStr = this.end.format(DateTimeFormatter.ofPattern("dd-MM-yyyy : hh:mm"));
     }
 
     public void addRoom(Room room) {
@@ -61,8 +49,7 @@ public class Reservation {
     // checks reservation for: res >= 1 day, has a booker, has a room, and start date is in future
     public boolean isValid() throws Exception {
         long diff = this.start.until(this.end, ChronoUnit.DAYS);
-        long startDateCompare = start.until(LocalDateTime.now(), ChronoUnit.DAYS);
-
+        long startDateCompare = this.start.until(LocalDateTime.now(), ChronoUnit.DAYS);
         if ((diff >= 1) && (this.booker != null) && (this.roomList.size() >= 1) && (startDateCompare <= 0)) {
             return true;
         } else {
