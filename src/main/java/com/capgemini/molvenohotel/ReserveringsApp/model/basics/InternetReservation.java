@@ -1,6 +1,4 @@
-package com.capgemini.molvenohotel.ReserveringsApp.basics;
-
-import com.capgemini.molvenohotel.ReserveringsApp.user.InternetGuest;
+package com.capgemini.molvenohotel.ReserveringsApp.model.basics;
 
 public class InternetReservation {
     private String rooms;

@@ -1,4 +1,4 @@
-package com.capgemini.molvenohotel.ReserveringsApp.user;
+package com.capgemini.molvenohotel.ReserveringsApp.model.user;
 
 /**
  * Superclass that models a basic user. In order of increasing permissions, this could be a:

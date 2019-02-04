@@ -1,11 +1,9 @@
-package com.capgemini.molvenohotel.ReserveringsApp.payment;
+package com.capgemini.molvenohotel.ReserveringsApp.model.payment;
 
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Reservation;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
 
 import java.time.Duration;
-
-import static java.time.temporal.ChronoUnit.DAYS;
 
 public class PaymentModule {
     public PaymentModule() {

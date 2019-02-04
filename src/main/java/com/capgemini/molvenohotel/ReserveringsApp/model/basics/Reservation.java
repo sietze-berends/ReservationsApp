@@ -1,7 +1,8 @@
-package com.capgemini.molvenohotel.ReserveringsApp.basics;
+package com.capgemini.molvenohotel.ReserveringsApp.model.basics;
 
-import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
-import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.exceptions.ReservationException;
+import com.capgemini.molvenohotel.ReserveringsApp.model.user.ExtraGuest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

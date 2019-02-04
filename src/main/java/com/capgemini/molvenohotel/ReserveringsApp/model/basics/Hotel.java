@@ -1,13 +1,12 @@
-package com.capgemini.molvenohotel.ReserveringsApp.hotel;
+package com.capgemini.molvenohotel.ReserveringsApp.model.basics;
 
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
-import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
-import com.capgemini.molvenohotel.ReserveringsApp.payment.Invoice;
-import com.capgemini.molvenohotel.ReserveringsApp.payment.PaymentModule;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Reservation;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
+import com.capgemini.molvenohotel.ReserveringsApp.model.user.ExtraGuest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.payment.Invoice;
+import com.capgemini.molvenohotel.ReserveringsApp.model.payment.PaymentModule;
 import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

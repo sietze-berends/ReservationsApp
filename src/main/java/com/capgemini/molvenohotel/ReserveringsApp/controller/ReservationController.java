@@ -1,13 +1,13 @@
 package com.capgemini.molvenohotel.ReserveringsApp.controller;
 
-import com.capgemini.molvenohotel.ReserveringsApp.basics.InternetReservation;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.InternetReservation;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Reservation;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Hotel;
+import com.capgemini.molvenohotel.ReserveringsApp.initializer.InitializeHotel;
 
-import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
-import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.user.ExtraGuest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;

@@ -1,6 +1,6 @@
-package com.capgemini.molvenohotel.ReserveringsApp.hotel;
+package com.capgemini.molvenohotel.ReserveringsApp.initializer;
 
-import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

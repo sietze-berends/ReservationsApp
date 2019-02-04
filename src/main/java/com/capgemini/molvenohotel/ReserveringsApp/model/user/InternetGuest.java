@@ -1,4 +1,4 @@
-package com.capgemini.molvenohotel.ReserveringsApp.user;
+package com.capgemini.molvenohotel.ReserveringsApp.model.user;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

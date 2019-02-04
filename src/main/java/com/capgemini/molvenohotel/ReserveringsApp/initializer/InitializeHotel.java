@@ -1,6 +1,6 @@
-package com.capgemini.molvenohotel.ReserveringsApp.hotel;
+package com.capgemini.molvenohotel.ReserveringsApp.initializer;
 
-import org.springframework.context.annotation.Configuration;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Hotel;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

@@ -1,8 +1,8 @@
 package com.capgemini.molvenohotel.ReserveringsApp.search;
 
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Hotel;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Reservation;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

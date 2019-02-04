@@ -1,10 +1,10 @@
 package com.capgemini.molvenohotel.ReserveringsApp;
 
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.RoomAttribute;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
-import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Hotel;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Reservation;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.RoomAttribute;
+import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
 
 import org.junit.Before;
 import java.util.ArrayList;

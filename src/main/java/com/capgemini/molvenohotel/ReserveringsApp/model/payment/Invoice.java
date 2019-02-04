@@ -1,7 +1,7 @@
-package com.capgemini.molvenohotel.ReserveringsApp.payment;
+package com.capgemini.molvenohotel.ReserveringsApp.model.payment;
 
-import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
+import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Reservation;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package com.capgemini.molvenohotel.ReserveringsApp.payment;
+package com.capgemini.molvenohotel.ReserveringsApp.model.payment;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

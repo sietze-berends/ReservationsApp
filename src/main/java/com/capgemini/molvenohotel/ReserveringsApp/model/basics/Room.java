@@ -1,4 +1,4 @@
-package com.capgemini.molvenohotel.ReserveringsApp.basics;
+package com.capgemini.molvenohotel.ReserveringsApp.model.basics;
 
 import java.util.List;
 

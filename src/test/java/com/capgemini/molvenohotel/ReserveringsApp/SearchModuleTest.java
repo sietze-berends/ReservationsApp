@@ -1,9 +1,9 @@
 package com.capgemini.molvenohotel.ReserveringsApp;
 
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.RoomAttribute;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.Hotel;
-import com.capgemini.molvenohotel.ReserveringsApp.hotel.InitializeHotel;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Hotel;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.RoomAttribute;
+import com.capgemini.molvenohotel.ReserveringsApp.initializer.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
 
 import org.junit.Assert;
