@@ -16,15 +16,15 @@ public class InitializeReservations {
 
     public InitializeReservations(Hotel hotel) {
         Reservation reservationOne = new Reservation(hotel.getRooms().subList(0, 3),
-                LocalDateTime.of(2019, 02, 5, 14, 00),
-                LocalDateTime.of(2019,02,8,11,00), hotel.getGuests().get(0), hotel.getExtraGuests());
+                LocalDateTime.of(2019, 05, 5, 14, 00),
+                LocalDateTime.of(2019,05,8,11,00), hotel.getGuests().get(0), hotel.getExtraGuests());
         Reservation reservationTwo = new Reservation(hotel.getRooms().subList(3, 6),
-                LocalDateTime.of(2019, 02, 20, 14, 00),
-                LocalDateTime.of(2019,02,24,11,00), hotel.getGuests().get(0), hotel.getExtraGuests());
+                LocalDateTime.of(2019, 06, 20, 14, 00),
+                LocalDateTime.of(2019,06,24,11,00), hotel.getGuests().get(0), hotel.getExtraGuests());
 
         Reservation reservationThree = new Reservation(hotel.getRooms().subList(6, 9),
-                LocalDateTime.of(2019, 02, 2, 14, 00),
-                LocalDateTime.of(2019,02,5,11,00), hotel.getGuests().get(1), hotel.getExtraGuests());
+                LocalDateTime.of(2019, 05, 2, 14, 00),
+                LocalDateTime.of(2019,05,5,11,00), hotel.getGuests().get(1), hotel.getExtraGuests());
 
         reservations.add(reservationOne);
         reservations.add(reservationTwo);

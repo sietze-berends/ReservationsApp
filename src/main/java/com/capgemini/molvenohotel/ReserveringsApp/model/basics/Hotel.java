@@ -1,13 +1,12 @@
 package com.capgemini.molvenohotel.ReserveringsApp.model.basics;
 
-import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Reservation;
-import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
 import com.capgemini.molvenohotel.ReserveringsApp.model.user.ExtraGuest;
 import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
 import com.capgemini.molvenohotel.ReserveringsApp.model.payment.Invoice;
 import com.capgemini.molvenohotel.ReserveringsApp.model.payment.PaymentModule;
 import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +16,36 @@ import java.util.List;
  * Hotel has some methods to perform searches, make bookings, etc
  */
 
-
+@Entity
 public class Hotel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     // some basic details about the rooms.Hotel
     private String name;
     private String telNo;
     private String email;
 
+    @OneToMany
     private List<Room> rooms;
+
+    @OneToMany
     private List<Guest> guests;
+
+    @OneToMany
     private List<ExtraGuest> extraGuests;
+
+    @OneToMany
     private List<Invoice> invoices;
+
+    @OneToMany
     private List<Reservation> reservations;
 
+    @Transient
     private SearchModule searchModule = new SearchModule();
+
+    @Transient
     private PaymentModule paymentModule = new PaymentModule();
 
     public Hotel(String name, String telNo, String email) {
@@ -154,7 +168,7 @@ public class Hotel {
   
     public Room getOneRoom(String roomNr) {
         for (Room room : this.rooms) {
-            if (room.getRoomId().equalsIgnoreCase(roomNr)) {
+            if (room.getRoomNr().equalsIgnoreCase(roomNr)) {
                 return room;
             }
         }

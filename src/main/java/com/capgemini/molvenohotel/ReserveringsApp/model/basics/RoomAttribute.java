@@ -1,12 +1,19 @@
 package com.capgemini.molvenohotel.ReserveringsApp.model.basics;
 
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
  * Class that models an attribute of a room, e.g. "jacuzzi" or "child friendly"
  */
 
+@Entity
 public class RoomAttribute {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
     private String roomAttributeId;
     private String description;
 

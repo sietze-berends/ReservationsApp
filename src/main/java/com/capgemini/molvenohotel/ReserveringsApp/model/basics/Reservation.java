@@ -4,36 +4,39 @@ import com.capgemini.molvenohotel.ReserveringsApp.exceptions.ReservationExceptio
 import com.capgemini.molvenohotel.ReserveringsApp.model.user.ExtraGuest;
 import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Models a reservation with some basic data
  */
 
+@Entity
 public class Reservation {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @OneToMany
     private List<Room> roomList;
     private LocalDateTime start;
     private LocalDateTime end;
+
+    @OneToOne
     private Guest booker;
+
+    @OneToMany
     private List<ExtraGuest> extraGuests;
-    private static AtomicInteger counter = new AtomicInteger(1000);
     private int reservationNumber;
     private int totalGuests;
     private boolean checkedIn;
     private String startStr;
     private String endStr;
-
-    public String getStartStr() {
-        return this.startStr;
-    }
-
-    public String getEndStr() {
-        return this.endStr;
-    }
 
     public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests) {
         this.roomList = room;
@@ -41,7 +44,6 @@ public class Reservation {
         this.end = end;
         this.booker = booker;
         this.extraGuests = extraGuests;
-        this.reservationNumber = counter.getAndIncrement();
         this.totalGuests = 1;
         for (ExtraGuest extraGuest : extraGuests) {
             this.totalGuests++;
@@ -87,7 +89,7 @@ public class Reservation {
         return booker;
     }
 
-    public int getBookerId(int guestId) {
+    public long getBookerId(long guestId) {
         return booker.getGuestId();
     }
 

@@ -3,9 +3,19 @@ package com.capgemini.molvenohotel.ReserveringsApp.model.payment;
 import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Reservation;
 import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.Duration;
 
+@Entity
 public class PaymentModule {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
     public PaymentModule() {
 
     }

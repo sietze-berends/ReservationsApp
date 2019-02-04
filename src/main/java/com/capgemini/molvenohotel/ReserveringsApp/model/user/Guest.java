@@ -1,14 +1,23 @@
 package com.capgemini.molvenohotel.ReserveringsApp.model.user;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Class that models a guest
  */
+@Entity
 public class Guest extends User{
-    private static AtomicInteger counter = new AtomicInteger(1000);
-    private String guestId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long guestId;
+
     private LocalDate dateOfBirth;
     private String email;
     private String password;
@@ -17,18 +26,17 @@ public class Guest extends User{
     public Guest(String firstName, String lastName, LocalDate dateOfBirth, String email, String password, String nationality) {
 
         super(firstName, lastName);
-        this.guestId = Integer.toString(counter.getAndIncrement());
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.password = password;
         this.nationality = nationality;
     }
 
-    public int getGuestId() {
-        return Integer.valueOf(guestId);
+    public long getGuestId() {
+        return guestId;
     }
 
-    public void setGuestId(String guestId) {
+    public void setGuestId(long guestId) {
         this.guestId = guestId;
     }
 

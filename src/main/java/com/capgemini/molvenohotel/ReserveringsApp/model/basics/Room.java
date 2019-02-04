@@ -1,5 +1,7 @@
 package com.capgemini.molvenohotel.ReserveringsApp.model.basics;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,8 +9,14 @@ import java.util.List;
  * Bookable indicates whether it's an actual room or something like a conference room;
  */
 
+@Entity
 public class Room {
-    private String roomId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long roomId;
+
+    private String roomNr;
     private String roomType;
     private double price;
     private int singleBeds;
@@ -18,14 +26,16 @@ public class Room {
     private int capacityAdults;
     private int capacityBaby;
     private boolean clean;
+
+    @OneToMany
     private List<RoomAttribute> roomAttributes;
-    private List<String> imageUrls;
+    private ArrayList<String> imageUrls;
 
 
     public Room(String roomNr, String roomType, double price, int singleBeds, int doubleBeds, int babyBeds,
                 int capacityRoom, int capacityAdults, int capacityBaby, boolean clean,
-                List<RoomAttribute> roomAttributes, List<String> imageUrls) {
-        this.roomId = roomNr;
+                List<RoomAttribute> roomAttributes, ArrayList<String> imageUrls) {
+        this.roomNr = roomNr;
         this.roomType = roomType;
         this.price = price;
         this.singleBeds = singleBeds;
@@ -53,7 +63,7 @@ public class Room {
                 ", capacityBaby=" + capacityBaby +
                 ", clean=" + clean +
                 ", roomAttributes=" + roomAttributes.toString() +
-                ", imageUrls=" + imageUrls +
+          //      ", imageUrls=" + imageUrls +
                 '}';
     }
 
@@ -79,8 +89,8 @@ public class Room {
         return capacityBaby;
     }
 
-    public String getRoomId() {
-        return roomId;
+    public String getRoomNr() {
+        return roomNr;
     }
 
     public int getSingleBeds() {
@@ -103,11 +113,11 @@ public class Room {
         return imageUrls;
     }
 
-    public void setRoomId(String roomId) {
-        this.roomId = roomId;
+    public void setRoomId(String roomNr) {
+        this.roomNr = roomNr;
     }
 
-    public void setImageUrls(List<String> imageUrls) {
+    public void setImageUrls(ArrayList<String> imageUrls) {
         this.imageUrls = imageUrls;
     }
 
