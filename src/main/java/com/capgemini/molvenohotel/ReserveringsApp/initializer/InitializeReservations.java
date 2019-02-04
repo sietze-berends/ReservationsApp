@@ -18,12 +18,10 @@ public class InitializeReservations {
         Reservation reservationOne = new Reservation(hotel.getRooms().subList(0, 3),
                 LocalDateTime.of(2019, 05, 5, 14, 00),
                 LocalDateTime.of(2019,05,8,11,00), hotel.getGuests().get(0), hotel.getExtraGuests());
+
         Reservation reservationTwo = new Reservation(hotel.getRooms().subList(3, 6),
                 LocalDateTime.of(2019, 06, 20, 14, 00),
                 LocalDateTime.of(2019,06,24,11,00), hotel.getGuests().get(0), hotel.getExtraGuests());
-                LocalDateTime.of(2019, 05, 20, 14, 00),
-                LocalDateTime.of(2019,05,24,11,00), hotel.getGuests().get(0), hotel.getExtraGuests());
->>>>>>> 212a4ea8cdbb84716493315c68e1f3ff664e1178:src/main/java/com/capgemini/molvenohotel/ReserveringsApp/hotel/InitializeReservations.java
 
         Reservation reservationThree = new Reservation(hotel.getRooms().subList(6, 9),
                 LocalDateTime.of(2019, 05, 2, 14, 00),

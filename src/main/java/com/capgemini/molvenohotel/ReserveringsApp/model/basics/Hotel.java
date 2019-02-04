@@ -1,4 +1,3 @@
-<<<<<<< HEAD:src/main/java/com/capgemini/molvenohotel/ReserveringsApp/model/basics/Hotel.java
 package com.capgemini.molvenohotel.ReserveringsApp.model.basics;
 
 import com.capgemini.molvenohotel.ReserveringsApp.model.user.ExtraGuest;
@@ -6,17 +5,7 @@ import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
 import com.capgemini.molvenohotel.ReserveringsApp.model.payment.Invoice;
 import com.capgemini.molvenohotel.ReserveringsApp.model.payment.PaymentModule;
 import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
-=======
-package com.capgemini.molvenohotel.ReserveringsApp.hotel;
 
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Reservation;
-import com.capgemini.molvenohotel.ReserveringsApp.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.payment.Invoice;
-import com.capgemini.molvenohotel.ReserveringsApp.payment.PaymentModule;
-import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
-import com.capgemini.molvenohotel.ReserveringsApp.user.ExtraGuest;
-import com.capgemini.molvenohotel.ReserveringsApp.user.Guest;
->>>>>>> 212a4ea8cdbb84716493315c68e1f3ff664e1178:src/main/java/com/capgemini/molvenohotel/ReserveringsApp/hotel/Hotel.java
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
