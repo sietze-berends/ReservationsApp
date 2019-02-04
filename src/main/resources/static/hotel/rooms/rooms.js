@@ -33,7 +33,7 @@ $( document ).ready(function() {
 
         $.each($rooms, function (index, value) {
             content += "<tr>"
-            content += '<td>' + value.roomId + '</td>';
+            content += '<td>' + value.roomNr + '</td>';
             content += '<td>' + value.roomType + '</td>';
             content += '<td>' + value.price + '</td>';
             content += "<td>" + value.singleBeds + "</td>"

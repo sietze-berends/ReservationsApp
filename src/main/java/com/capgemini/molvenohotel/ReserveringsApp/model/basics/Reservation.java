@@ -38,7 +38,7 @@ public class Reservation {
     private String startStr;
     private String endStr;
 
-    public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests) {
+    public Reservation(int reservationNumber, List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests) {
         this.roomList = room;
         this.start = start;
         this.end = end;
@@ -48,6 +48,7 @@ public class Reservation {
         for (ExtraGuest extraGuest : extraGuests) {
             this.totalGuests++;
         }
+        this.reservationNumber = reservationNumber;
         this.checkedIn = false;
     }
 

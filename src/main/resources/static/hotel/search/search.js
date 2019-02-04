@@ -43,7 +43,7 @@
 
             $.each($results, function (index, value) {
                 content += "<tr id = row " + index + ">"
-                content += '<td id = roomId>' + value.roomId + '</td>';
+                content += '<td id = roomId>' + value.roomNr + '</td>';
                 content += "<td>" + value.singleBeds + "</td>"
                 content += "<td>" + value.doubleBeds + "</td>"
                 content += "<td>" + value.babyBeds + "</td>"

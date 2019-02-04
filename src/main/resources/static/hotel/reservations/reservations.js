@@ -36,7 +36,7 @@ $( document ).ready(function() {
             var $rooms = value.roomList
 
             $.each($rooms, function (index, value) {
-                content += + value.roomId
+                content += + value.roomNr
                 if (!(index == $rooms.length -1)) {
                     content += "/"
                 }

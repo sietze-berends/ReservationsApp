@@ -52,7 +52,7 @@ public class ReservationController {
 
         List<ExtraGuest> extraGuests = new ArrayList<>();
 
-        hotel.addReservation(new Reservation(roomsList, start, end, booker, extraGuests));
+        hotel.addReservation(new Reservation(4, roomsList, start, end, booker, extraGuests));
         return hotel.getReservations();
     }
 
