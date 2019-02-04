@@ -35,8 +35,11 @@ public class Reservation {
     private int reservationNumber;
     private int totalGuests;
     private boolean checkedIn;
+<<<<<<< HEAD:src/main/java/com/capgemini/molvenohotel/ReserveringsApp/model/basics/Reservation.java
     private String startStr;
     private String endStr;
+=======
+>>>>>>> 212a4ea8cdbb84716493315c68e1f3ff664e1178:src/main/java/com/capgemini/molvenohotel/ReserveringsApp/basics/Reservation.java
 
     public Reservation(List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests) {
         this.roomList = room;
