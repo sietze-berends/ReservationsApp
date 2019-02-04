@@ -22,14 +22,20 @@ public class Guest extends User{
     private String email;
     private String password;
     private String nationality;
+    private int guestIdWeb;
 
-    public Guest(String firstName, String lastName, LocalDate dateOfBirth, String email, String password, String nationality) {
+    public int getGuestIdWeb() {
+        return guestIdWeb;
+    }
+
+    public Guest(int guestIdWeb, String firstName, String lastName, LocalDate dateOfBirth, String email, String password, String nationality) {
 
         super(firstName, lastName);
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.password = password;
         this.nationality = nationality;
+        this.guestIdWeb = guestIdWeb;
     }
 
     public long getGuestId() {

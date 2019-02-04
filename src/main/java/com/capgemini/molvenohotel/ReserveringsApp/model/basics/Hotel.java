@@ -129,6 +129,7 @@ public class Hotel {
         return reservations;
     }
 
+
     public void addRoom(Room room){
         rooms.add(room);
     }

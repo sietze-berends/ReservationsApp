@@ -20,8 +20,8 @@ public class InternetGuest extends Guest {
     private String password;
     private String nationality;
 
-    public InternetGuest(String firstName, String lastName, String dateOfBirth, String email, String password, String nationality) {
-        super(firstName, lastName, LocalDate.parse(dateOfBirth,DateTimeFormatter.ofPattern("yyyy-MM-dd")), email, password, nationality);
+    public InternetGuest(int guestIdWeb, String firstName, String lastName, String dateOfBirth, String email, String password, String nationality) {
+        super(guestIdWeb, firstName, lastName, LocalDate.parse(dateOfBirth,DateTimeFormatter.ofPattern("yyyy-MM-dd")), email, password, nationality);
 
     }
 

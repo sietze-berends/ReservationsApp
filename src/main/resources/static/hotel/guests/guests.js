@@ -27,10 +27,12 @@
              content += '<th> Nationality </th>'
              content += '</thead>'
              content += '<tbody id = "tablebody">'
+             console.log($guests)
 
              $.each($guests, function (index, value) {
                  content += "<tr>"
-                 content += "<td>" + value.guestId + "</td>"
+                 console.log(value)
+                 content += "<td>" + value.guestIdWeb + "</td>"
                  content += '<td>' + value.firstName + " " + value.lastName + '</td>';
                  content += "<td>" + value.dateOfBirth + "</td>"
                  content += "<td>" + value.email + "</td>"

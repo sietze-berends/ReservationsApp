@@ -48,7 +48,7 @@ public class ReservationTest {
         List<Room> roomReservering1 = new ArrayList<>();
 //        roomReservering1.add(room1);
 
-        Guest booker = new Guest("John", "the Dude", LocalDate.now(), "test@test.com", "supersecret123","Dutch");
+        Guest booker = new Guest(1, "John", "the Dude", LocalDate.now(), "test@test.com", "supersecret123","Dutch");
 
         ExtraGuest extraGuest1 = new ExtraGuest("Avinash", "Soerdjbali", "Hindustani");
         ExtraGuest extraGuest2 = new ExtraGuest("Leon", "Zwakenberg", "Dutch");

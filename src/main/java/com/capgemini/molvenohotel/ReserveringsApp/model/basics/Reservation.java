@@ -38,6 +38,14 @@ public class Reservation {
     private String startStr;
     private String endStr;
 
+    public String getStartStr() {
+        return startStr;
+    }
+
+    public String getEndStr() {
+        return endStr;
+    }
+
     public Reservation(int reservationNumber, List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests) {
         this.roomList = room;
         this.start = start;
@@ -50,6 +58,8 @@ public class Reservation {
         }
         this.reservationNumber = reservationNumber;
         this.checkedIn = false;
+        this.startStr = this.start.format(DateTimeFormatter.ofPattern("dd-MM-yyyy : hh:mm"));
+        this.endStr = this.end.format(DateTimeFormatter.ofPattern("dd-MM-yyyy : hh:mm"));
     }
 
     public void addRoom(Room room) {
