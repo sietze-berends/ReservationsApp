@@ -37,14 +37,15 @@ $( document ).ready(function() {
            data : submitData,
            contentType : 'application/JSON',
            success : function(response) {
-               console.log("success")
-               window.location.href('/hotel/reservations/reservations.html')
+               window.location.assign('/hotel/reservations/reservations.html')
+               console.log('success')
+
            }, error : function(response) {
-               console.log("nosuccess")
-               window.location.href('/hotel/reservations/reservations.html')
+               window.location.assign('/hotel/reservations/reservations.html')
+               console.log('error')
                }
        })
-       console.log("end")
-       window.location.href('/hotel/reservations/reservations.html')
+        window.location.assign('/hotel/reservations/reservations.html')
+        console.log('end')
     })
 });

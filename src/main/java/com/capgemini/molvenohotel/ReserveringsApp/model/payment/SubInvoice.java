@@ -24,5 +24,4 @@ public class SubInvoice {
         this.name = name;
         this.subInvoiceLines = new ArrayList<>();
     }
-
 }

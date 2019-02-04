@@ -26,10 +26,11 @@ public class SubInvoiceLine{
     private BigDecimal price;
     private LocalDateTime timeOfPurchase;
 
-    public SubInvoiceLine(String name, int amount, BigDecimal price) {
+    public SubInvoiceLine(String name, int amount, BigDecimal price, LocalDateTime timeOfPurchase) {
         this.name = name;
         this.amount = amount;
         this.price = price;
+        this.timeOfPurchase = timeOfPurchase;
     }
 
 }

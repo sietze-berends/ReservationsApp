@@ -5,6 +5,8 @@ import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
 import com.capgemini.molvenohotel.ReserveringsApp.model.payment.Invoice;
 import com.capgemini.molvenohotel.ReserveringsApp.model.payment.PaymentModule;
 import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
+import com.capgemini.molvenohotel.ReserveringsApp.payment.PaymentModule;
+import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -101,10 +103,8 @@ public class Hotel {
         return result;
     }
 
-    public void addReservation(Reservation reservation) throws Exception{
-        if (reservation.isValid()){
-            reservations.add(reservation);
-        }
+    public void addReservation(Reservation reservation) {
+        this.reservations.add(reservation);
     }
 
     public double makeInvoice(Reservation reservation) {
