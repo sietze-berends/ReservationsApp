@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/hotel")
+@RequestMapping(value = "/hotel2")
 public class ReservationController {
 
     private InitializeHotel initializeHotel = new InitializeHotel();

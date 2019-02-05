@@ -19,7 +19,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(value = "/hotel")
+@RequestMapping(value = "/hotel2")
 public class SearchController {
     private InitializeHotel initializeHotel = new InitializeHotel();
     private Hotel hotel = initializeHotel.makeMolveno();

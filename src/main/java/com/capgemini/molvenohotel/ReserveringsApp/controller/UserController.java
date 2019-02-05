@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/hotel")
+@RequestMapping(value = "/hotel2")
 public class UserController {
 
     private InitializeHotel initializeHotel = new InitializeHotel();

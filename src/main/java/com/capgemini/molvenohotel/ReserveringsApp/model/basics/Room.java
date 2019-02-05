@@ -14,7 +14,7 @@ public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long roomId;
+    private long id;
 
     private String roomNr;
     private String roomType;
@@ -31,7 +31,9 @@ public class Room {
     private List<RoomAttribute> roomAttributes;
     private ArrayList<String> imageUrls;
 
+    public Room () {
 
+    }
     public Room(String roomNr, String roomType, double price, int singleBeds, int doubleBeds, int babyBeds,
                 int capacityRoom, int capacityAdults, int capacityBaby, boolean clean,
                 List<RoomAttribute> roomAttributes, ArrayList<String> imageUrls) {
@@ -52,7 +54,7 @@ public class Room {
     @Override
     public String toString() {
         return "Room{" +
-                "roomId='" + roomId + '\'' +
+                "id='" + id + '\'' +
                 ", roomType='" + roomType +
                 ", price=" + price +
                 ", singleBeds=" + singleBeds +
@@ -113,7 +115,7 @@ public class Room {
         return imageUrls;
     }
 
-    public void setRoomId(String roomNr) {
+    public void setId(String roomNr) {
         this.roomNr = roomNr;
     }
 

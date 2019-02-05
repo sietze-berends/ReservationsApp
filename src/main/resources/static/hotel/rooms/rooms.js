@@ -2,7 +2,7 @@ $( document ).ready(function() {
     var rooms;
     $.ajax({
        type:'get',
-       url: '../hotel/rooms',
+       url: 'hotel/rooms',
        success: function(result) {
            rooms = result;
            fillRooms(rooms);
