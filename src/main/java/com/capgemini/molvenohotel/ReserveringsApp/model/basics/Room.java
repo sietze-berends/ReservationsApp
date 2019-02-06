@@ -27,7 +27,7 @@ public class Room {
     private int capacityBaby;
     private boolean clean;
 
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     private List<RoomAttribute> roomAttributes;
     private ArrayList<String> imageUrls;
 

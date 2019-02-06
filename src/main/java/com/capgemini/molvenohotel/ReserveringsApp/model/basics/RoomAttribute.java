@@ -17,6 +17,9 @@ public class RoomAttribute {
     private String roomAttributeId;
     private String description;
 
+    public RoomAttribute() {
+
+    }
     public RoomAttribute(String attributeId, String description) {
         this.roomAttributeId = attributeId;
         this.description = description;

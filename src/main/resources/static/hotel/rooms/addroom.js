@@ -11,19 +11,21 @@ $('#add-room').submit(function(event) {
        }
    })
    console.log(newRoom)
-//   event.preventDefault()
-//   console.log(JSON.stringify(newRoom))
-//   $.post( {
-//       url : '/hotel/allrooms/add',
-//       data : JSON.stringify(newRoom),
-//       contentType: "application/json",
-//       succes : function(result) {
-//           if(result.validated) {
-//               console.log("Room added")
-//               }
-//           else {
-//               console.log("No room added")
-//           }
-//       }
-//   })
+   console.log(JSON.stringify(newRoom))
+   $.post( {
+       url : '/hotel/allrooms/add',
+       data : JSON.stringify(newRoom),
+       contentType: "application/json",
+       succes : function(result) {
+           if(result.validated) {
+               console.log("Room added")
+               window.location.assign('hotel/rooms/rooms.html')
+               }
+           else {
+               console.log("No room added")
+               window.location.assign('hotel/rooms/rooms.html')
+           }
+       }
+   })
+   window.location.href = '/hotel/rooms/addroom.html';
 })
