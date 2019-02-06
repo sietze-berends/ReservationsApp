@@ -9,7 +9,7 @@ $('#add-room').submit(function(event) {
        } else {
        newRoom[field.name] = field.value
        }
-   })
+   });
    $.post( {
        url : '/hotel/allrooms/add',
        data : JSON.stringify(newRoom),
@@ -24,6 +24,6 @@ $('#add-room').submit(function(event) {
                window.location.assign('hotel/rooms/rooms.html')
            }
        }
-   })
+   });
    window.location.href = '/hotel/rooms/addroom.html';
-})
+});

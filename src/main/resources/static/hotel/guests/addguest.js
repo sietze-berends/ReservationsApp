@@ -1,5 +1,5 @@
     // submit the form
-    $('#add-guest-form').submit(function(event) {
+    $('#confirmNewGuest').submit(function(event) {
        var newGuestForm = $(this).serializeArray();
        var newGuest = {}
 
@@ -9,13 +9,13 @@
                } else {
                    newGuest[field.name] = field.value
                }
-       })
-       newGuest = JSON.stringify(newGuest)
-       console.log(newGuest)
+       });
+       // newGuest = JSON.stringify(newGuest)
+       // console.log(newGuest)
        $.post( {
            url : '/hotel/allguests/add',
            data : JSON.stringify(newGuest),
-           contentType : "application/JSON",
+           contentType : "application/json",
            success : function(result) {
                if(result.validated) {
                    console.log("Guest added")
