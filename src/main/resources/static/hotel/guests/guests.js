@@ -1,22 +1,22 @@
-    $( document ).ready(function() {
-        var guests;
-        $.ajax({
-           type:'get',
-           url: '../hotel/guests',
-           success: function(result) {
-               guests = result;
-               fillGuests(guests);
-               }
-           })
-        });
+$( document ).ready(function() {
+    console.log("ready")
+    var guests;
+    $.ajax({
+        type:'get',
+        url: 'hotel/allguests',
+        success: function(result) {
+            guests = result;
+            fillGuests(guests);
+        }
+    });
 
+    // open form
+    $(document).on('click', '#addGuest', function(){
+        window.location.href = '/hotel/guests/addguest.html';
+    });
+});
 
-        // open form
-        $(document).on('click', '#addGuest', function(){
-            window.location.href = '/hotel/guests/addguest.html';
-        });
-
-     function fillGuests($guests) {
+function fillGuests($guests) {
              var content = '<input id="addGuest" type="button" value="Add guest"/>'
              content += '<table id = "allGuests" class="table table-bordered table-striped table-hover table-condensed">'
              content += '<thead id = tableHeader>'
