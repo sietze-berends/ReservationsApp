@@ -13,8 +13,8 @@
        newGuest = JSON.stringify(newGuest)
        console.log(newGuest)
        $.post( {
-           url : '/hotel/guests/add',
-           data : newGuest,
+           url : '/hotel/allguests/add',
+           data : JSON.stringify(newGuest),
            contentType : "application/JSON",
            success : function(result) {
                if(result.validated) {
@@ -24,5 +24,6 @@
                    console.log("No guest added")
                }
            }
-       })
-    })
+       });
+        window.location = "/hotel/guest/addguest.html";
+    });

@@ -26,6 +26,9 @@ public class Guest extends User{
         return guestIdWeb;
     }
 
+    public Guest() {
+    }
+
     public Guest(int guestIdWeb, String firstName, String lastName, LocalDate dateOfBirth, String email, String password, String nationality) {
 
         super(firstName, lastName);
