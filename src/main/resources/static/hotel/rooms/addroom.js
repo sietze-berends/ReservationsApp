@@ -14,7 +14,7 @@ $('#add-room').submit(function(event) {
        url : '/hotel/allrooms/add',
        data : JSON.stringify(newRoom),
        contentType: "application/json",
-       succes : function(result) {
+       success : function(result) {
            if(result.validated) {
                console.log("Room added")
                window.location.assign('hotel/rooms/rooms.html')

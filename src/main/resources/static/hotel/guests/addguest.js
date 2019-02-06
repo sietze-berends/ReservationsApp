@@ -10,8 +10,8 @@
                    newGuest[field.name] = field.value
                }
        });
-       // newGuest = JSON.stringify(newGuest)
-       // console.log(newGuest)
+       newGuest = JSON.stringify(newGuest)
+       console.log(newGuest)
        $.post( {
            url : '/hotel/allguests/add',
            data : JSON.stringify(newGuest),
