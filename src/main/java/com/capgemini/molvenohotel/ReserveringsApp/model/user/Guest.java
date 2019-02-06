@@ -36,6 +36,10 @@ public class Guest extends User{
         this.guestIdWeb = guestIdWeb;
     }
 
+    public Guest(String firstName, String lastName) {
+        super(firstName, lastName);
+    }
+
     public long getGuestId() {
         return guestId;
     }

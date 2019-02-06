@@ -19,6 +19,7 @@ public class GuestEndPoint {
     @GetMapping("/allguests")
     public Iterable<Guest> getAllGuests() {
         Iterable<Guest> guests = guestService.showAllGuests();
+        System.out.println("test in /allguest end point");
         return guests;
     }
 
