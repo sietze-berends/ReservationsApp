@@ -5,10 +5,8 @@ import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.util.Optional;
 
 @RestController
@@ -18,15 +16,24 @@ public class RoomEndPoint {
     @Autowired
     private RoomService roomService;
 
-    @GetMapping("/rooms")
-    public Iterable<Room    > getAllRooms() {
+    @GetMapping("/allrooms")
+    public Iterable<Room> getAllRooms() {
         Iterable<Room> rooms = roomService.showAllRooms();
         return rooms;
     }
 
-    @GetMapping("/rooms/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @PostMapping("/allrooms/add")
+    public Iterable<Room> addRoom(@RequestBody Room room) {
+        roomService.addRoom(room);
+        return roomService.showAllRooms();
+    }
+
+    @GetMapping("/allrooms/{id}")
     public Room getRoomById(@PathVariable Long id) {
         Optional<Room> room = roomService.showRoomById(id);
         return room.get();
     }
+
+
 }

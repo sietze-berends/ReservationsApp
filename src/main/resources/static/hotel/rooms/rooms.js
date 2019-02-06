@@ -1,8 +1,9 @@
 $( document ).ready(function() {
+    console.log("ready")
     var rooms;
     $.ajax({
        type:'get',
-       url: 'hotel/rooms',
+       url: 'hotel/allrooms',
        success: function(result) {
            rooms = result;
            fillRooms(rooms);

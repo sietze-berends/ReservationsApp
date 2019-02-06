@@ -65,7 +65,7 @@ public class Room {
                 ", capacityBaby=" + capacityBaby +
                 ", clean=" + clean +
                 ", roomAttributes=" + roomAttributes.toString() +
-          //      ", imageUrls=" + imageUrls +
+                ", imageUrls=" + imageUrls +
                 '}';
     }
 

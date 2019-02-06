@@ -22,4 +22,9 @@ public class RoomService {
     public Optional<Room> showRoomById(Long id) {
         return roomRepository.findById(id);
     }
+
+    public Room addRoom(Room room) {
+        System.out.println(room);
+        return roomRepository.save(room);
+    }
 }
