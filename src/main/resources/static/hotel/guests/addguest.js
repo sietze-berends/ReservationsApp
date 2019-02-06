@@ -1,5 +1,5 @@
     // submit the form
-    $('#confirmNewGuest').submit(function(event) {
+    $("#confirmNewGuest").click(function() {
        var newGuestForm = $(this).serializeArray();
        var newGuest = {}
 
@@ -10,8 +10,11 @@
                    newGuest[field.name] = field.value
                }
        });
-       newGuest = JSON.stringify(newGuest)
-       console.log(newGuest)
+
+       newGuest = JSON.stringify(newGuest);
+       console.log(newGuest);
+       $( "#add-guest" ).submit();
+
        $.post( {
            url : '/hotel/allguests/add',
            data : JSON.stringify(newGuest),
@@ -25,5 +28,5 @@
                }
            }
        });
-        window.location = "/hotel/guest/addguest.html";
+
     });
