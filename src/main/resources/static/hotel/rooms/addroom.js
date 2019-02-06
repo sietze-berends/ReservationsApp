@@ -10,8 +10,6 @@ $('#add-room').submit(function(event) {
        newRoom[field.name] = field.value
        }
    })
-   console.log(newRoom)
-   console.log(JSON.stringify(newRoom))
    $.post( {
        url : '/hotel/allrooms/add',
        data : JSON.stringify(newRoom),
