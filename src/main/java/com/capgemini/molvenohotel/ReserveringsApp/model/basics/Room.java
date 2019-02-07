@@ -35,7 +35,8 @@ public class Room {
 
     }
     public Room(String roomNr, String roomType, double price, int singleBeds, int doubleBeds, int babyBeds,
-                int capacityRoom, int capacityAdults, int capacityBaby, boolean clean, boolean childFriendly, boolean disabledFriendly, ArrayList<String> imageUrls) {
+                int capacityRoom, int capacityAdults, int capacityBaby, boolean clean, boolean childFriendly,
+                boolean disabledFriendly, ArrayList<String> imageUrls) {
         this.roomNr = roomNr;
         this.roomType = roomType;
         this.price = price;
@@ -154,4 +155,23 @@ public class Room {
         this.clean = clean;
     }
 
+    public boolean isChildFriendly() {
+        return childFriendly;
+    }
+
+    public boolean isDisabledFriendly() {
+        return disabledFriendly;
+    }
+
+    public void setRoomNr(String roomNr) {
+        this.roomNr = roomNr;
+    }
+
+    public void setChildFriendly(boolean childFriendly) {
+        this.childFriendly = childFriendly;
+    }
+
+    public void setDisabledFriendly(boolean disabledFriendly) {
+        this.disabledFriendly = disabledFriendly;
+    }
 }
