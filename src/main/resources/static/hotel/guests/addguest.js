@@ -14,7 +14,6 @@ $("#add-guest").submit(function () {
     });
 
     console.log(newGuest);
-    alert("jojo");
     $.ajax({
         type: "POST",
         url : "hotel/allguests/add",
@@ -30,13 +29,5 @@ $("#add-guest").submit(function () {
             }
         }
     });
-
-    // $.ajax({
-    //     type: "POST",
-    //     url: url,
-    //     data: data,
-    //     success: success,
-    //     dataType: dataType
-    // });
-
+    window.location.href = '/hotel/guests/guests.html';
 });
