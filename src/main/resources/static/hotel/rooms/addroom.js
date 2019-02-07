@@ -3,13 +3,9 @@ $('#add-room').submit(function(event) {
    var newRoomForm = $(this).serializeArray();
    var newRoom = {}
    $(newRoomForm).each(function(i, field) {
-       if(field.name == "roomAttributes") {
-           newRoomAttribute = JSON.parse(field.value)
-           newRoom[field.name] = newRoomAttribute
-       } else {
        newRoom[field.name] = field.value
-       }
    })
+   console.log(JSON.stringify*(newRoom))
    $.post( {
        url : '/hotel/allrooms/add',
        data : JSON.stringify(newRoom),
