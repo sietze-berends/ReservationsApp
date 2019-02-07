@@ -27,10 +27,9 @@
     </div>
 </div>
     <div class="form-style-5">
-        <form id="add-guest-form">
-            <fieldset>
-           <div class="col-1"></div>
-                <div class="col-lg">
+        <form id="add-guest">
+           <!--<div class="col-1"></div>-->
+                <!--<div class="col-lg">-->
                   <label for="firstName">First name*</label>
                     <input id="firstName" name="firstName" type="text" class="required">
 					<br>
@@ -241,9 +240,10 @@
                     </select>
 					<br>
                     <input id="confirmNewGuest" type="submit" value = "Submit"/>
-                </div>
-            <div class="col=1"></div>
-            </fieldset>
+                    <!--<input id="submit" type="button" name="submit" value="submit">-->
+                    <a href="/hotel/guests/guests.html" class="button">Go back</a>
+                <!--</div>-->
+            <!--<div class="col=1"></div>-->
 		</form>
 		</div>
 
@@ -256,5 +256,6 @@
         crossorigin="anonymous"></script>
 <script src="script.js"></script>
 <script src="/hotel/guests/addguest.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </body>
 </html>

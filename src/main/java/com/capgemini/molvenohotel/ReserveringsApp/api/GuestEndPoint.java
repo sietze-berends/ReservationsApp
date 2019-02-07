@@ -25,9 +25,8 @@ public class GuestEndPoint {
 
     @Consumes(MediaType.APPLICATION_JSON)
     @PostMapping("/allguests/add")
-    public Iterable<Guest> addGuest(@RequestBody Guest guest) {
-        guestService.addGuest(guest);
-        return guestService.showAllGuests();
+    public Guest addGuest(@RequestBody Guest guest) {
+        return guestService.addGuest(guest);
     }
 
     @GetMapping("/allguests/{id}")
