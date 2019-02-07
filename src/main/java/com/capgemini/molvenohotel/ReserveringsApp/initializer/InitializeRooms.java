@@ -16,11 +16,6 @@ public class InitializeRooms {
     public Room room2;
 
     public InitializeRooms() {
-        List<RoomAttribute> disabledFriendly = new ArrayList<>();
-        List<RoomAttribute> notDisabledFriendly = new ArrayList<>();
-
-        disabledFriendly.add(allRoomAttributes.get(0));
-        notDisabledFriendly.add(allRoomAttributes.get(1));
 
         rooms.add(new Room("101", "Single", 999, 1, 0, 0, 1,1, 0, true, false, true, null));
 //        rooms.add(new Room("102", "Single", 999, 1, 0, 0, 1,1, 0, true, notDisabledFriendly, null));
