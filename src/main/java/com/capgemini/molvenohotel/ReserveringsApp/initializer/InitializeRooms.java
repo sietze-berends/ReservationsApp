@@ -11,7 +11,6 @@ import java.util.List;
  */
 public class InitializeRooms {
     private List<Room> rooms = new ArrayList<>();
-    private List<RoomAttribute> allRoomAttributes = new ArrayList<>();
     public Room room1;
     public Room room2;
 

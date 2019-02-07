@@ -15,9 +15,9 @@ public class AttributesChecker {
 
     }
 
-    public List<Room> filter(List<RoomAttribute> desiredAttributes, List<Room> allRooms) {
-        List<Room> filteredRooms = new ArrayList<>();
-        // check alle kamers in availableRooms
+//    public List<Room> filter(List<RoomAttribute> desiredAttributes, List<Room> allRooms) {
+//        List<Room> filteredRooms = new ArrayList<>();
+//        // check alle kamers in availableRooms
 //        for (Room room : allRooms) {
 //            // check alle gewenste attributen
 //            for (RoomAttribute desiredRoomAttribute : desiredAttributes) {
@@ -28,7 +28,6 @@ public class AttributesChecker {
 //                }
 //            }
 //        }
-        return filteredRooms;
+//        return filteredRooms;
     }
-}
 
