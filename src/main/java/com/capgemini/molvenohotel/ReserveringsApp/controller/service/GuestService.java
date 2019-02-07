@@ -25,7 +25,6 @@ public class GuestService {
     }
 
     public Guest addGuest(Guest guest) {
-        System.out.println("Added guest: " + guest);
         return guestRepository.save(guest);
     }
 
