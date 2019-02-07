@@ -25,5 +25,5 @@ $('#add-room').submit(function(event) {
            }
        }
    })
-   window.location.href = '/hotel/rooms/addroom.html';
+   window.location.href = '/hotel/rooms/rooms.html';
 })

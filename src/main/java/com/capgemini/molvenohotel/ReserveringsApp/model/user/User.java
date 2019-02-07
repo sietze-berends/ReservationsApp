@@ -1,9 +1,12 @@
 package com.capgemini.molvenohotel.ReserveringsApp.model.user;
 
+import javax.persistence.MappedSuperclass;
+
 /**
  * Superclass that models a basic user. In order of increasing permissions, this could be a:
  * Guest, receptionist, chief receptionist, operational manager or owner
  */
+@MappedSuperclass
 public abstract class User {
 
     private String firstName;
