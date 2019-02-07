@@ -1,28 +1,30 @@
-    // submit the form
-    $('#add-guest-form').submit(function(event) {
-       var newGuestForm = $(this).serializeArray();
-       var newGuest = {}
+// submit the form
+$("#add-guest").submit(function () {
+    var newGuestForm = $(this).serializeArray();
+    var newGuest = {}
+    console.log(newGuestForm);
+    event.preventDefault();
+    $(newGuestForm).each(function(i, field) {
+        if (field.name == "dateOfBirth") {
+                newGuest[field.name] = field.value.toString()
+            } else {
+                newGuest[field.name] = field.value
+            }
+    });
 
-       $(newGuestForm).each(function(i, field) {
-           if (field.name == "dateOfBirth") {
-                   newGuest[field.name] = field.value.toString()
-               } else {
-                   newGuest[field.name] = field.value
-               }
-       })
-       newGuest = JSON.stringify(newGuest)
-       console.log(newGuest)
-       $.post( {
-           url : '/hotel/guests/add',
-           data : newGuest,
-           contentType : "application/JSON",
-           success : function(result) {
-               if(result.validated) {
-                   console.log("Guest added")
-                   }
-               else {
-                   console.log("No guest added")
-               }
-           }
-       })
-    })
+    console.log(newGuest);
+    $.post( {
+        url : "/hotel/allguests/add",
+        data : JSON.stringify(newGuest),
+        contentType : "application/json",
+        success : function(result) {
+            if(result.validated) {
+                console.log("Guest added")
+                }
+            else {
+                console.log("No guest added")
+            }
+        }
+    });
+
+});

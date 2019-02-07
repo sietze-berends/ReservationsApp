@@ -21,8 +21,10 @@ public class Guest extends User{
     private String password;
     private String nationality;
 
-    public Guest(String firstName, String lastName, LocalDate dateOfBirth, String email, String password, String nationality) {
+    public Guest() {
+    }
 
+    public Guest(String firstName, String lastName, LocalDate dateOfBirth, String email, String password, String nationality) {
         super(firstName, lastName);
         this.dateOfBirth = dateOfBirth;
         this.email = email;
