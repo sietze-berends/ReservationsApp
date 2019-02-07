@@ -24,9 +24,8 @@ public class RoomEndPoint {
 
     @Consumes(MediaType.APPLICATION_JSON)
     @PostMapping("/allrooms/add")
-    public Iterable<Room> addRoom(@RequestBody Room room) {
+    public void addRoom(@RequestBody Room room) {
         roomService.addRoom(room);
-        return roomService.showAllRooms();
     }
 
     @GetMapping("/allrooms/{id}")

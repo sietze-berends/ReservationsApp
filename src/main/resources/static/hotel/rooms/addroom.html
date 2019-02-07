@@ -51,13 +51,12 @@
         <input type="radio" name="clean" value="false"> Needs Cleaning<br>
         <br>
         Disabled friendly: <br>
-        <!--This could be an option to just have disable friendly y/n, not having it be objects-->
-        <!--<input type="radio" name="disabled" value="true"> Yes <br>-->
-        <!--<input type="radio" name="disabled" value="false"> No <br>-->
-        <select name="roomAttributes">
-            <option value='[{"attributeId" : "disabled", "description" : "test"}]'>Disabled-friendly</option>
-            <option value='[{"attributeId" : "disabledddd", "description" : "testttt"}]'>Disabled-friendly</option>
-        </select><br>
+        <input type="radio" name="disabled" value="true"> Yes <br>
+        <input type="radio" name="disabled" value="false" checked> No <br>
+        <br>
+        Child friendly: <br>
+        <input type="radio" name="childfriendly" value="true"> Yes <br>
+        <input type="radio" name="childfriendly" value="false" checked> No <br>
         <br>
         Room picture URL:<br>
         <input type="text" name="roomPictureURL"><br>

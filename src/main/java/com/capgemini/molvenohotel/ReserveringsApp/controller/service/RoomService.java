@@ -24,7 +24,6 @@ public class RoomService {
     }
 
     public Room addRoom(Room room) {
-        System.out.println(room);
         return roomRepository.save(room);
     }
 }
