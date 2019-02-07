@@ -16,11 +16,6 @@ public class InitializeRooms {
     public Room room2;
 
     public InitializeRooms() {
-        allRoomAttributes.add(new RoomAttribute("Disabled", "A room which is disabled friendly"));
-        allRoomAttributes.add(new RoomAttribute("NoAttributes", "This room has no attributes"));
-        allRoomAttributes.add(new RoomAttribute("Child friendly", "A room which is child friendly"));
-        allRoomAttributes.add(new RoomAttribute("Balcony", "There's a balcony in this room"));
-
         List<RoomAttribute> disabledFriendly = new ArrayList<>();
         List<RoomAttribute> notDisabledFriendly = new ArrayList<>();
 

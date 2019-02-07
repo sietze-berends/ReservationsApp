@@ -31,8 +31,6 @@ public class ReservationTest {
 
     @Before
     public void before(){
-        List<RoomAttribute> room1Attributes = new ArrayList<>();
-        List<RoomAttribute> room2Attributes = new ArrayList<>();
 
 //        Room room1 = new Room("101", 20.0, 100.0, 0, 1, 2, true, room1Attributes, null);
 //        Room room2 = new Room("102", 40.0, 200.0, 2, 1, 4, true, room2Attributes, null);
