@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class Guest extends User{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long guestId;
 
     private LocalDate dateOfBirth;
