@@ -1,7 +1,6 @@
 package com.capgemini.molvenohotel.ReserveringsApp.initializer;
 
 import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.model.basics.RoomAttribute;
 
 import java.util.ArrayList;
 import java.util.List;

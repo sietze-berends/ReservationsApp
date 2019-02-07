@@ -1,20 +1,17 @@
 package com.capgemini.molvenohotel.ReserveringsApp;
 
+import com.capgemini.molvenohotel.ReserveringsApp.initializer.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Hotel;
 import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Room;
-import com.capgemini.molvenohotel.ReserveringsApp.model.basics.RoomAttribute;
-import com.capgemini.molvenohotel.ReserveringsApp.initializer.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class SearchModuleTest {
 
