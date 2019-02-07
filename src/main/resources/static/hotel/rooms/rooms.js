@@ -29,6 +29,7 @@ $( document ).ready(function() {
         content += '<th> Capacity </th>'
         content += '<th> Clean </th>'
         content += '<th> Disabled-friendly</th>'
+        content += '<th> Child-friendly</th>'
         content += '</thead>'
         content += '<tbody id = tableBody>'
 
@@ -47,9 +48,14 @@ $( document ).ready(function() {
                 } else {
                 content += '<td data-sort="2"> <span class="glyphicon glyphicon-remove"></span> </td>'
                 }
-            if (value.roomAttributes[0].roomAttributeId == "Disabled") {
+            if (value.disabledFriendly) {
                 content += '<td data-sort="1"> <span class="glyphicon glyphicon-ok"></span> </td>'
             } else {
+                content += '<td data-sort="2"> <span class="glyphicon glyphicon-remove"></span> </td>'
+                }
+            if (value.childFriendly) {
+                content += '<td data-sort="1"> <span class="glyphicon glyphicon-ok"></span> </td>'
+                } else {
                 content += '<td data-sort="2"> <span class="glyphicon glyphicon-remove"></span> </td>'
                 }
             content += "</tr>";
