@@ -18,16 +18,16 @@ public class AttributesChecker {
     public List<Room> filter(List<RoomAttribute> desiredAttributes, List<Room> allRooms) {
         List<Room> filteredRooms = new ArrayList<>();
         // check alle kamers in availableRooms
-        for (Room room : allRooms) {
-            // check alle gewenste attributen
-            for (RoomAttribute desiredRoomAttribute : desiredAttributes) {
-                boolean contains = room.getRoomAttributes().contains(desiredRoomAttribute);
-                if (room.getRoomAttributes().contains(desiredRoomAttribute)) {
-                    System.out.println("Match! Room with capacity " + room.getCapacityRoom() + " has " + room.getRoomAttributes());
-                    filteredRooms.add(room);
-                }
-            }
-        }
+//        for (Room room : allRooms) {
+//            // check alle gewenste attributen
+//            for (RoomAttribute desiredRoomAttribute : desiredAttributes) {
+//                boolean contains = room.getRoomAttributes().contains(desiredRoomAttribute);
+//                if (room.getRoomAttributes().contains(desiredRoomAttribute)) {
+//                    System.out.println("Match! Room with capacity " + room.getCapacityRoom() + " has " + room.getRoomAttributes());
+//                    filteredRooms.add(room);
+//                }
+//            }
+//        }
         return filteredRooms;
     }
 }

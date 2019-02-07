@@ -15,15 +15,15 @@ public class InitializeReservations {
     private List<Reservation> reservations = new ArrayList<>();
 
     public InitializeReservations(Hotel hotel) {
-        Reservation reservationOne = new Reservation(1, hotel.getRooms().subList(0, 3),
+        Reservation reservationOne = new Reservation(1, hotel.getRooms(),
                 LocalDateTime.of(2019, 05, 5, 14, 00),
                 LocalDateTime.of(2019,05,8,11,00), hotel.getGuests().get(0), hotel.getExtraGuests());
 
-        Reservation reservationTwo = new Reservation(2, hotel.getRooms().subList(3, 6),
+        Reservation reservationTwo = new Reservation(2, hotel.getRooms(),
                 LocalDateTime.of(2019, 06, 20, 14, 00),
                 LocalDateTime.of(2019,06,24,11,00), hotel.getGuests().get(0), hotel.getExtraGuests());
 
-        Reservation reservationThree = new Reservation(3, hotel.getRooms().subList(6, 9),
+        Reservation reservationThree = new Reservation(3, hotel.getRooms(),
                 LocalDateTime.of(2019, 05, 2, 14, 00),
                 LocalDateTime.of(2019,05,5,11,00), hotel.getGuests().get(1), hotel.getExtraGuests());
 

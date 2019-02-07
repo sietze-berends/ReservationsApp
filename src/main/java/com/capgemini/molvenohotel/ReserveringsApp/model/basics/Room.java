@@ -26,17 +26,16 @@ public class Room {
     private int capacityAdults;
     private int capacityBaby;
     private boolean clean;
+    private boolean childFriendly;
+    private boolean disabledFriendly;
 
-    @OneToMany(cascade = {CascadeType.ALL})
-    private List<RoomAttribute> roomAttributes;
     private ArrayList<String> imageUrls;
 
     public Room () {
 
     }
     public Room(String roomNr, String roomType, double price, int singleBeds, int doubleBeds, int babyBeds,
-                int capacityRoom, int capacityAdults, int capacityBaby, boolean clean,
-                List<RoomAttribute> roomAttributes, ArrayList<String> imageUrls) {
+                int capacityRoom, int capacityAdults, int capacityBaby, boolean clean, boolean childFriendly, boolean disabledFriendly, ArrayList<String> imageUrls) {
         this.roomNr = roomNr;
         this.roomType = roomType;
         this.price = price;
@@ -47,7 +46,8 @@ public class Room {
         this.capacityAdults = capacityAdults;
         this.capacityBaby = capacityBaby;
         this.clean = clean;
-        this.roomAttributes = roomAttributes;
+        this.disabledFriendly = disabledFriendly;
+        this.childFriendly = childFriendly;
         this.imageUrls = imageUrls;
     }
 
@@ -64,13 +64,8 @@ public class Room {
                 ", capacityAdults=" + capacityAdults +
                 ", capacityBaby=" + capacityBaby +
                 ", clean=" + clean +
-                ", roomAttributes=" + roomAttributes.toString() +
                 ", imageUrls=" + imageUrls +
                 '}';
-    }
-
-    public List<RoomAttribute> getRoomAttributes() {
-        return roomAttributes;
     }
 
     public String getRoomType() { return roomType; }
@@ -159,7 +154,4 @@ public class Room {
         this.clean = clean;
     }
 
-    public void setRoomAttributes(List<RoomAttribute> roomAttributes) {
-        this.roomAttributes = roomAttributes;
-    }
 }
