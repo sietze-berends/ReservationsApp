@@ -24,6 +24,6 @@ $('#add-room').submit(function(event) {
                window.location.assign('hotel/rooms/rooms.html')
            }
        }
-   });
-   window.location.href = '/hotel/rooms/addroom.html';
-});
+   })
+   window.location.href = '/hotel/rooms/rooms.html';
+})
