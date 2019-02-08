@@ -30,7 +30,7 @@
 
     function showResults($results) {
 
-       var content = '<table id = "searchResults" class="table table-bordered table-striped table-hover table-condensed">'
+       var content = '<table id = "searchResults" name = "Suggestion" class="table table-bordered table-striped table-hover table-condensed">'
             content += '<thead id = "thead">'
             content += '<tr> <th> Room number </th>'
             content += '<th> Single beds </th>'

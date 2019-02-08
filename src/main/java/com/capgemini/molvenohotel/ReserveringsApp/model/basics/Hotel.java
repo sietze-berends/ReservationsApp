@@ -4,11 +4,8 @@ import com.capgemini.molvenohotel.ReserveringsApp.model.basics.user.ExtraGuest;
 import com.capgemini.molvenohotel.ReserveringsApp.model.basics.user.Guest;
 import com.capgemini.molvenohotel.ReserveringsApp.model.payment.Invoice;
 import com.capgemini.molvenohotel.ReserveringsApp.model.payment.PaymentModule;
-import com.capgemini.molvenohotel.ReserveringsApp.search.SearchModule;
-
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,9 +41,6 @@ public class Hotel {
     private List<Reservation> reservations;
 
     @Transient
-    private SearchModule searchModule = new SearchModule();
-
-    @Transient
     private PaymentModule paymentModule = new PaymentModule();
 
     public Hotel(String name, String telNo, String email) {
@@ -77,29 +71,6 @@ public class Hotel {
 
     public String getTelNo() {
         return telNo;
-    }
-
-    public String search(LocalDateTime start, LocalDateTime end, int amountOfGuests, int amountOfRooms) {
-        List<Room> suggestion = searchModule.searchSuggestion(start, end, amountOfGuests, amountOfRooms, this);
-        //TODO: remove hardcoded strings and dutch language
-        if (suggestion == null) {
-
-            return "Call the receptionist on " + telNo;
-        }
-        String result = "";
-        result += "eerst suggestie \n";
-
-        for (Room room : suggestion) {
-            result += room.toString() + "\n";
-        }
-
-        result += "Dan de rest:\n";
-
-        List<Room> availableRooms = searchModule.searchAll(start, end, this);
-        for (Room room : availableRooms) {
-            result += room.toString() + "\n";
-        }
-        return result;
     }
 
     public void addReservation(Reservation reservation) {
