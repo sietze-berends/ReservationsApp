@@ -41,7 +41,23 @@ function fillGuestDetail($guest) {
 
     content += '</tbody> </table> <div class = "row"></div>';
     content += '<input id="updateGuest" type="button" value="Update guest"/>';
-    content += '<input id="deleteGuest" type="button" value="Delete guest"/>';
+    content += '<input id="deleteGuest" type="button" value="Delete guest" onClick = deleteGuest(guest.guestId) />';
     $("#guestDetailDiv").html(content);
+
 }
+
+function deleteGuest(guestId) {
+
+    console.log("reaches delete");
+    console.log(guestId);
+    var id = guestId;
+        jQuery.ajax({
+            url: 'hotel/allguests/' + id + '/delete',
+            type: 'DELETE',
+            success: function() {
+                alert("deleted!!!!")
+            }
+        });
+        // build redirect link
+};
 
