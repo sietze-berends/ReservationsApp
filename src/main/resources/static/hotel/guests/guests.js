@@ -32,7 +32,7 @@ function fillGuests($guests) {
              $.each($guests, function (index, value) {
                  content += "<tr id = 'guestRow'>";
                  console.log(value);
-                 content += "<td id='guestId' onClick = showSingleGuest()>" + value.guestId + "</td>";
+                 content += "<td style='cursor: pointer;' id='guestId' onClick = showSingleGuest()>" + value.guestId + "</td>";
                  content += '<td>' + value.firstName + " " + value.lastName + '</td>';
                  content += "<td>" + value.dateOfBirth + "</td>";
                  content += "<td>" + value.email + "</td>";
