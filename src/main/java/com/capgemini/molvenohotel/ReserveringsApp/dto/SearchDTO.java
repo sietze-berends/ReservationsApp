@@ -1,12 +1,12 @@
-package com.capgemini.molvenohotel.ReserveringsApp.search;
+package com.capgemini.molvenohotel.ReserveringsApp.dto;
 
-public class SearchDetails {
+public class SearchDTO {
     private String start;
     private String end;
     private int amountOfPersons;
     private int amountOfRooms;
 
-    public SearchDetails(String start, String end, int amountOfPersons, int amountOfRooms) {
+    public SearchDTO(String start, String end, int amountOfPersons, int amountOfRooms) {
         this.start = start;
         this.end = end;
         this.amountOfPersons = amountOfPersons;
@@ -27,5 +27,15 @@ public class SearchDetails {
 
     public int getAmountOfRooms() {
         return amountOfRooms;
+    }
+
+    @Override
+    public String toString() {
+        return "SearchDTO{" +
+                "start='" + start + '\'' +
+                ", end='" + end + '\'' +
+                ", amountOfPersons=" + amountOfPersons +
+                ", amountOfRooms=" + amountOfRooms +
+                '}';
     }
 }

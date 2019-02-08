@@ -24,7 +24,8 @@
                showResults(result)
            }
        })
-       event.preventDefault();
+       event.preventDefault()
+       return false;
     })
 
     function showResults($results) {
@@ -38,6 +39,7 @@
             content += '<th> Capacity </th>'
             content += '<th> Clean </th>'
             content += '<th> Disabled-friendly</th>'
+            content += '<th> Child-friendly</th>'
             content += '</thead>'
             content += '<tbody id = tableBody>'
 
@@ -54,9 +56,14 @@
                     } else {
                     content += '<td data-sort="2"> <span class="glyphicon glyphicon-remove"></span> </td>'
                     }
-                if (value.roomAttributes[0].roomAttributeId == "Disabled") {
+                if (value.disabledFriendly) {
                     content += '<td data-sort="1"> <span class="glyphicon glyphicon-ok"></span> </td>'
                 } else {
+                    content += '<td data-sort="2"> <span class="glyphicon glyphicon-remove"></span> </td>'
+                    }
+                if (value.childFriendly) {
+                    content += '<td data-sort="1"> <span class="glyphicon glyphicon-ok"></span> </td>'
+                    } else {
                     content += '<td data-sort="2"> <span class="glyphicon glyphicon-remove"></span> </td>'
                     }
                 content += "</tr>";
@@ -76,10 +83,9 @@
             $.each(rooms, function (index, value) {
                 dataRooms[index] = value.textContent
             })
-            console.log($submitData)
             dataStart = JSON.parse($submitData).start
             dataEnd = JSON.parse($submitData).end
             dataGuests = JSON.parse($submitData).amountOfPersons
             dataRooms = dataRooms.toString()
-            window.location.href = '/hotel/reservations/addreservation.html?rooms=' + encodeURIComponent(dataRooms) + '&start=' + encodeURIComponent(dataStart) + '&end=' + encodeURIComponent(dataEnd) + '&guests=' + encodeURIComponent(dataGuests)
+            window.location.href = '/hotel/reservations/addreservationfromsearch.html?rooms=' + encodeURIComponent(dataRooms) + '&start=' + encodeURIComponent(dataStart) + '&end=' + encodeURIComponent(dataEnd) + '&guests=' + encodeURIComponent(dataGuests)
         });

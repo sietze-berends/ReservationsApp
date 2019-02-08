@@ -129,5 +129,22 @@ public class Reservation {
     public void setReservationNumber(int reservationNumber) {
         this.reservationNumber = reservationNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "id=" + id +
+                ", roomList=" + roomList +
+                ", start=" + start +
+                ", end=" + end +
+                ", booker=" + booker +
+                ", extraGuests=" + extraGuests +
+                ", reservationNumber=" + reservationNumber +
+                ", totalGuests=" + totalGuests +
+                ", checkedIn=" + checkedIn +
+                ", startStr='" + startStr + '\'' +
+                ", endStr='" + endStr + '\'' +
+                '}';
+    }
 }
 

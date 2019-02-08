@@ -47,11 +47,7 @@ public class ReservationService {
         List<ExtraGuest> extraGuests = new ArrayList<>();
 
         // initialize the head booker
-        for (String string : reservationDTO.getBooker().split("-")) {
-            System.out.println(string);
-        }
         Guest booker = guestRepository.findByEmail(reservationDTO.getBooker().split("-")[1].replace(" ", ""));
-        System.out.println(booker);
 
         // initialize all the rooms
         List<Room> rooms = new ArrayList<>();
