@@ -1,4 +1,4 @@
-package com.capgemini.molvenohotel.ReserveringsApp.model.user;
+package com.capgemini.molvenohotel.ReserveringsApp.model.basics.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

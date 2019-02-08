@@ -1,13 +1,13 @@
-package com.capgemini.molvenohotel.ReserveringsApp.model.basics;
+package com.capgemini.molvenohotel.ReserveringsApp.dto;
 
-public class InternetReservation {
+public class ReservationDTO {
     private String rooms;
     private String from;
     private String to;
     private String guests;
     private String booker;
 
-    public InternetReservation(String rooms, String from, String to, String guests, String booker) {
+    public ReservationDTO(String rooms, String from, String to, String guests, String booker) {
         this.rooms = rooms;
         this.from = from;
         this.to = to;

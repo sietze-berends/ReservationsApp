@@ -2,8 +2,8 @@ package com.capgemini.molvenohotel.ReserveringsApp.controller;
 
 import com.capgemini.molvenohotel.ReserveringsApp.initializer.InitializeHotel;
 import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Hotel;
-import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
-import com.capgemini.molvenohotel.ReserveringsApp.model.user.InternetGuest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.user.InternetGuest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

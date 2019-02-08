@@ -1,9 +1,5 @@
-package com.capgemini.molvenohotel.ReserveringsApp.model.user;
+package com.capgemini.molvenohotel.ReserveringsApp.model.basics.user;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 

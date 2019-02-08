@@ -7,7 +7,7 @@ $( document ).ready(function() {
        success: function(result) {
            $guests = result;
          $.each($guests, function (index, value) {
-            $("#bookers").append('<option value = "' + value.firstName + ' ' + value.lastName + '">')
+            $("#bookers").append('<option value = "' + value.firstName + ' ' + value.lastName + ' - ' + value.email + '">')
          })
        }
     })

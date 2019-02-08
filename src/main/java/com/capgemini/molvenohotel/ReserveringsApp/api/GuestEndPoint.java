@@ -1,7 +1,7 @@
 package com.capgemini.molvenohotel.ReserveringsApp.api;
 
 import com.capgemini.molvenohotel.ReserveringsApp.controller.service.GuestService;
-import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.user.Guest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

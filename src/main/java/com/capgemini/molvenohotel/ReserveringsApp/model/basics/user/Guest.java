@@ -1,4 +1,4 @@
-package com.capgemini.molvenohotel.ReserveringsApp.model.user;
+package com.capgemini.molvenohotel.ReserveringsApp.model.basics.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +15,8 @@ public class Guest extends User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long guestId;
-
+    private String firstName;
+    private String lastName;
     private LocalDate dateOfBirth;
     private String email;
     private String password;
@@ -30,6 +31,8 @@ public class Guest extends User{
         this.email = email;
         this.password = password;
         this.nationality = nationality;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Guest(String firstName, String lastName) {
@@ -78,5 +81,22 @@ public class Guest extends User{
 
     public String getBookerString() {
         return getFirstName() + " " + getLastName();
+    }
+    @Override
+    public String getFirstName() {
+        return firstName;
+    }
+
+    @Override
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastNamel) {
+        this.lastName = lastNamel;
     }
 }

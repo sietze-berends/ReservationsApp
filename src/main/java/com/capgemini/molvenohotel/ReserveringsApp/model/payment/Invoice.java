@@ -1,6 +1,6 @@
 package com.capgemini.molvenohotel.ReserveringsApp.model.payment;
 
-import com.capgemini.molvenohotel.ReserveringsApp.model.user.Guest;
+import com.capgemini.molvenohotel.ReserveringsApp.model.basics.user.Guest;
 import com.capgemini.molvenohotel.ReserveringsApp.model.basics.Reservation;
 
 import javax.persistence.*;
