@@ -1,5 +1,5 @@
 // submit the form
-$('#add-room').submit(function(event) {
+$('#add-room').submit(function() {
    var newRoomForm = $(this).serializeArray();
    var newRoom = {};
    $(newRoomForm).each(function(i, field) {

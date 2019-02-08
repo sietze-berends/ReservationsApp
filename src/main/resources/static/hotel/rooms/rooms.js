@@ -1,6 +1,7 @@
+// als het document geladen is
 $( document ).ready(function() {
-    console.log("ready")
     var rooms;
+    //
     $.ajax({
        type:'get',
        url: 'hotel/allrooms',
@@ -61,6 +62,6 @@ $( document ).ready(function() {
             content += "</tr>";
         })
         content += '</tbody> </table> <div class = "row"></div>'
-        $("#allRoomsDiv").html(content)
+        $('#allRoomsDiv').html(content)
         $('#allRooms').DataTable();
      }
