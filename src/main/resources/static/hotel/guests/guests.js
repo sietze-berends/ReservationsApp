@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    console.log("ready")
+    console.log("ready");
     var guests;
     $.ajax({
         type:'get',
@@ -43,4 +43,15 @@ function fillGuests($guests) {
              content += '</tbody> </table> <div class = "row"></div>';
              $("#allGuestsDiv").html(content);
              $('#allGuests').DataTable();
-          }
+}
+
+$('.dataTable .sorting_1').on('click', 'tbody td', function() {
+
+    //get textContent of the TD
+    console.log('TD cell textContent : ', this.textContent)
+
+    //get the value of the TD using the API
+    console.log('value by API : ', table.cell({ row: this.parentNode.rowIndex, column : this.cellIndex }).data());
+
+    console.log('API row values : ', table.row(this).data());
+})

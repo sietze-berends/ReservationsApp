@@ -1,6 +1,6 @@
--- insert into guest values (1, 'Sietze', 'b', '1992-12-11', 'sietze.b@gmail.com', 'dutch', 'cantsayman')
---                         ,(2, 'pim', 'g', '1995-12-01', 'pim.g@gmail.com', 'dutch', 'toencrypt')
---                         ,(3, 'avi', 'nash', '1990-03-02', 'avi.nash@gmail.com', 'dutch', 'youwishyouknew');
+insert into guest values (1, 'Sietze', 'b', '1992-12-11', 'sietze.b@gmail.com', 'dutch', 'cantsayman')
+                        ,(2, 'pim', 'g', '1995-12-01', 'pim.g@gmail.com', 'dutch', 'toencrypt')
+                        ,(3, 'avi', 'nash', '1990-03-02', 'avi.nash@gmail.com', 'dutch', 'youwishyouknew');
 
 
 insert into room (`id`, `room_nr`, `room_type`, `price`, `single_beds`, `double_beds`, `baby_beds`, `capacity_room`
