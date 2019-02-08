@@ -1,19 +1,26 @@
-$( document ).ready(function() {
-    console.log("ready");
-    var guestDetail;
+$(document).ready(function () {
+
+    var url_string = window.location.href
+    var url = new URL(url_string);
+    var guestId = url.searchParams.get("guestId")
+
+    $('#guestId').val(guestId)
+
+    console.log(guestId);
+
     $.ajax({
-        type:'get',
-        url: 'hotel/allguests/{id}',
-        success: function(result) {
-            guestDetail = result;
-            fillGuest(guestDetail);
+        type: 'get',
+        url: 'hotel/allguests/' + guestId,
+        success: function (result) {
+            guest = result;
+            console.log(guest);
+            fillGuestDetail(guest);
         }
     });
 });
 
-function fillGuest($guestDetail) {
-    var content = '<input id="addGuest" type="button" value="Add guest"/>'
-    content += '<table id = "allGuests" class="table table-bordered table-striped table-hover table-condensed">';
+function fillGuestDetail($guest) {
+    var content = '<table id = "guestDetail" class="table table-bordered table-striped table-hover table-condensed">';
     content += '<thead id = tableHeader>';
     content += '<tr> <th> Guest number </th>';
     content += '<th> Name </th>';
@@ -22,20 +29,19 @@ function fillGuest($guestDetail) {
     content += '<th> Nationality </th>';
     content += '</thead>';
     content += '<tbody id = "tablebody">';
-    console.log($guests);
+    console.log($guest);
 
-    $.each($guests, function (index, value) {
-        content += "<tr>";
-        console.log(value);
-        content += "<td>" + value.guestId + "</td>";
-        content += '<td>' + value.firstName + " " + value.lastName + '</td>';
-        content += "<td>" + value.dateOfBirth + "</td>";
-        content += "<td>" + value.email + "</td>";
-        content += "<td>" + value.nationality + "</td>";
+    content += "<tr>";
+    content += "<td>" + guest.guestId + "</td>";
+    content += '<td>' + guest.firstName + " " + guest.lastName + '</td>';
+    content += "<td>" + guest.dateOfBirth + "</td>";
+    content += "<td>" + guest.email + "</td>";
+    content += "<td>" + guest.nationality + "</td>";
+    content += "</tr>";
 
-        content += "</tr>";
-    });
     content += '</tbody> </table> <div class = "row"></div>';
-    $("#allGuestsDiv").html(content);
-    $('#allGuests').DataTable();
+    content += '<input id="updateGuest" type="button" value="Update guest"/>';
+    content += '<input id="deleteGuest" type="button" value="Delete guest"/>';
+    $("#guestDetailDiv").html(content);
 }
+

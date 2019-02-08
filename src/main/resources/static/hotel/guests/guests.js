@@ -56,12 +56,10 @@ function showSingleGuest(){
     }
 
     function getval(cel) {
+        var guestId = cel.innerHTML;
         // window.location.href = '/hotel/allguests/' + (cel.innerHTML);
-        window.location.href = '/hotel/guests/guestdetail.html';
-        function loadInfo(){
-            alert('test')
+        window.location.href = '/hotel/guests/guestdetail.html?guestId=' + encodeURIComponent(guestId);
 
-        }
     }
 
 
