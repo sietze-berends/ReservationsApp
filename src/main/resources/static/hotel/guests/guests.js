@@ -30,9 +30,9 @@ function fillGuests($guests) {
              console.log($guests);
 
              $.each($guests, function (index, value) {
-                 content += "<tr>";
+                 content += "<tr id = 'guestRow'>";
                  console.log(value);
-                 content += "<td>" + value.guestId + "</td>";
+                 content += "<td id='guestId' onClick = showSingleGuest()>" + value.guestId + "</td>";
                  content += '<td>' + value.firstName + " " + value.lastName + '</td>';
                  content += "<td>" + value.dateOfBirth + "</td>";
                  content += "<td>" + value.email + "</td>";
@@ -45,13 +45,27 @@ function fillGuests($guests) {
              $('#allGuests').DataTable();
 }
 
-$('.dataTable .sorting_1').on('click', 'tbody td', function() {
+function showSingleGuest(){
+    var tbl = document.getElementById("allGuests");
 
-    //get textContent of the TD
-    console.log('TD cell textContent : ', this.textContent)
+    if (tbl != null) {
+        for (var i = 0; i < tbl.rows.length; i++) {
+            for (var j = 0; j < tbl.rows[i].cells.length; j++)
+                tbl.rows[i].cells[j].onclick = function () { getval(this); };
+        }
+    }
 
-    //get the value of the TD using the API
-    console.log('value by API : ', table.cell({ row: this.parentNode.rowIndex, column : this.cellIndex }).data());
+    function getval(cel) {
+        // window.location.href = '/hotel/allguests/' + (cel.innerHTML);
+        window.location.href = '/hotel/guests/guestdetail.html';
+        function loadInfo(){
+            alert('test')
 
-    console.log('API row values : ', table.row(this).data());
-})
+        }
+    }
+
+
+
+}
+
+
