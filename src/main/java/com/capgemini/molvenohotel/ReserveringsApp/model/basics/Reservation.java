@@ -45,7 +45,7 @@ public class Reservation {
     public String getEndStr() {
         return endStr;
     }
-
+    public Reservation(){}
     public Reservation(int reservationNumber, List<Room> room, LocalDateTime start, LocalDateTime end, Guest booker, List<ExtraGuest> extraGuests) {
         this.roomList = room;
         this.start = start;
