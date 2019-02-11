@@ -45,6 +45,7 @@ function fillGuests($guests) {
              $('#allGuests').DataTable();
 }
 
+// function that gets id of the field that is clicked on, and passes it to guestdetail.js
 function showSingleGuest(){
     var tbl = document.getElementById("allGuests");
 
@@ -57,12 +58,8 @@ function showSingleGuest(){
 
     function getval(cel) {
         var guestId = cel.innerHTML;
-        // window.location.href = '/hotel/allguests/' + (cel.innerHTML);
         window.location.href = '/hotel/guests/guestdetail.html?guestId=' + encodeURIComponent(guestId);
-
     }
-
-
 
 }
 
