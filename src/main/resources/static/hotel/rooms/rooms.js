@@ -39,7 +39,7 @@ $( document ).ready(function() {
             console.log(value);
             content += "<td style='cursor: pointer;' id='roomId' onClick = showSingleRoom()>" + value.roomNr + "</td>";
             content += '<td>' + value.roomType + '</td>';
-            content += '<td>' + value.price + '</td>';
+            content += '<td> &yen ' + value.price + '</td>';
             content += "<td>" + value.singleBeds + "</td>"
             content += "<td>" + value.doubleBeds + "</td>"
             content += "<td>" + value.babyBeds + "</td>"
