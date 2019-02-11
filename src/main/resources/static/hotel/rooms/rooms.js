@@ -36,7 +36,8 @@ $( document ).ready(function() {
 
         $.each($rooms, function (index, value) {
             content += "<tr>"
-            content += '<td>' + value.roomNr + '</td>';
+            console.log(value);
+            content += "<td style='cursor: pointer;' id='roomId' onClick = showSingleRoom()>" + value.roomNr + "</td>";
             content += '<td>' + value.roomType + '</td>';
             content += '<td>' + value.price + '</td>';
             content += "<td>" + value.singleBeds + "</td>"
@@ -64,4 +65,26 @@ $( document ).ready(function() {
         content += '</tbody> </table> <div class = "row"></div>'
         $('#allRoomsDiv').html(content)
         $('#allRooms').DataTable();
+     }
+
+     function showSingleRoom(){
+     console.log('showSingleRoom')
+         var tbl = document.getElementById("allRooms");
+
+         if (tbl != null) {
+             for (var i = 0; i < tbl.rows.length; i++) {
+                 for (var j = 0; j < tbl.rows[i].cells.length; j++)
+                     tbl.rows[i].cells[j].onclick = function () { getval(this); };
+             }
+         }
+
+         function getval(cel) {
+             var roomNr = cel.innerHTML;
+             // window.location.href = '/hotel/allguests/' + (cel.innerHTML);
+             window.location.href = '/hotel/rooms/roomdetail.html?roomNr=' + encodeURIComponent(roomNr);
+
+         }
+
+
+
      }
