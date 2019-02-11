@@ -29,8 +29,6 @@ $('#searchform').submit(function (event) {
 
 function showResults($results) {
 
-
-
     var content = '<table id = "searchResults" name = "Suggestion" class="table table-bordered table-striped table-hover table-condensed compact wrap">'
     content += '<thead id = "thead">'
     content += '<tr> <th> Room number </th>'
