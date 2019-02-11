@@ -39,7 +39,7 @@ function fillRoomDetail($room) {
     content += '<tr>';
     content += '<td>' + room.roomNr + '</td>';
     content += '<td>' + room.roomType + '</td>';
-    content += '<td>' + room.price + '</td>';
+    content += '<td>&yen ' + room.price + '</td>';
     content += "<td>" + room.singleBeds + "</td>"
     content += "<td>" + room.doubleBeds + "</td>"
     content += "<td>" + room.babyBeds + "</td>"
