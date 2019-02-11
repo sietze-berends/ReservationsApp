@@ -8,6 +8,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <base href="../../" />
     <link rel="stylesheet" href="../../public/stylesheet.css">
+    <link rel="stylesheet" href="../../public/forms.css">
     <link href="https://fonts.googleapis.com/css?family=Squada+One" rel="stylesheet">
 </head>
 <body>
@@ -25,36 +26,38 @@
         <img class = "logo" src="/public/images/molveno_logo.jpg" alt="Logo Molveno Lake Resort">
     </div>
 </div>
-<div class="container">
-    <form id="add-reservation-from-search-form">
-        <div class="col-1"></div>
-        <div class="col-lg">
-            <label for="rooms">Rooms*</label>
-            <input id="rooms" name="rooms" type="text" class="required">
-            <br>
 
-            <label for="from">From</label>
-            <input id="from" name="from" type="date" class="required">
-            <br>
+    <div class="form-style-5">
+        <form id="add-reservation-from-search-form">
+            <div class="col-1"></div>
+            <div class="col-lg">
+                <label for="rooms">Rooms*</label>
+                <input id="rooms" name="rooms" type="text" class="required">
+                <br>
 
-            <label for="to">To</label>
-            <input id="to" name="to" type="date" class="required">
-            <br>
+                <label for="from">From</label>
+                <input id="from" name="from" type="date" class="required">
+                <br>
 
-            <label for="guests">Guests</label>
-            <input id="guests" name="guests" type="number" class="required">
-            <br>
+                <label for="to">To</label>
+                <input id="to" name="to" type="date" class="required">
+                <br>
 
-            <label for="booker">Booker*</label>
-            <input list = "bookers" id="booker" name="booker" type="text" class="required">
-            <datalist id = "bookers"></datalist>
-            <br>
+                <label for="guests">Guests</label>
+                <input id="guests" name="guests" type="number" class="required">
+                <br>
 
-            <input id="confirmNewGuest" type="submit" value = "Submit"/>
-        </div>
-        <div class="col=1"></div>
-    </form>
-</div>
+                <label for="booker">Booker*</label>
+                <input list="bookers" id="booker" name="booker" type="text" class="required">
+                <datalist id="bookers"></datalist>
+                <br>
+
+                <input id="confirmNewGuest" type="submit" value="Submit"/>
+            </div>
+            <div class="col=1"></div>
+        </form>
+    </div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
