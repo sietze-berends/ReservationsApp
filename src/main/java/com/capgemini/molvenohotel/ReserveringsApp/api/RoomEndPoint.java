@@ -28,10 +28,17 @@ public class RoomEndPoint {
         roomService.addRoom(room);
     }
 
-    @GetMapping("/allrooms/{id}")
-    public Room getRoomById(@PathVariable Long id) {
-        Optional<Room> room = roomService.showRoomById(id);
-        return room.get();
+    @GetMapping("/allrooms/{roomNr}")
+    public Room getRoomById(@PathVariable String roomNr) {
+        System.out.println("Ik ben in de allroom/id");
+        Room room = roomService.showRoomByRoomNr(roomNr);
+        return room;
+    }
+
+    @DeleteMapping("/allrooms/{roomNr}/delete")
+    public void deleteRoom(@PathVariable String roomNr){
+        roomService.removeRoomByRoomNr(roomNr);
+        System.out.println("Deleted room endPoint id: " + roomNr);
     }
 
 

@@ -55,7 +55,8 @@ function deleteGuest(guestId) {
             url: 'hotel/allguests/' + id + '/delete',
             type: 'DELETE',
             success: function() {
-                alert("deleted!!!!")
+                console.log("deleted!!!!")
+                window.location.href = '/hotel/guests/guests.html'
             }
         });
         // build redirect link

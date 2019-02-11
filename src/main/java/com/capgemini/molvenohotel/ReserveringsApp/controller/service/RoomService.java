@@ -19,11 +19,16 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
-    public Optional<Room> showRoomById(Long id) {
-        return roomRepository.findById(id);
+    public Room showRoomByRoomNr(String roomNr) {
+        return roomRepository.findByRoomNr(roomNr);
     }
 
     public Room addRoom(Room room) {
         return roomRepository.save(room);
+    }
+
+    public void removeRoomByRoomNr(String roomNr) {
+        System.out.println("Deleted room id: " + roomNr);
+        roomRepository.deleteByRoomNr(roomNr);
     }
 }
