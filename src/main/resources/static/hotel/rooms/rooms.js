@@ -31,12 +31,11 @@ $( document ).ready(function() {
         content += '<th> Clean </th>'
         content += '<th> Disabled-friendly</th>'
         content += '<th> Child-friendly</th>'
+        content += '<th> Available today </th>'
         content += '</thead>'
         content += '<tbody id = tableBody>'
-
         $.each($rooms, function (index, value) {
             content += "<tr>"
-            console.log(value);
             content += "<td style='cursor: pointer;' id='roomId' onClick = showSingleRoom()>" + value.roomNr + "</td>";
             content += '<td>' + value.roomType + '</td>';
             content += '<td> &yen ' + value.price + '</td>';
@@ -44,6 +43,7 @@ $( document ).ready(function() {
             content += "<td>" + value.doubleBeds + "</td>"
             content += "<td>" + value.babyBeds + "</td>"
             content += "<td>" + value.capacityRoom + "</td>"
+            content += "<td id = 'availableToday'></td>
 
             if (value.clean) {
                 content += '<td data-sort="1"> <span class="glyphicon glyphicon-ok"></span> </td>'
@@ -65,6 +65,7 @@ $( document ).ready(function() {
         content += '</tbody> </table> <div class = "row"></div>'
         $('#allRoomsDiv').html(content)
         $('#allRooms').DataTable();
+        fillAvailability()
      }
 
      function showSingleRoom(){

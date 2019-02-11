@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.core.MediaType;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/hotel")
@@ -39,6 +38,12 @@ public class RoomEndPoint {
     public void deleteRoom(@PathVariable String roomNr){
         roomService.removeRoomByRoomNr(roomNr);
         System.out.println("Deleted room endPoint id: " + roomNr);
+    }
+
+    @GetMapping("/available/")
+    public Iterable<Room> availableRoom(@RequestParam String roomNr, @RequestParam String start, @RequestParam String end) {
+        return roomService.findAvailabilityPerRoomNr(start, end, roomNr);
+
     }
 
 

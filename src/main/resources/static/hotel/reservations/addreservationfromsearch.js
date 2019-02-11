@@ -3,7 +3,7 @@ $( document ).ready(function() {
 
     $.ajax({
        type:'get',
-       url: '../hotel/guests',
+       url: '../hotel/allguests',
        success: function(result) {
            $guests = result;
          $.each($guests, function (index, value) {
@@ -47,5 +47,6 @@ $( document ).ready(function() {
        })
         window.location.assign('/hotel/reservations/reservations.html')
         console.log('end')
+        return false
     })
 });
