@@ -64,7 +64,6 @@ h3 {
 	background: #109177;
 }
 
-
 /* Dropdown Button */
 .dropbtn {
   background-color: midnightblue;
@@ -106,4 +105,13 @@ h3 {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: midnightblue;}
+
+/*#searchResults_wrapper{*/
+   /*width: 50px;*/
+
+/*}*/
+
+/*#searchResults{*/
+    /*width: 100px;*/
+/*}*/
 
