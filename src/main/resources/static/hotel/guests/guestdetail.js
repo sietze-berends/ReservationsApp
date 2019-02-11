@@ -46,19 +46,22 @@ function fillGuestDetail($guest) {
 
 }
 
+// function that deletes guest on click, and small warning pop up
 function deleteGuest(guestId) {
 
-    console.log("reaches delete");
-    console.log(guestId);
-    var id = guestId;
+    if (confirm('Are you sure you want to delete this guest?')) {
+        var id = guestId;
         jQuery.ajax({
             url: 'hotel/allguests/' + id + '/delete',
             type: 'DELETE',
             success: function() {
-                console.log("deleted!!!!")
-                window.location.href = '/hotel/guests/guests.html'
+
             }
         });
-        // build redirect link
-};
+        window.location.href = '/hotel/guests/guests.html';
+    } else {
+        // window.location.href = '/hotel/guests/guests.html';
+    }
+}
+
 
