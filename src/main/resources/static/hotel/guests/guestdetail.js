@@ -64,4 +64,9 @@ function deleteGuest(guestId) {
     }
 }
 
+function updateGuest(guestId){
+        console.log(guestId)
+        window.location.href = '/hotel/guests/guestdetail.html?guestId=' + encodeURIComponent(guestId) + "/edit";
+}
+
 
