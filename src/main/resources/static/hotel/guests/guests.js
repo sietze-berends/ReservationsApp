@@ -32,7 +32,7 @@ function fillGuests($guests) {
              $.each($guests, function (index, value) {
                  content += "<tr id = 'guestRow'>";
                  console.log(value);
-                 content += "<td style='cursor: pointer;' id='guestId' onClick = showSingleGuest()>" + value.guestId + "</td>";
+                 content += "<td style='cursor: pointer;' id='guestId' onClick = showSingleGuest(this)>" + value.guestId + "</td>";
                  content += '<td>' + value.firstName + " " + value.lastName + '</td>';
                  content += "<td>" + value.dateOfBirth + "</td>";
                  content += "<td>" + value.email + "</td>";
@@ -45,25 +45,23 @@ function fillGuests($guests) {
              $('#allGuests').DataTable();
 }
 
-function showSingleGuest(){
-    var tbl = document.getElementById("allGuests");
+// function that gets id of the field that is clicked on, and passes it to guestdetail.js
+function showSingleGuest(clickId) {
+    getval(clickId);
 
-    if (tbl != null) {
-        for (var i = 0; i < tbl.rows.length; i++) {
-            for (var j = 0; j < tbl.rows[i].cells.length; j++)
-                tbl.rows[i].cells[j].onclick = function () { getval(this); };
+//   var tbl = document.getElementById("allGuests");
+
+//    if (tbl != null) {
+//        for (var i = 0; i < tbl.rows.length; i++) {
+//            for (var j = 0; j < tbl.rows[i].cells.length; j++)
+//                tbl.rows[i].cells[j].onclick = function () { getval(this); };
+//        }
+//    }
+
+        function getval(cel) {
+            console.log("getval")
+            var guestId = cel.innerHTML;
+            window.location.href = '/hotel/guests/guestdetail.html?guestId=' + encodeURIComponent(guestId);
         }
-    }
-
-    function getval(cel) {
-        var guestId = cel.innerHTML;
-        // window.location.href = '/hotel/allguests/' + (cel.innerHTML);
-        window.location.href = '/hotel/guests/guestdetail.html?guestId=' + encodeURIComponent(guestId);
-
-    }
-
-
-
 }
-
 

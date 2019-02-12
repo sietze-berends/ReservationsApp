@@ -33,13 +33,11 @@ $( document ).ready(function() {
         content += '<th> Child-friendly</th>'
         content += '</thead>'
         content += '<tbody id = tableBody>'
-
         $.each($rooms, function (index, value) {
             content += "<tr>"
-            console.log(value);
-            content += "<td style='cursor: pointer;' id='roomId' onClick = showSingleRoom()>" + value.roomNr + "</td>";
+            content += "<td style='cursor: pointer;' id='roomId' onClick = showSingleRoom(this)>" + value.roomNr + "</td>";
             content += '<td>' + value.roomType + '</td>';
-            content += '<td>' + value.price + '</td>';
+            content += '<td> &yen ' + value.price + '</td>';
             content += "<td>" + value.singleBeds + "</td>"
             content += "<td>" + value.doubleBeds + "</td>"
             content += "<td>" + value.babyBeds + "</td>"
@@ -67,24 +65,26 @@ $( document ).ready(function() {
         $('#allRooms').DataTable();
      }
 
-     function showSingleRoom(){
-     console.log('showSingleRoom')
-         var tbl = document.getElementById("allRooms");
+     function showSingleRoom(clickId){
+     getval(clickId);
+//     console.log('showSingleRoom')
+//         var tbl = document.getElementById("allRooms");
+//
+//         if (tbl != null) {
+//             for (var i = 0; i < tbl.rows.length; i++) {
+//                 for (var j = 0; j < tbl.rows[i].cells.length; j++)
+//                     tbl.rows[i].cells[j].onclick = function () { getval(this); };
+//             }
+//         }
 
-         if (tbl != null) {
-             for (var i = 0; i < tbl.rows.length; i++) {
-                 for (var j = 0; j < tbl.rows[i].cells.length; j++)
-                     tbl.rows[i].cells[j].onclick = function () { getval(this); };
-             }
-         }
 
-         function getval(cel) {
-             var roomNr = cel.innerHTML;
-             // window.location.href = '/hotel/allguests/' + (cel.innerHTML);
-             window.location.href = '/hotel/rooms/roomdetail.html?roomNr=' + encodeURIComponent(roomNr);
-
-         }
 
 
 
      }
+              function getval(cel) {
+                  var roomNr = cel.innerHTML;
+                  // window.location.href = '/hotel/allguests/' + (cel.innerHTML);
+                  window.location.href = '/hotel/rooms/roomdetail.html?roomNr=' + encodeURIComponent(roomNr);
+
+              }

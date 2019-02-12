@@ -53,7 +53,7 @@ public class ReservationService {
         List<Room> rooms = new ArrayList<>();
         String roomsString[] = reservationDTO.getRooms().split(",");
         for (String room : roomsString) {
-            rooms.add(roomRepository.findByRoomNr(room));
+            rooms.add(roomRepository.findByRoomNr(room.replace(" ", "")));
         }
 
         // initialize the start date and end date

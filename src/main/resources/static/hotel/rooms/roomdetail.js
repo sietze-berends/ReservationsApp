@@ -39,7 +39,7 @@ function fillRoomDetail($room) {
     content += '<tr>';
     content += '<td>' + room.roomNr + '</td>';
     content += '<td>' + room.roomType + '</td>';
-    content += '<td>' + room.price + '</td>';
+    content += '<td>&yen ' + room.price + '</td>';
     content += "<td>" + room.singleBeds + "</td>"
     content += "<td>" + room.doubleBeds + "</td>"
     content += "<td>" + room.babyBeds + "</td>"
@@ -71,18 +71,18 @@ function fillRoomDetail($room) {
 
 function deleteRoom(roomNr) {
 
-    console.log("reaches delete");
-    console.log(roomNr);
-    var id = roomNr;
+    if (confirm('Are you sure you want to delete this room?')) {
+        var id = roomNr;
         jQuery.ajax({
             url: 'hotel/allrooms/' + id + '/delete',
             type: 'DELETE',
             success: function() {
-                console.log("deleted!!!!")
 
-                window.location.href = '/hotel/rooms/rooms.html'
             }
         });
-        // build redirect link
-};
+        window.location.href = '/hotel/rooms/rooms.html';
+    } else {
+        window.location.href = '/hotel/rooms/rooms.html';
+    }
+}
 

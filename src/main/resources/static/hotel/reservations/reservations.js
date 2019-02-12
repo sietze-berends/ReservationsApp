@@ -32,6 +32,7 @@ $( document ).ready(function() {
         $.each($reservations, function (index, value) {
             content += "<tr>"
             content += "<td style='cursor: pointer;' id='reservationNumber' onClick = showSingleReservation()>" + value.reservationNumber + "</td>";
+            content += '<td>' + value.id + '</td>';
             content += '<td>'
             var $rooms = value.roomList
 
