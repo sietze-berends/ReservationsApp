@@ -46,9 +46,7 @@ function fillGuests($guests) {
 }
 
 // function that gets id of the field that is clicked on, and passes it to guestdetail.js
-function showSingleGuest(){
-    var tbl = document.getElementById("allGuests");
-function showSingleGuest(clickId){
+function showSingleGuest(clickId) {
     getval(clickId);
 
 //   var tbl = document.getElementById("allGuests");
@@ -60,11 +58,10 @@ function showSingleGuest(clickId){
 //        }
 //    }
 
-    function getval(cel) {
-        var guestId = cel.innerHTML;
-        window.location.href = '/hotel/guests/guestdetail.html?guestId=' + encodeURIComponent(guestId);
-    }
-
+        function getval(cel) {
+            console.log("getval")
+            var guestId = cel.innerHTML;
+            window.location.href = '/hotel/guests/guestdetail.html?guestId=' + encodeURIComponent(guestId);
+        }
 }
-
 
