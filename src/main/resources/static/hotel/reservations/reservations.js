@@ -2,7 +2,6 @@ $( document ).ready(function() {
     var reservations;
     $.ajax({
        type:'get',
-       url: '../hotel/reservations/',
        url: '../hotel/allreservations/',
        success: function(result) {
            reservations = result;
@@ -32,7 +31,6 @@ $( document ).ready(function() {
 
         $.each($reservations, function (index, value) {
             content += "<tr>"
-            content += '<td>' + value.reservationNumber + '</td>';
             content += "<td style='cursor: pointer;' id='reservationNumber' onClick = showSingleReservation()>" + value.reservationNumber + "</td>";
             content += '<td>'
             var $rooms = value.roomList
