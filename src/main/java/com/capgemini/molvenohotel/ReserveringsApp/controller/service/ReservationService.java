@@ -40,6 +40,7 @@ public class ReservationService {
         return reservationRepository.findById(id);
     }
 
+
     public Reservation save(ReservationDTO reservationDTO) {
 
         // initialize the extra guests as an empty array with the right size
@@ -74,7 +75,6 @@ public class ReservationService {
     }
 
     public void removeReservationById(Long reservationId) {
-        System.out.println("Deleted reservation id: " + reservationId);
         reservationRepository.deleteById(reservationId);
     }
 

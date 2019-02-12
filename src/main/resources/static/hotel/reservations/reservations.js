@@ -31,8 +31,7 @@ $( document ).ready(function() {
 
         $.each($reservations, function (index, value) {
             content += "<tr>"
-            content += "<td style='cursor: pointer;' id='reservationNumber' onClick = showSingleReservation()>" + value.id + "</td>";
-            content += '<td>' + value.id + '</td>';
+            content += "<td style='cursor: pointer;' id='reservationNumber' onClick = showSingleReservation(this)>" + value.id + "</td>";
             content += '<td>'
             var $rooms = value.roomList
 
@@ -62,16 +61,17 @@ $( document ).ready(function() {
      }
 
 
-function showSingleReservation(){
-    var tbl = document.getElementById("allReservations");
-
-    if (tbl != null) {
-        for (var i = 0; i < tbl.rows.length; i++) {
-            for (var j = 0; j < tbl.rows[i].cells.length; j++)
-                tbl.rows[i].cells[j].onclick = function () { getval(this); };
+function showSingleReservation(clickId){
+//    var tbl = document.getElementById("allReservations");
+//
+//    if (tbl != null) {
+//        for (var i = 0; i < tbl.rows.length; i++) {
+//            for (var j = 0; j < tbl.rows[i].cells.length; j++)
+//                tbl.rows[i].cells[j].onclick = function () { getval(this); };
+//        }
+//    }
+        getval(clickId)
         }
-    }
-
     function getval(cel) {
         var reservationNumber = cel.innerHTML;
         window.location.href = '/hotel/reservations/reservationdetail.html?reservationNumber=' + encodeURIComponent(reservationNumber);
@@ -80,4 +80,3 @@ function showSingleReservation(){
 
 
 
-}

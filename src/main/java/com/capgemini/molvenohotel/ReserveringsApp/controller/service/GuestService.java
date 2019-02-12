@@ -29,12 +29,10 @@ public class GuestService {
     }
 
     public void removeGuestById(Long guestId) {
-        System.out.println("Deleted guest id: " + guestId);
         guestRepository.deleteById(guestId);
     }
 
     public void removeAllGuests(List<Guest> guests) {
-        System.out.println("All deleted guests: " + guests);
         guestRepository.deleteAll(guests);
     }
 }

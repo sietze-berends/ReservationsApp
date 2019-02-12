@@ -30,11 +30,14 @@ public class ReservationEndPoint {
         return reservationDTO;
     }
 
-    @GetMapping("/allreservations/{reservationNumber}")
-    public Reservation getReservationById(@PathVariable int reservationNumber) {
-        System.out.println("Ik ben in de allroom/id");
-        Reservation reservation = reservationService.showReservationByReservationNumber(reservationNumber);
-        return reservation;
+    @GetMapping("/allreservations/{id}")
+    public Reservation getReservationById(@PathVariable Long id) {
+        Optional<Reservation> reservation = reservationService.showReservationById(id);
+        return reservation.get();
+    }
+    @DeleteMapping("/allreservations/{id}/delete")
+    public void deleteGuest(@PathVariable Long id){
+       reservationService.removeReservationById(id);
     }
 }
 

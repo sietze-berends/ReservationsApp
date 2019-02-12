@@ -26,7 +26,6 @@ public class RoomService {
     }
 
     public void removeRoomByRoomNr(String roomNr) {
-        System.out.println("Deleted room id: " + roomNr);
         roomRepository.deleteByRoomNr(roomNr);
     }
 
