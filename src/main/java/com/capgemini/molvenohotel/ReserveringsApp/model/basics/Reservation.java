@@ -146,5 +146,13 @@ public class Reservation {
                 ", endStr='" + endStr + '\'' +
                 '}';
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public boolean isCheckedIn() {
+        return checkedIn;
+    }
 }
 
