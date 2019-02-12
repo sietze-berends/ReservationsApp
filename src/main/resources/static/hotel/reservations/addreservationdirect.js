@@ -18,10 +18,10 @@ $( document ).ready(function() {
            $(newReservationForm).each(function(i, field) {
                 submitData[field.name] = field.value
            })
-
+            console.log(submitData)
         $.ajax({
             type:'post',
-            url: '../hotel/reservations/add',
+            url: '../hotel/allreservations/add',
             data : JSON.stringify(submitData),
             contentType : "application/json"
             })

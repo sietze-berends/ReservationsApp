@@ -3,6 +3,7 @@ $( document ).ready(function() {
     $.ajax({
        type:'get',
        url: '../hotel/reservations/',
+       url: '../hotel/allreservations/',
        success: function(result) {
            reservations = result;
            fillReservations(reservations);
@@ -32,6 +33,7 @@ $( document ).ready(function() {
         $.each($reservations, function (index, value) {
             content += "<tr>"
             content += '<td>' + value.reservationNumber + '</td>';
+            content += "<td style='cursor: pointer;' id='reservationNumber' onClick = showSingleReservation()>" + value.reservationNumber + "</td>";
             content += '<td>'
             var $rooms = value.roomList
 
@@ -59,3 +61,24 @@ $( document ).ready(function() {
         $("#allReservationsDiv").html(content)
         $('#allReservations').DataTable();
      }
+
+
+function showSingleReservation(){
+    var tbl = document.getElementById("allReservations");
+
+    if (tbl != null) {
+        for (var i = 0; i < tbl.rows.length; i++) {
+            for (var j = 0; j < tbl.rows[i].cells.length; j++)
+                tbl.rows[i].cells[j].onclick = function () { getval(this); };
+        }
+    }
+
+    function getval(cel) {
+        var reservationNumber = cel.innerHTML;
+        window.location.href = '/hotel/reservations/reservationdetail.html?reservationNumber=' + encodeURIComponent(reservationNumber);
+
+    }
+
+
+
+}

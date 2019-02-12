@@ -33,7 +33,7 @@ $( document ).ready(function() {
        submitData = JSON.stringify(submitData)
        console.log(submitData)
        $.post ( {
-           url : 'hotel/reservations/add',
+           url : 'hotel/allreservations/add',
            data : submitData,
            contentType : 'application/JSON',
            success : function(response) {

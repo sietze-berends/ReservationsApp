@@ -73,4 +73,13 @@ public class ReservationService {
         return reservationRepository.save(reservation);
     }
 
+    public void removeReservationById(Long reservationId) {
+        System.out.println("Deleted reservation id: " + reservationId);
+        reservationRepository.deleteById(reservationId);
+    }
+
+    public Reservation showReservationByReservationNumber(int reservationNumber) {
+        return reservationRepository.findByReservationNumber(reservationNumber);
+    }
+
 }
