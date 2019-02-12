@@ -71,18 +71,18 @@ function fillRoomDetail($room) {
 
 function deleteRoom(roomNr) {
 
-    console.log("reaches delete");
-    console.log(roomNr);
-    var id = roomNr;
+    if (confirm('Are you sure you want to delete this room?')) {
+        var id = roomNr;
         jQuery.ajax({
             url: 'hotel/allrooms/' + id + '/delete',
             type: 'DELETE',
             success: function() {
-                console.log("deleted!!!!")
 
-                window.location.href = '/hotel/rooms/rooms.html'
             }
         });
-        // build redirect link
-};
+        window.location.href = '/hotel/rooms/rooms.html';
+    } else {
+        window.location.href = '/hotel/rooms/rooms.html';
+    }
+}
 
